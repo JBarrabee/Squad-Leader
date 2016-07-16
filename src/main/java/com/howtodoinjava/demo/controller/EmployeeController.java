@@ -15,7 +15,7 @@ import com.howtodoinjava.demo.service.EmployeeManager;
 import com.howtodoinjava.demo.validator.EmployeeValidator;
 
 @Controller
-@RequestMapping("/employee-module/addNew")
+@RequestMapping("addEmployee")
 @SessionAttributes("employee")
 public class EmployeeController 
 {
@@ -32,6 +32,8 @@ public class EmployeeController
 		 model.addAttribute("employee", employeeVO);
 		 return "addEmployee";
     }
+	
+	
 	
 	@RequestMapping(method = RequestMethod.POST)
     public String submitForm(@ModelAttribute("employee") EmployeeVO employeeVO,
