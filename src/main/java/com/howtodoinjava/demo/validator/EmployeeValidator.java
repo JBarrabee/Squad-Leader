@@ -29,7 +29,6 @@ public class EmployeeValidator implements Validator {
 		}
 
 		// Validation for email address. Cannot be blank. Must match with regex.
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "error.email", "Email is required.");
 		final Pattern emailRegex = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
 				Pattern.CASE_INSENSITIVE);
 		Matcher matcher = emailRegex.matcher(p.getEmail());
