@@ -1,6 +1,8 @@
 package com.howtodoinjava.demo.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.EnumSet;
 
 public class EmployeeVO implements Serializable 
 {
@@ -13,6 +15,8 @@ public class EmployeeVO implements Serializable
 	private String streetAddress;
 	private String city;
 	private String state;
+	
+
 
 	
 	public String getStreetAddress() {

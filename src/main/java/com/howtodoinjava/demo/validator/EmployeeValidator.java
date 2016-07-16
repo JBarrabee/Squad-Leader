@@ -18,7 +18,7 @@ public class EmployeeValidator implements Validator {
 		// Validation for first name. Cannot be blank. Cannot have over 30 chars
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "error.firstName", "First name is required.");
 		EmployeeVO p = (EmployeeVO) target;
-		if (p.getFirstName().length() > 30) {
+		while (p.getFirstName().length() > 30) {
 			errors.rejectValue("firstName", "error.firstName.tooManyChars");
 		}
 
@@ -46,6 +46,8 @@ public class EmployeeValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "city", "error.city", "City Required.");
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "state", "error.state", "State Required.");
+		
+		
 
 	}
 
