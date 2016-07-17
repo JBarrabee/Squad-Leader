@@ -45,15 +45,18 @@
 						}
 					}
 				};
-				xhttp.open("GET", callLink, true);
-				xhttp.send(); // Sends the request
+				//xhttp.open("GET", callLink, true);
+				//xhttp.send(); // Sends the request
+				var xhr =createCORSRequest('GET', callLink);
+				xhr.send();
 			}
 		} //end of funtion
 
-		var refreshDetroitLink = "https://api.meetup.com/refreshdetroit/events?photo-host=public&page=20&sig_id=9283563&sig=182244089349639c68879c73ba06b4d567a867c2";
+	
+		var refreshDetroitLink = "https://api.meetup.com/2/events?key=7b746934724f4a84010a3e5968137b&group_urlname=refreshdetroit&sign=true";
 		var scrabbleGroupLink = "https://api.meetup.com/scrabble-boardgame/events?photo-host=public&page=20&sig_id=9283563&sig=4ec5b42c06eabd6fcb230021a6424871d3e4f413";
-
-		myfuntion(scrabbleGroupLink);
+		
+	//	myfuntion(scrabbleGroupLink);
 		myfuntion(refreshDetroitLink);
 	</script>
 	<section id="list"></section>

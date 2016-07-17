@@ -21,7 +21,8 @@
 						for (i = 0; i < jsonObj.length; i++) {
 							var eventName = jsonObj[i].name;
 							var eventLocation = jsonObj[i].venue.name;
-							var eventTime = jsonObj[i].time;
+							
+							var date = new Date(jsonObj[i].time);
 							var eventCity = jsonObj[i].venue.city;
 							var eventLongitude = jsonObj[i].venue.lon;
 							var eventLatitude = jsonObj[i].venue.lat;
@@ -39,7 +40,7 @@
 									+ "<br>"
 									+ "starts at"
 									+ ", "
-									+ jsonObj[i].time
+									+ date
 									+ ", "
 									+ jsonObj[i].venue.city + "</p><br>";
 						}
@@ -48,11 +49,11 @@
 				xhttp.open("GET", callLink, true);
 				xhttp.send(); // Sends the request
 			}
-		}
+		} //end of funtion
 
 		var refreshDetroitLink = "https://api.meetup.com/refreshdetroit/events?photo-host=public&page=20&sig_id=9283563&sig=182244089349639c68879c73ba06b4d567a867c2";
-		var scrabbleGroupLink = "https://api.meetup.com/scrabble-boardgame/events?photo-host=public&page=20&sig_id=9283563&sig=4ec5b42c06eabd6fcb230021a6424871d3e4f413";
-
+		//var scrabbleGroupLink = "https://api.meetup.com/scrabble-boardgame/events?photo-host=public&page=20&sig_id=9283563&sig=4ec5b42c06eabd6fcb230021a6424871d3e4f413";
+		
 		myfuntion(scrabbleGroupLink);
 		myfuntion(refreshDetroitLink);
 	</script>
