@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.*,java.util.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
-<%@ page import="com.database.people.PeopleDAO"%>
+<%@ page import="net.squadleader.people.PeopleDAO"%>
 
 
-<%@ page import="com.database.people.Person"%>
+<%@ page import="net.squadleader.people.Person"%>
  
  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -20,10 +20,9 @@
 	<h1>Hibernate Example: Product Listing</h1>
 	<table>
 		<%
-			List<Person> products = DAO.getAllProducts();
+			List<Person> products = PeopleDAO.getAllPeople();
 			for (Person p : products) {
-				out.println("<tr><td>" + p.getId() + "</td><td>" + p.getName() + "</td><td>" + p.getCategory()
-						+ "</td><td>" + p.getPrice() + "</td></tr>");
+				out.println("<tr><td>" + p.getPersonID() + "</td><td>" + p.getFirstName() + "</td></tr>");
 			}
 		%>
 	</table>

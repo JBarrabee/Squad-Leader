@@ -1,23 +1,27 @@
 package com.howtodoinjava.demo.validator;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-import java.util.regex.*;
-import com.howtodoinjava.demo.model.EmployeeVO;
+
+import net.squadleader.people.Person;
+
 
 @Component
 public class EmployeeValidator implements Validator {
 
 	public boolean supports(Class clazz) {
-		return EmployeeVO.class.isAssignableFrom(clazz);
+		return Person.class.isAssignableFrom(clazz);
 	}
 
 	public void validate(Object target, Errors errors) {
 		// Validation for first name. Cannot be blank. Cannot have over 30 chars
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "error.firstName", "First name is required.");
-		EmployeeVO p = (EmployeeVO) target;
+		Person p = (Person) target;
 		while (p.getFirstName().length() > 30) {
 			errors.rejectValue("firstName", "error.firstName.tooManyChars");
 		}

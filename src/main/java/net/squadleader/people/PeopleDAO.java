@@ -1,4 +1,4 @@
-package com.database.people;
+package net.squadleader.people;
 
 import java.util.List;
 import org.hibernate.Session;

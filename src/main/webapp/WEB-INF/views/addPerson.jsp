@@ -38,7 +38,7 @@
 
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
-			<form:form method="post" modelAttribute="employee">
+			<form:form method="post" modelAttribute="person">
 				<%-- <form:errors path="*" cssClass="error" /> --%>
 				<table>
 					<tr>
@@ -137,7 +137,7 @@
 					
 
 					<tr>
-						<td colspan="3"><input type="submit" value="Add Employee" /></td>
+						<td colspan="3"><input type="submit" value="Add Person" /></td>
 					</tr>
 				</table>
 			</form:form>

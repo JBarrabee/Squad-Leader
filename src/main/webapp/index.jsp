@@ -22,7 +22,7 @@
   <ul class="nav navbar-nav ">
     
     <li class="nav-item pull-*-right">
-      <a class="nav-link" href=" addEmployee.html">SIGN UP</a>
+      <a class="nav-link" href=" addPerson.html">SIGN UP</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="">LOG IN</a>

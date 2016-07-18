@@ -9,15 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-
-import com.howtodoinjava.demo.model.EmployeeVO;
+import net.squadleader.people.Person;
 import com.howtodoinjava.demo.service.EmployeeManager;
 import com.howtodoinjava.demo.validator.EmployeeValidator;
 
 @Controller
-@RequestMapping("addEmployee")
-@SessionAttributes("employee")
-public class EmployeeController 
+@RequestMapping("addPerson")
+@SessionAttributes("person")
+public class PersonController 
 {
 	@Autowired
 	EmployeeManager manager;
@@ -28,29 +27,29 @@ public class EmployeeController
 	@RequestMapping(method = RequestMethod.GET)
     public String setupForm(Model model) 
 	{
-		 EmployeeVO employeeVO = new EmployeeVO();
-		 model.addAttribute("employee", employeeVO);
-		 return "addEmployee";
+		 Person person = new Person();
+		 model.addAttribute("person", person);
+		 return "addPerson";
     }
 	
 	
 	
 	@RequestMapping(method = RequestMethod.POST)
-    public String submitForm(@ModelAttribute("employee") EmployeeVO employeeVO,
+    public String submitForm(@ModelAttribute("person") Person Person,
             				BindingResult result, SessionStatus status) 
 	{
 		
-		validator.validate(employeeVO, result);
+		validator.validate(Person, result);
 		
 		if (result.hasErrors()) {
-			return "addEmployee";
+			return "addPerson";
 		}
 		//Store the employee information in database
-		//manager.createNewRecord(employeeVO);
+		//manager.createNewRecord(Person);
 		
 		//Mark Session Complete
 		status.setComplete();
-		return "redirect:addNew/success";
+		return "addSuccess";
     }
 	
 	@RequestMapping(value = "/success", method = RequestMethod.GET)
