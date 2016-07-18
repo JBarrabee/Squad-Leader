@@ -11,11 +11,12 @@
 		function myfuntion(callLink) {
 			loadDoc(); // how java script creates a function
 			function loadDoc() { // this will be the function that other documents will call
-				var xhttp = new XMLHttpRequest(); // creating the object
-				xhttp.onreadystatechange = function() { //when connection is ready make sure it is good
-					if (xhttp.readyState == 4 && xhttp.status == 200) {
+				var xhr = new XMLHttpRequest(); // creating the object
+				//I changed the xhttp to xhr as I saw in an example.
+				xhr.onreadystatechange = function() { //when connection is ready make sure it is good
+					if (this.readyState == 4 && this.status == 200) {
 						//console.log(xhttp.responseText);
-						var jsonObj = JSON.parse(xhttp.responseText); // get the data
+						var jsonObj = JSON.parse(xhr.responseText); // get the data
 						console.log(jsonObj);
 						//Data is an array  Need to do a for loop (or a inhanced for loop) to get all information
 						for (i = 0; i < jsonObj.length; i++) {

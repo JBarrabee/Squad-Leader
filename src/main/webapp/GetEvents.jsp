@@ -10,9 +10,9 @@
 	<script>
 		function myfuntion(callLink) {
 			loadDoc(); // how java script creates a function
-			function loadDoc() { // this will be the function that other documents will call
-				var xhttp = new XMLHttpRequest(); // creating the object
-				xhttp.onreadystatechange = function() { //when connection is ready make sure it is good
+			var xhr = new XMLHttpRequest(); // creating the object
+			//I changed the xhttp to xhr as I saw in an example.
+			xhr.onreadystatechange = function() { //when connection is ready make sure it is good
 					if (xhttp.readyState == 4 && xhttp.status == 200) {
 						//console.log(xhttp.responseText);
 						var jsonObj = JSON.parse(xhttp.responseText); // get the data
@@ -49,7 +49,7 @@
 				xhttp.open("GET", callLink, true);
 				xhttp.send(); // Sends the request
 			}
-		} //end of funtion
+		 //end of funtion
 
 		var refreshDetroitLink = "https://api.meetup.com/refreshdetroit/events?photo-host=public&page=20&sig_id=9283563&sig=182244089349639c68879c73ba06b4d567a867c2";
 		//var scrabbleGroupLink = "https://api.meetup.com/scrabble-boardgame/events?photo-host=public&page=20&sig_id=9283563&sig=4ec5b42c06eabd6fcb230021a6424871d3e4f413";
