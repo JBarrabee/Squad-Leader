@@ -1,5 +1,6 @@
 package com.howtodoinjava.demo.controller;
 
+import net.squadleader.people.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import net.squadleader.people.Person;
 import com.howtodoinjava.demo.service.EmployeeManager;
 import com.howtodoinjava.demo.validator.EmployeeValidator;
 
@@ -35,18 +35,18 @@ public class PersonController
 	
 	
 	@RequestMapping(method = RequestMethod.POST)
-    public String submitForm(@ModelAttribute("person") Person Person,
+    public String submitForm(@ModelAttribute("person") Person person,
             				BindingResult result, SessionStatus status) 
 	{
 		
-		validator.validate(Person, result);
+		validator.validate(person, result);
 		
 		if (result.hasErrors()) {
 			return "addPerson";
 		}
 		//Store the employee information in database
 		//manager.createNewRecord(Person);
-		
+		PeopleDAO.addPerson(person);
 		//Mark Session Complete
 		status.setComplete();
 		return "addSuccess";
