@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 public class PeopleDAO {
-	
+
 	private static SessionFactory factory;
 
 	private static void setupFactory() {
@@ -20,7 +20,7 @@ public class PeopleDAO {
 		Configuration configuration = new Configuration();
 		// modify these to match your XML files
 		configuration.configure("hibernate.cfg.xml");
-		configuration.addResource("product.hbm.xml");
+		configuration.addResource("person.hbm.xml");
 		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 				.applySettings(configuration.getProperties()).build();
 		factory = configuration.buildSessionFactory(serviceRegistry);

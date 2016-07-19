@@ -8,13 +8,13 @@
 </head>
 <body>
 	<script>
-		function myfuntion(callLink) {
-			loadDoc(); // how java script creates a function
-			var xhr = new XMLHttpRequest(); // creating the object
+		//function myfuntion(callLink) {
+			function loadDoc(){ // how java script creates a function
+			var xhttp = new XMLHttpRequest(); // creating the object
 			//I changed the xhttp to xhr as I saw in an example.
-			xhr.onreadystatechange = function() { //when connection is ready make sure it is good
+			xhttp.onreadystatechange = function() { //when connection is ready make sure it is good
 					if (xhttp.readyState == 4 && xhttp.status == 200) {
-						//console.log(xhttp.responseText);
+						console.log(xhttp.responseText);
 						var jsonObj = JSON.parse(xhttp.responseText); // get the data
 						console.log(jsonObj);
 						//Data is an array  Need to do a for loop (or a inhanced for loop) to get all information
@@ -42,20 +42,21 @@
 									+ ", "
 									+ date
 									+ ", "
-									+ jsonObj[i].venue.city + "</p><br>";
+									+ "</p><br>";
 						}
 					}
 				};
-				xhttp.open("GET", callLink, true);
+				xhttp.open("GET", refreshDetroitLink, true);
 				xhttp.send(); // Sends the request
 			}
+		//}
 		 //end of funtion
 
 		var refreshDetroitLink = "https://api.meetup.com/refreshdetroit/events?photo-host=public&page=20&sig_id=9283563&sig=182244089349639c68879c73ba06b4d567a867c2";
-		//var scrabbleGroupLink = "https://api.meetup.com/scrabble-boardgame/events?photo-host=public&page=20&sig_id=9283563&sig=4ec5b42c06eabd6fcb230021a6424871d3e4f413";
+		var scrabbleGroupLink = "https://api.meetup.com/scrabble-boardgame/events?photo-host=public&page=20&sig_id=9283563&sig=4ec5b42c06eabd6fcb230021a6424871d3e4f413";
 		
-		myfuntion(scrabbleGroupLink);
-		myfuntion(refreshDetroitLink);
+		//myfuntion(scrabbleGroupLink);
+	//	myfuntion(refreshDetroitLink);
 	</script>
 	<section id="list"></section>
 	<br>
