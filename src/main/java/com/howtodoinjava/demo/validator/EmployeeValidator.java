@@ -20,14 +20,14 @@ public class EmployeeValidator implements Validator {
 
 	public void validate(Object target, Errors errors) {
 		// Validation for first name. Cannot be blank. Cannot have over 30 chars
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "error.firstName", "First name is required.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "FIRST_NAME", "error.firstName", "First name is required.");
 		Person p = (Person) target;
 		while (p.getFIRST_NAME().length() > 30) {
 			errors.rejectValue("firstName", "error.firstName.tooManyChars");
 		}
 
 		// Validation for last name. Cannot be blank. Cannot have over 30 chars
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "error.lastName", "Last name is required.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "LAST_NAME", "error.lastName", "Last name is required.");
 		if (p.getFIRST_NAME().length() > 30) {
 			errors.rejectValue("lastName", "error.lastName.tooManyChars");
 		}
@@ -38,17 +38,17 @@ public class EmployeeValidator implements Validator {
 		Matcher matcher = emailRegex.matcher(p.getEMAIL());
 
 		if (!matcher.find()) {
-			errors.rejectValue("email", "error.email.invalid");
+			errors.rejectValue("EMAIL", "error.email.invalid");
 		}
 
 		// NEEDS TO VALIDATE ADDRESS DYNAMICALLY THROUGH API
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "streetAddress", "error.streetAddress",
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "STREET_ADDRESS", "error.streetAddress",
 				"Street Address Required.");
 
 		
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "city", "error.city", "City Required.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "CITY", "error.city", "City Required.");
 
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "state", "error.state", "State Required.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "STATE", "error.state", "State Required.");
 		
 		
 

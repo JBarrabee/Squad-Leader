@@ -3,7 +3,7 @@
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"    
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="net.squadleader.people.Person" table="people">
+	<class name="net.squadleader.people.Person" table="Person">
 		<id name="ID" column="ID" type="int">
 			<generator class="increment"></generator>
 		</id>
@@ -12,7 +12,7 @@
 		<property name="EMAIL" column="EMAIL" type="string"></property>
 		<property name="STREET_ADDRESS" column="STREET_ADDRESS" type="string"></property>
 		<property name="CITY" column="CITY" type="string"></property>
-		<property name="STATE" column="EMAIL" type="string"></property>
+		<property name="STATE" column="STATE" type="string"></property>
 		<property name="LATITUDE" column="LATITUDE" type="string"></property>
 		<property name="LONGITUDE" column="LONGITUDE" type="string"></property>
 		<property name="DOB" column="DOB" type="string"></property>
