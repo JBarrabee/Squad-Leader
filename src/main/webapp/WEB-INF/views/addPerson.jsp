@@ -35,14 +35,14 @@
 		</h2>
 	</div>
 
-
+/Applications/MySQLWorkbench.app/Contents/MacOS/mysqldump
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
 			<form:form method="post" modelAttribute="person">
 				<%-- <form:errors path="*" cssClass="error" /> --%>
 				<table>
 					<tr>
-						<td><spring:message code="lbl.firstName" text="First Name" /></td>
+						<td><spring:message code="lbl.FIRST_NAME" text="First Name" /></td>
 						<td><form:input path="FIRST_NAME" /></td>
 						<td><form:errors path="FIRST_NAME" cssClass="error" /></td>
 					</tr>
@@ -147,21 +147,21 @@
 							<option value="11">November</option>
 							<option value="12">December</option>
 							</select>
-						</td>
-						<td>
-							<select id="DOB_Day" name="DOB_Day">
-							for (var i=1;i<32;i++) {
-								<option value=i>i</option>
-							}
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<select id="DOB_Day" name="DOB_Day"> -->
+<!-- 							for (var i=1;i<32;i++) { -->
+<!-- 								<option value=i>i</option> -->
+<!-- 							} -->
 
 							
-							</select>
+<!-- 							</select> -->
 						
-						</td>
-					</tr>
-					<tr>
-					<td><form:hidden path="ACCESS_LEVEL" /></td>
-					<input id="ACCESS_LEVEL" name="ACCESS_LEVEL" type="hidden" value="false"/> 
+<!-- 						</td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<%-- 					<td><form:hidden path="ACCESS_LEVEL" /></td> --%>
+
 					
 
 					<tr>

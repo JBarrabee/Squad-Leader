@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-dark bg-inverse ">
+	<nav class="navbar navbar-dark bg-inverse ">
 		<ul class="nav navbar-nav ">
 
 			<li class="nav-item"><a class="nav-link"
@@ -26,6 +26,17 @@
 			<!-- <li class="nav-item"><a class="nav-link" href="">LOG IN</a></li> -->
 		</ul>
 	</nav>
+
+	<div class="row">
+		<div class="col-lg-2 col-md-offset-1 ">
+		<p>stuff in here. <br> Stuff in here. </p>
+	 
+	 </div>
+	
+	
+	</div>
+	
+	
 	
 </body>
 </html>
