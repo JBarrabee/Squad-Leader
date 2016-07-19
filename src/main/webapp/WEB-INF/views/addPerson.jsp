@@ -43,40 +43,40 @@
 				<table>
 					<tr>
 						<td><spring:message code="lbl.firstName" text="First Name" /></td>
-						<td><form:input path="firstName" /></td>
-						<td><form:errors path="firstName" cssClass="error" /></td>
+						<td><form:input path="FIRST_NAME" /></td>
+						<td><form:errors path="FIRST_NAME" cssClass="error" /></td>
 					</tr>
 
 
 					<tr>
 						<td><spring:message code="lbl.lastName" text="Last Name" /></td>
-						<td><form:input path="lastName" /></td>
-						<td><form:errors path="lastName" cssClass="error" /></td>
+						<td><form:input path="LAST_NAME" /></td>
+						<td><form:errors path="LAST_NAME" cssClass="error" /></td>
 					</tr>
 
 					<tr>
 						<td><spring:message code="lbl.email" text="Email " /></td>
-						<td><form:input path="email" /></td>
-						<td><form:errors path="email" cssClass="error" /></td>
+						<td><form:input path="EMAIL" /></td>
+						<td><form:errors path="EMAIL" cssClass="error" /></td>
 					</tr>
 
 					<tr>
-						<td><spring:message code="lbl." text="Street Address" /></td>
-						<td><form:input path="streetAddress" /></td>
-						<td><form:errors path="streetAddress" cssClass="error" /></td>
+						<td><spring:message code="lbl.streetAddress" text="Street Address" /></td>
+						<td><form:input path="STREET_ADDRESS" /></td>
+						<td><form:errors path="STREET_ADDRESS" cssClass="error" /></td>
 					</tr>
 
 					<tr>
-						<td><spring:message code="lbl." text="City" /></td>
-						<td><form:input path="city" /></td>
-						<td><form:errors path="city" cssClass="error" /></td>
+						<td><spring:message code="lbl.city" text="City" /></td>
+						<td><form:input path="CITY" /></td>
+						<td><form:errors path="CITY" cssClass="error" /></td>
 					</tr>
 
 					
 					<tr>
 						<td><spring:message code="lbl." text="State" /></td>
 						
-						<td><select id="state" name="state">
+						<td><select id="STATE" name="STATE">
 						<option value="AL">Alabama</option>
 						<option value="AK">Alaska</option>
 						<option value="AZ">Arizona</option>
@@ -129,11 +129,39 @@
 						<option value="WY">Wyoming</option>
 						
 						</select></td>
-						<td><form:errors path="state" cssClass="error" /></td>
+						<td><form:errors path="STATE" cssClass="error" /></td>
 					</tr>
+					<tr>
+						<td><spring:message code=".lbl" text="DOB" /></td>
+						<td><select id="DOB_Month" name="DOB_Month">
+							<option value="1">January</option>
+							<option value="2">February</option>
+							<option value="3">March</option>
+							<option value="4">April</option>
+							<option value="5">May</option>
+							<option value="6">June</option>
+							<option value="7">July</option>
+							<option value="8">August</option>
+							<option value="9">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
+							</select>
+						</td>
+						<td>
+							<select id="DOB_Day" name="DOB_Day">
+							for (var i=1;i<32;i++) {
+								<option value=i>i</option>
+							}
 
-					
-					
+							
+							</select>
+						
+						</td>
+					</tr>
+					<tr>
+					<td><form:hidden path="ACCESS_LEVEL" /></td>
+					<input id="ACCESS_LEVEL" name="ACCESS_LEVEL" type="hidden" value="false"/> 
 					
 
 					<tr>
