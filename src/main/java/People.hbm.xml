@@ -7,9 +7,9 @@
 		<id name="PERSON_ID" column="PERSON_ID" type="int">
 			<generator class="increment"></generator>
 		</id>
-		<property name="firstName" column="First_Name" type="string"></property>
-		<property name="lastName" column="Last_Name" type="string"></property>
-		<property name="email" column="STREET" type="string"></property>
+		<property name="FIRST_NAME" column="FIRST_NAME" type="string"></property>
+		<property name="LAST_NAME" column="LAST_NAME" type="string"></property>
+		<property name="EMAIL" column="EMAIL" type="string"></property>
 		
 			
 	</class>

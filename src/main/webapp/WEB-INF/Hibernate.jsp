@@ -22,7 +22,7 @@
 		<%
 			List<Person> products = PeopleDAO.getAllPeople();
 			for (Person p : products) {
-				out.println("<tr><td>" + p.getID() + "</td><td>" + p.getFirstName() + "</td></tr>");
+				out.println("<tr><td>" + p.getID() + "</td><td>" + p.getFIRST_NAME() + "</td></tr>");
 			}
 		%>
 	</table>
