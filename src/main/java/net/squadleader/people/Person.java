@@ -6,7 +6,7 @@ public class Person implements Serializable  {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private int personID;
+	private int PERSON_ID;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -20,12 +20,12 @@ public class Person implements Serializable  {
 	public Person(){}
 	
 	
-	public int getPersonID() {
-		return personID;
+	public int getPERSON_ID() {
+		return PERSON_ID;
 	}
 
-	public void setPersonID(int personID) {
-		this.personID = personID;
+	public void setPERSON_ID(int personID) {
+		this.PERSON_ID = personID;
 	}
 
 	public String getFirstName() {
@@ -102,7 +102,7 @@ public class Person implements Serializable  {
 	
 	@Override
 	public String toString() {
-		return "Person ID = " + personID + ", First name = " + firstName
+		return "Person ID = " + PERSON_ID + ", First name = " + firstName
 				+ "Last name = " + lastName + ", Email = " + email + 
 				"Access Level = " + accessLevel + "Street Address = " + streetAddress + 
 				"City = " + city + "State = " + state + "Zip Code = " + zipCode + 

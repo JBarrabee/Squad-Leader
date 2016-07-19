@@ -20,7 +20,7 @@ public class PeopleDAO {
 		Configuration configuration = new Configuration();
 		// modify these to match your XML files
 		configuration.configure("hibernate.cfg.xml");
-		configuration.addResource("product.hbm.xml");
+		configuration.addResource("People.hbm.xml");
 		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 				.applySettings(configuration.getProperties()).build();
 		factory = configuration.buildSessionFactory(serviceRegistry);
@@ -44,7 +44,7 @@ public class PeopleDAO {
 			setupFactory();
 		Session hibernateSession = factory.openSession();
 		hibernateSession.getTransaction().begin();
-		List<Person> people = hibernateSession.createQuery("FROM Person").list();
+		List<Person> people = hibernateSession.createQuery("FROM people").list();
 		hibernateSession.getTransaction().commit();
 		hibernateSession.close();
 		return people;
