@@ -7,106 +7,189 @@ public class Person implements Serializable  {
 	private static final long serialVersionUID = 1L;
 	
 	private int PERSON_ID;
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String accessLevel;
-	private String streetAddress;
-	private String city;
-	private String state;
-	private String zipCode;
-	private String birthday;
+	private String FIRST_NAME;
+	private String LAST_NAME;
+	private String EMAIL;
+	private String STREET_ADDRESS;
+	private String CITY;
+	private String STATE;
+	private String LATITUDE;
+	private String LONGITUDE;
+	private String DOB;
+	private String ACCESS_LEVEL;
 	
 	public Person(){}
+	
+	
 	
 	
 	public int getPERSON_ID() {
 		return PERSON_ID;
 	}
 
-	public void setPERSON_ID(int personID) {
-		this.PERSON_ID = personID;
+
+
+
+	public void setPERSON_ID(int pERSON_ID) {
+		PERSON_ID = pERSON_ID;
 	}
 
-	public String getFirstName() {
-		return firstName;
+
+
+
+	public String getFIRST_NAME() {
+		return FIRST_NAME;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+
+
+
+	public void setFIRST_NAME(String fIRST_NAME) {
+		FIRST_NAME = fIRST_NAME;
 	}
 
-	public String getLastName() {
-		return lastName;
+
+
+
+	public String getLAST_NAME() {
+		return LAST_NAME;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+
+
+
+	public void setLAST_NAME(String lAST_NAME) {
+		LAST_NAME = lAST_NAME;
 	}
 
-	public String getEmail() {
-		return email;
+
+
+
+	public String getEMAIL() {
+		return EMAIL;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+
+
+
+	public void setEMAIL(String eMAIL) {
+		EMAIL = eMAIL;
 	}
 
-	public String getAccessLevel() {
-		return accessLevel;
+
+
+
+	public String getSTREET_ADDRESS() {
+		return STREET_ADDRESS;
 	}
 
-	public void setAccessLevel(String accessLevel) {
-		this.accessLevel = accessLevel;
+
+
+
+	public void setSTREET_ADDRESS(String sTREET_ADDRESS) {
+		STREET_ADDRESS = sTREET_ADDRESS;
 	}
 
-	public String getStreetAddress() {
-		return streetAddress;
+
+
+
+	public String getCITY() {
+		return CITY;
 	}
 
-	public void setStreetAddress(String streetAddress) {
-		this.streetAddress = streetAddress;
+
+
+
+	public void setCITY(String cITY) {
+		CITY = cITY;
 	}
 
-	public String getCity() {
-		return city;
+
+
+
+	public String getSTATE() {
+		return STATE;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+
+
+
+	public void setSTATE(String sTATE) {
+		STATE = sTATE;
 	}
 
-	public String getState() {
-		return state;
+
+
+
+	public String getLATITUDE() {
+		return LATITUDE;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+
+
+
+	public void setLATITUDE(String lATITUDE) {
+		LATITUDE = lATITUDE;
 	}
 
-	public String getZipCode() {
-		return zipCode;
+
+
+
+	public String getLONGITUDE() {
+		return LONGITUDE;
 	}
 
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
+
+
+
+	public void setLONGITUDE(String lONGITUDE) {
+		LONGITUDE = lONGITUDE;
 	}
 
-	public String getBirthday() {
-		return birthday;
+
+
+
+	public String getDOB() {
+		return DOB;
 	}
 
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
-	}	
-	
+
+
+
+	public void setDOB(String dOB) {
+		DOB = dOB;
+	}
+
+
+
+
+	public String getACCESS_LEVEL() {
+		return ACCESS_LEVEL;
+	}
+
+
+
+
+	public void setACCESS_LEVEL(String aCCESS_LEVEL) {
+		ACCESS_LEVEL = aCCESS_LEVEL;
+	}
+
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+
+
 	@Override
 	public String toString() {
-		return "Person ID = " + PERSON_ID + ", First name = " + firstName
-				+ "Last name = " + lastName + ", Email = " + email + 
-				"Access Level = " + accessLevel + "Street Address = " + streetAddress + 
-				"City = " + city + "State = " + state + "Zip Code = " + zipCode + 
-				"Birthday = " + birthday;
+		return "Person ID = " + PERSON_ID + ", First name = " + FIRST_NAME
+				+ "Last name = " + LAST_NAME + ", Email = " + EMAIL + 
+				"Access Level = " + ACCESS_LEVEL + "Street Address = " + STREET_ADDRESS + 
+				"City = " + CITY + "State = " + STATE +  "Birthday = " + DOB ;
 	}
 	
 	
