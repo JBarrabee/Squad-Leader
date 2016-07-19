@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<p>experimenting</p>
+
 	<nav class="navbar navbar-dark bg-inverse ">
 		<ul class="nav navbar-nav ">
 

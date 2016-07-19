@@ -3,12 +3,14 @@
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"    
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.database.people" table="groceries">
-		<id name="idpeople" column="ID" type="int">
+	<class name="net.squadleader.people.Person" table="people">
+		<id name="PERSON_ID" column="PERSON_ID" type="int">
 			<generator class="increment"></generator>
 		</id>
-		<property name="firstName" column="firstName" type="string"></property>
-		<property name="lastName" column="lastName" type="string"></property>
-		<property name="price" column="price" type="double"></property>
+		<property name="firstName" column="First_Name" type="string"></property>
+		<property name="lastName" column="Last_Name" type="string"></property>
+		<property name="email" column="STREET" type="string"></property>
+		
+			
 	</class>
 </hibernate-mapping>
