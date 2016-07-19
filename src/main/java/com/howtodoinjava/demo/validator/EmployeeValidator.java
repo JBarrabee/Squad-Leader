@@ -38,17 +38,17 @@ public class EmployeeValidator implements Validator {
 		Matcher matcher = emailRegex.matcher(p.getEMAIL());
 
 		if (!matcher.find()) {
-			errors.rejectValue("email", "error.email.invalid");
+			errors.rejectValue("EMAIL", "error.email.invalid");
 		}
 
 		// NEEDS TO VALIDATE ADDRESS DYNAMICALLY THROUGH API
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "streetAddress", "error.streetAddress",
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "STREET_ADDRESS", "error.streetAddress",
 				"Street Address Required.");
 
 		
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "city", "error.city", "City Required.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "CITY", "error.city", "City Required.");
 
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "state", "error.state", "State Required.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "STATE", "error.state", "State Required.");
 		
 		
 

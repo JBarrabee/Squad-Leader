@@ -3,13 +3,23 @@
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"    
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="net.squadleader.people.Person" table="people">
-		<id name="PERSON_ID" column="PERSON_ID" type="int">
+	<class name="net.squadleader.people.Person" table="Person">
+		<id name="ID" column="ID" type="int">
 			<generator class="increment"></generator>
 		</id>
 		<property name="FIRST_NAME" column="FIRST_NAME" type="string"></property>
 		<property name="LAST_NAME" column="LAST_NAME" type="string"></property>
 		<property name="EMAIL" column="EMAIL" type="string"></property>
+<<<<<<< HEAD
+=======
+		<property name="STREET_ADDRESS" column="STREET_ADDRESS" type="string"></property>
+		<property name="CITY" column="CITY" type="string"></property>
+		<property name="STATE" column="STATE" type="string"></property>
+		<property name="LATITUDE" column="LATITUDE" type="string"></property>
+		<property name="LONGITUDE" column="LONGITUDE" type="string"></property>
+		<property name="DOB" column="DOB" type="string"></property>
+		<property name="ACCESS_LEVEL" column="ACCESS_LEVEL" type="string"></property>
+>>>>>>> e920afa26ee945d34219dc1b3fe4000a52619fe9
 		
 			
 	</class>

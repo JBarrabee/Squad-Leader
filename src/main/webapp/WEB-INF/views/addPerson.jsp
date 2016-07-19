@@ -35,14 +35,14 @@
 		</h2>
 	</div>
 
-
+/Applications/MySQLWorkbench.app/Contents/MacOS/mysqldump
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
 			<form:form method="post" modelAttribute="person">
 				<%-- <form:errors path="*" cssClass="error" /> --%>
 				<table>
 					<tr>
-						<td><spring:message code="lbl.firstName" text="First Name" /></td>
+						<td><spring:message code="lbl.FIRST_NAME" text="First Name" /></td>
 						<td><form:input path="FIRST_NAME" /></td>
 						<td><form:errors path="FIRST_NAME" cssClass="error" /></td>
 					</tr>
@@ -133,6 +133,7 @@
 					</tr>
 					<tr>
 						<td><spring:message code=".lbl" text="DOB" /></td>
+<<<<<<< HEAD
 						<td><form:input type="date" path="DOB" />
 <!-- 						<td><select id="DOB_Month" name="DOB_Month"> -->
 <!-- 							<option value="1">January</option> -->
@@ -152,15 +153,37 @@
 <!-- 						<td> -->
 <!-- 							<select id="DOB_Day" name="DOB_Day"> -->
 
+=======
+						<td><select id="DOB_Month" name="DOB_Month">
+							<option value="1">January</option>
+							<option value="2">February</option>
+							<option value="3">March</option>
+							<option value="4">April</option>
+							<option value="5">May</option>
+							<option value="6">June</option>
+							<option value="7">July</option>
+							<option value="8">August</option>
+							<option value="9">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
+							</select>
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<select id="DOB_Day" name="DOB_Day"> -->
+<!-- 							for (var i=1;i<32;i++) { -->
+<!-- 								<option value=i>i</option> -->
+<!-- 							} -->
+>>>>>>> e920afa26ee945d34219dc1b3fe4000a52619fe9
 
 							
-							</select>
+<!-- 							</select> -->
 						
-						</td>
-					</tr>
-					<tr>
-					<td><form:hidden path="ACCESS_LEVEL" /></td>
-					<input id="ACCESS_LEVEL" name="ACCESS_LEVEL" type="hidden" value="false"/> 
+<!-- 						</td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<%-- 					<td><form:hidden path="ACCESS_LEVEL" /></td> --%>
+
 					
 
 					<tr>
