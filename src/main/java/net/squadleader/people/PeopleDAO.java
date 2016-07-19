@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 public class PeopleDAO {
-	
+
 	private static SessionFactory factory;
 
 	private static void setupFactory() {

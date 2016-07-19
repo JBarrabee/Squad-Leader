@@ -10,7 +10,6 @@
 			<!-- SQL dialect -->
 			<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>         
 			<!-- Specify session context -->
-			<property name="hibernate.current_session_context_class">org.hibernate.context.inte
-				rnal.ThreadLocalSessionContext</property>
+			<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
 	</session-factory>
 </hibernate-configuration> 
