@@ -15,11 +15,21 @@ public class Person implements Serializable  {
 	private String FIRST_NAME;
 	private String LAST_NAME;
 	private String EMAIL;
+	private String PASS;
+	public String getPASS() {
+		return PASS;
+	}
+
+	public void setPASS(String PASS) {
+		this.PASS = PASS;
+	}
+
+
 	private String STREET_ADDRESS;
 	private String CITY;
 	private String STATE;
 	@DateTimeFormat(pattern = "mm/DD/yyy")
-	private Date DOB;
+	private String DOB;
 	private String LATITUDE;
 	private String LONGITUDE;
 
@@ -106,11 +116,11 @@ public class Person implements Serializable  {
 		return LONGITUDE;
 	}
 	
-	public void setDOB(Date DOB) {
+	public void setDOB(String DOB) {
 		this.DOB = DOB;
 	}
 	
-	public Date getDOB() {
+	public String getDOB() {
 		return DOB;
 	}
 	

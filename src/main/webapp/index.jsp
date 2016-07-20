@@ -25,7 +25,7 @@
       <a class="nav-link" href=" addPerson.html">SIGN UP</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="">LOG IN</a>
+      <a class="nav-link" href="createLogin.html">LOGIN</a>
     </li>
   </ul>
 </nav>
