@@ -51,7 +51,7 @@ public class PersonController
 	
 	
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping( method = RequestMethod.POST)
     public String submitForm(@ModelAttribute("person") Person person,
             				BindingResult result, SessionStatus status) 
 	{
