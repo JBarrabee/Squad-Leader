@@ -18,7 +18,7 @@ public class Person implements Serializable  {
 	private String STREET_ADDRESS;
 	private String CITY;
 	private String STATE;
-	@DateTimeFormat(pattern = "mm/DD/yyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date DOB;
 	private String LATITUDE;
 	private String LONGITUDE;

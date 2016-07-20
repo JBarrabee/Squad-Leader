@@ -134,6 +134,7 @@
 					</tr>
 					<tr>
 						<td><spring:message code=".lbl" text="DOB" /></td>
+
 						<td><form:input type="date" path="DOB" />
 					<tr>
 						<td colspan="3"><input type="submit" value="Add Person" /></td>
