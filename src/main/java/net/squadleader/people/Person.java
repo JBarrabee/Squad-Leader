@@ -3,6 +3,8 @@ package net.squadleader.people;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Person implements Serializable  {
 	
 	private static final long serialVersionUID = 1L;
@@ -16,10 +18,10 @@ public class Person implements Serializable  {
 	private String STREET_ADDRESS;
 	private String CITY;
 	private String STATE;
-
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date DOB;
 	private String LATITUDE;
 	private String LONGITUDE;
-	private String DOB;
 
 	
 
@@ -104,11 +106,11 @@ public class Person implements Serializable  {
 		return LONGITUDE;
 	}
 	
-	public void setDOB(String DOB) {
+	public void setDOB(Date DOB) {
 		this.DOB = DOB;
 	}
 	
-	public String getDOB() {
+	public Date getDOB() {
 		return DOB;
 	}
 	

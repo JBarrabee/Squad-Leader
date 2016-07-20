@@ -23,13 +23,13 @@ public class EmployeeValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "FIRST_NAME", "error.firstName", "First name is required.");
 		Person p = (Person) target;
 		while (p.getFIRST_NAME().length() > 30) {
-			errors.rejectValue("firstName", "error.firstName.tooManyChars");
+			errors.rejectValue("firstName", "error.FIRST_NAME.tooManyChars");
 		}
 
 		// Validation for last name. Cannot be blank. Cannot have over 30 chars
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "LAST_NAME", "error.lastName", "Last name is required.");
 		if (p.getFIRST_NAME().length() > 30) {
-			errors.rejectValue("lastName", "error.lastName.tooManyChars");
+			errors.rejectValue("lastName", "error.LAST_NAME.tooManyChars");
 		}
 
 		// Validation for email address. Cannot be blank. Must match with regex.
