@@ -28,8 +28,8 @@ public class Person implements Serializable  {
 	private String STREET_ADDRESS;
 	private String CITY;
 	private String STATE;
-	@DateTimeFormat(pattern = "mm/DD/yyy")
-	private String DOB;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date DOB;
 	private String LATITUDE;
 	private String LONGITUDE;
 
@@ -116,11 +116,11 @@ public class Person implements Serializable  {
 		return LONGITUDE;
 	}
 	
-	public void setDOB(String DOB) {
+	public void setDOB(Date DOB) {
 		this.DOB = DOB;
 	}
 	
-	public String getDOB() {
+	public Date getDOB() {
 		return DOB;
 	}
 	

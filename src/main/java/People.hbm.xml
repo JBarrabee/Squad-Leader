@@ -4,6 +4,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="net.squadleader.people.Person" table="userAccounts">
+
 		<id name="ID" column="ID" type="int">
 			<generator class="increment"></generator>
 		</id>
@@ -16,7 +17,7 @@
 		<property name="STATE" column="STATE" type="string"></property>
 		<property name="LATITUDE" column="LATITUDE" type="string"></property>
 		<property name="LONGITUDE" column="LONGITUDE" type="string"></property>
-		<property name="DOB" column="DOB" type="string"></property>
+		<property name="DOB" column="DOB" type="date"></property>
 		<property name="ACCESS_LEVEL" column="ACCESS_LEVEL" type="string"></property>
 
 		

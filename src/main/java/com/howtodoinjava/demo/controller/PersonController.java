@@ -41,7 +41,7 @@ public class PersonController
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
 		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		dateFormat.setLenient(true);
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
 	}
@@ -56,7 +56,7 @@ public class PersonController
 	
 	
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping( method = RequestMethod.POST)
     public String submitForm(@ModelAttribute("person") Person person,
             				BindingResult result, SessionStatus status) 
 	{
@@ -66,6 +66,8 @@ public class PersonController
 		if (result.hasErrors()) {
 			return "addPerson";
 		}
+		System.out.println(person.getDOB());
+		System.out.println(person.getDOB().toString());
 		//Store the employee information in database
 		//manager.createNewRecord(Person);
 		PeopleDAO.addPerson(person);
