@@ -30,52 +30,48 @@ import net.squadleader.people.Person;
 @Controller
 @RequestMapping("addPerson")
 @SessionAttributes("person")
-public class PersonController 
-{
+public class PersonController {
 	@Autowired
 	EmployeeManager manager;
-	
+
 	@Autowired
 	EmployeeValidator validator;
-	
+
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
-		
+
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		dateFormat.setLenient(true);
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-    public String setupForm(Model model) 
-	{
-		 Person person = new Person();
-		 model.addAttribute("person", person);
-		 return "addPerson";
-    }
-	
-	
-	
-	@RequestMapping( method = RequestMethod.POST)
-    public String submitForm(@ModelAttribute("person") Person person,
-            				BindingResult result, SessionStatus status) 
-	{
-		
+	public String setupForm(Model model) {
+		Person person = new Person();
+		model.addAttribute("person", person);
+		return "addPerson";
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	public String submitForm(@ModelAttribute("person") Person person, BindingResult result, SessionStatus status) {
+
 		validator.validate(person, result);
-		
+
 		if (result.hasErrors()) {
 			return "addPerson";
 		}
+
 		System.out.println(person.getDOB());
 		System.out.println(person.getDOB().toString());
-		//Store the employee information in database
-		//manager.createNewRecord(Person);
+		// Store the employee information in database
+		// manager.createNewRecord(Person);
+
 		PeopleDAO.addPerson(person);
-		//Mark Session Complete
+		// Mark Session Complete
 		status.setComplete();
 		return "addSuccess";
-    }
-	
+	}
+
 	@RequestMapping(value = "/success", method = RequestMethod.GET)
     public String success(Model model) 
 	{
@@ -83,3 +79,4 @@ public class PersonController
     }
 	
 }
+

@@ -22,7 +22,7 @@
 		<ul class="nav navbar-nav ">
 
 			<li class="nav-item"><a class="nav-link"
-				href=" addEmployee.html">LOG OUT</a></li>
+				href=" addPeron.html">LOG OUT</a></li>
 			<!-- <li class="nav-item"><a class="nav-link" href="">LOG IN</a></li> -->
 		</ul>
 	</nav>
