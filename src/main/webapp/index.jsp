@@ -17,6 +17,7 @@
 </head>
 
 <body>
+<a href ="addMeetup?">Click Here</a>
 
 <nav class="navbar navbar-dark bg-inverse ">
   <ul class="nav navbar-nav ">
@@ -25,7 +26,7 @@
       <a class="nav-link" href=" addPerson.html">SIGN UP</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="">LOG IN</a>
+      <a class="nav-link" href="createLogin.html">LOGIN</a>
     </li>
   </ul>
 </nav>

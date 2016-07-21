@@ -1,5 +1,6 @@
 package net.squadleader.meetups;
 
+import net.squadleader.meetups.Meetup;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -108,7 +109,7 @@ public class Meetup implements Serializable {
 		return EVENT_LATITUDE;
 	}
 
-	public void setEVENT_LATITUTE(String eVENT_LATITUDE) {
+	public void setEVENT_LATITUDE(String eVENT_LATITUDE) {
 		EVENT_LATITUDE = eVENT_LATITUDE;
 	}
 

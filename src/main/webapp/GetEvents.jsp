@@ -2,31 +2,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Ajax Demo</title>
+<title>Meetup Events</title>
 </head>
 <body>
 <script>
-//Using YQL and JSONP
-/* $.ajax({
-    url: "http://query.yahooapis.com/v1/public/yql",
- 
-    // The name of the callback parameter, as specified by the YQL service
-    jsonp: "callback",
- 
-    // Tell jQuery we're expecting JSONP
-    dataType: "jsonp",
- 
-    // Tell YQL what we want and that we want JSON
-    data: {
-        q: "select title,abstract,url from search.news where query=\"cat\"",
-        format: "json"
-    },
- 
-    // Work with the response
-    success: function( response ) {
-        console.log( response ); // server response
-    }
-}); */
+
 var meetupArray = [ 
 "https://api.meetup.com/ITintheD/events?photo-host=public&page=20&sig_id=209133816&sig=f1f01a0c6faa4c32e47ee45454c2af4d850723de",
 "https://api.meetup.com/refreshdetroit/events?photo-host=public&page=20&sig_id=9283563&sig=182244089349639c68879c73ba06b4d567a867c2",
@@ -120,20 +100,19 @@ function loadDoc(list, link) {
   xhttp.open("GET",link, true);  
   xhttp.setRequestHeader('Access-Control-Allow-Origin', "*");
   xhttp.send();
+
 }
 
-  
-  
-
-
 </script>
-<section id="debug"></section>
-<section id="list0"></section>
-<section id="list1"></section>
-<section id="list2"></section>
-<section id="list3"></section>
-<section id="list4"></section>
-<section id="list5"></section>
-<section id="list6"></section>
+
+
+<div id="debug"></div>
+<div id="list0"></div>
+<div id="list1"></div>
+<div id="list2"></div>
+<div id="list3"></div>
+<div id="list4"></div>
+<div id="list5"></div>
+<div id="list6"></div>
 </body>
 </html>
