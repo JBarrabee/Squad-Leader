@@ -70,5 +70,7 @@ public class PersonController {
 	@RequestMapping(value = "/success", method = RequestMethod.GET)
 	public String success(Model model) {
 		return "addSuccess";
+		
+	
 	}
 }
