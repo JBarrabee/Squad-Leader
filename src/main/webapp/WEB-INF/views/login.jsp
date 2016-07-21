@@ -14,6 +14,13 @@ color: red;
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Log In</title>
+
+<!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->
+<link rel="stylesheet" type="text/css"
+	href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script src="bootstrap/js/bootstrap.js"></script>
+
 </head>
 <body>
 <h1>Please Enter Your Account Information</h1>
@@ -21,11 +28,11 @@ color: red;
 		<table>
 			<tbody>
 				<tr>
-					<td><form:input path="username" placeholder="Enter username"></form:input></td>
+					<td><form:input path="EMAIL" placeholder="Enter email"></form:input></td>
 					<td class="error">${userError}</td>
 				</tr>
 				<tr>
-					<td><form:input path="password" placeholder="Enter password"></form:input></td>
+					<td><form:input path="PASS" placeholder="Enter password"></form:input></td>
 					<td class="error">${passError}</td>
 				</tr>
 				<tr>

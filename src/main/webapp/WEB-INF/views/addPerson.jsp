@@ -35,10 +35,6 @@
 		</h2>
 	</div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 00643b0340167b0d25e80ceacc65627459fede63
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
 			<form:form method="post" modelAttribute="person">
@@ -143,11 +139,6 @@
 					</tr>
 					<tr>
 						<td><spring:message code=".lbl" text="DOB" /></td>
-<<<<<<< HEAD
-						<td><form:input type="date" path="DOB" />
-=======
->>>>>>> 00643b0340167b0d25e80ceacc65627459fede63
-
 						<td><form:input type="date" path="DOB" />
 					<tr>
 						<td colspan="3"><input type="submit" value="Add Person" /></td>

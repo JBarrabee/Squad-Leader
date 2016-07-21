@@ -45,7 +45,7 @@ public class PersonController
 		dateFormat.setLenient(true);
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
 	}
-	
+
 	@RequestMapping(method = RequestMethod.GET)
     public String setupForm(Model model) 
 	{
@@ -82,28 +82,4 @@ public class PersonController
 		 return "addSuccess";
     }
 	
-	@RequestMapping("/createLogin")
- 	public ModelAndView createLogin() {
- 		return new ModelAndView("login", "command", new Person());
-  	}
-
-
-	@RequestMapping("/submitLogin")
-	public String submitLogin(@ModelAttribute("command") Person person, Model model, @CookieValue(value = "loggedIn", defaultValue="false") String loggedIn, HttpServletResponse response){
-		if (PeopleDAO.checkLogin(person)){
-			Cookie cookie = new Cookie("loggedIn","true");
-			cookie.setMaxAge(60);
-			response.addCookie(cookie);
-			model.addAttribute("cookie", cookie);
-			return "memberArea";
-		} else {
-			if (PeopleDAO.containsPerson(person))
-				model.addAttribute("passError", "Password is incorrect");
-			else
-				model.addAttribute("userError", "User doesn't exist");
-			
-			return "login";
-				
-		}
-	}
 }

@@ -59,7 +59,7 @@ public class PeopleDAO {
 		hibernateSession.getTransaction().begin();
 		
 		String email = "'" + person.getEMAIL() + "'";
-		String hql = "SELECT PASS FROM userAccounts WHERE EMAIL = "+email;
+		String hql = "SELECT PASS FROM Person WHERE EMAIL = "+email;
 		List query = hibernateSession.createQuery(hql).list();
 		
 		if(!query.isEmpty() && query.get(0).equals(person.getPASS()))
@@ -76,11 +76,11 @@ public class PeopleDAO {
 		hibernateSession.getTransaction().begin();
 		
 		String email = "'" + person.getEMAIL() + "'";
-		String hql = "SELECT PASS FROM userAccounts WHERE EMAIL = "+email;
+		String hql = "FROM Person WHERE EMAIL = "+email;
 		Query query = hibernateSession.createQuery(hql);
 		List results = query.list();
 		
-		if(!results.isEmpty())
+		if(results.isEmpty())
 			return false;
 		
 		return true;
