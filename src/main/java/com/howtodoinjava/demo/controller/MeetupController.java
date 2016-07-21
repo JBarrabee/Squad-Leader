@@ -85,12 +85,11 @@ public class MeetupController {
 					Meetup meetup = new Meetup();
 					JsonObject firstObject = objArray.get(a).getAsJsonObject();
 					JsonObject group = firstObject.get("group").getAsJsonObject();
-					String groupURL = group.get("url").getAsString();
+					String groupURL = group.get("urlname").getAsString();
 					String groupName = group.get("name").getAsString();
 
 					String eventName = firstObject.get("name").getAsString();
 					String eventLink = firstObject.get("time").getAsString();
-					String eventTime = firstObject.get("date").getAsString();
 
 					JsonObject venue = firstObject.get("venue").getAsJsonObject();
 					String venueName = venue.get("name").getAsString();
@@ -103,7 +102,7 @@ public class MeetupController {
 					System.out.println("worked number 2");
 
 					System.out.println("Event Name = " + eventName + "\t" + "Event Link = " + eventLink
-							+ "Venue Name = " + eventTime + "Venue Name = " + venueName);
+							+ "Venue Name = " + venueName);
 
 					meetup.setGROUP_URL(groupURL);
 					meetup.setGROUP_NAME(groupName);
@@ -118,8 +117,9 @@ public class MeetupController {
 
 					eventArray.add(meetup);
 				}
-				return new ModelAndView("shuffle", "message", eventArray);
+				return new ModelAndView("viewEvents", "message", eventArray);
 			} catch (Exception e) {
+				e.printStackTrace();
 				return new ModelAndView("error", "message", "HTTP Connection Error: " + e);
 			} finally {
 				if (request != null)
