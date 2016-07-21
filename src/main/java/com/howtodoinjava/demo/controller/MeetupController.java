@@ -101,9 +101,6 @@ public class MeetupController {
 					String eventLongitude = venue.get("lon").getAsString();
 					System.out.println("worked number 2");
 
-					System.out.println("Event Name = " + eventName + "\t" + "Event Link = " + eventLink
-							+ "Venue Name = " + venueName);
-
 					meetup.setGROUP_URL(groupURL);
 					meetup.setGROUP_NAME(groupName);
 					meetup.setEVENT_VENUE_NAME(venueName);
@@ -116,6 +113,9 @@ public class MeetupController {
 					meetup.setEVENT_NAME(eventName);
 
 					eventArray.add(meetup);
+
+					System.out.println("Event Name = " + eventArray.get(0).getEVENT_NAME() + "rt" + "Event Link = "
+							+ eventLink + "Venue Name = " + venueName);
 				}
 				return new ModelAndView("viewEvents", "message", eventArray);
 			} catch (Exception e) {
