@@ -3,15 +3,15 @@
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"    
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="net.squadleader.people.Person" table="Person">
-	
-	
+	<class name="net.squadleader.people.Person" table="userAccounts">
+
 		<id name="ID" column="ID" type="int">
 			<generator class="increment"></generator>
 		</id>
 		<property name="FIRST_NAME" column="FIRST_NAME" type="string"></property>
 		<property name="LAST_NAME" column="LAST_NAME" type="string"></property>
 		<property name="EMAIL" column="EMAIL" type="string"></property>
+		<property name="PASS" column="PASS" type="string"></property>
 		<property name="STREET_ADDRESS" column="STREET_ADDRESS" type="string"></property>
 		<property name="CITY" column="CITY" type="string"></property>
 		<property name="STATE" column="STATE" type="string"></property>

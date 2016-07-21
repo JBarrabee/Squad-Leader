@@ -35,7 +35,6 @@
 		</h2>
 	</div>
 
-
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
 			<form:form method="post" modelAttribute="person">
@@ -58,6 +57,12 @@
 						<td><spring:message code="lbl.email" text="Email " /></td>
 						<td><form:input path="EMAIL" /></td>
 						<td><form:errors path="EMAIL" cssClass="error" /></td>
+					</tr>
+					
+					<tr>
+						<td><spring:message code="lbl.pass" text="Password" /></td>
+						<td><form:input path="PASS" /></td>
+						<td><form:errors path="PASS" cssClass="error" /></td>
 					</tr>
 
 					<tr>
@@ -134,7 +139,6 @@
 					</tr>
 					<tr>
 						<td><spring:message code=".lbl" text="DOB" /></td>
-
 						<td><form:input type="date" path="DOB" />
 					<tr>
 						<td colspan="3"><input type="submit" value="Add Person" /></td>
