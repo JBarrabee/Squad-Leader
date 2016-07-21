@@ -32,7 +32,7 @@ import com.howtodoinjava.demo.validator.EmployeeValidator;
 import antlr.collections.List;
 
 @Controller
-@RequestMapping("addMeetup")
+@RequestMapping("viewEvents")
 @SessionAttributes("meetup")
 public class MeetupController {
 
@@ -53,7 +53,7 @@ public class MeetupController {
 				"https://api.meetup.com/the-iron-yard-detroit/events?photo-host=public&page=20&sig_id=209133816&sig=54e41552a1621655091dd3aab3b543e075b0f0b6");
 
 		ArrayList<Meetup> eventArray = new ArrayList<Meetup>();
-
+		ArrayList<String> sURLList = new ArrayList<String>();
 		System.out.println(meetupArray.size());
 		for (int i = 0; i < meetupArray.size(); i++) {
 			// from Java Script for proof. Not needed
@@ -62,14 +62,21 @@ public class MeetupController {
 			 * a.concat(c); String link = meetupArray.get(i); loadDoc(list ,
 			 * link )
 			 */
-
+			// public addMeetupsToArray(){
 			String sURL = meetupArray.get(i);// just a string
 			System.out.println(sURL);
+			sURLList.add(sURL);
 
-			HttpURLConnection request = null;
-			try {
+		}
+
+		HttpURLConnection request = null;
+		try {
+
+			ModelAndView mv = new ModelAndView("viewEvents");
+			for (int b = 0; b < sURLList.size(); b++) {
 				// Connect to the URL using java's native library
-				URL url = new URL(sURL);
+				String sURLb = sURLList.get(b);
+				URL url = new URL(sURLb);
 				request = (HttpURLConnection) url.openConnection();
 				request.connect();
 
@@ -81,6 +88,7 @@ public class MeetupController {
 															// may be an object.
 				System.out.println("stage2");
 				System.out.println(objArray.size());
+
 				for (int a = 0; a < objArray.size(); a++) {
 					Meetup meetup = new Meetup();
 					JsonObject firstObject = objArray.get(a).getAsJsonObject();
@@ -89,7 +97,7 @@ public class MeetupController {
 					String groupName = group.get("name").getAsString();
 
 					String eventName = firstObject.get("name").getAsString();
-					String eventLink = firstObject.get("time").getAsString();
+					String eventTime = firstObject.get("time").getAsString();
 
 					JsonObject venue = firstObject.get("venue").getAsJsonObject();
 					String venueName = venue.get("name").getAsString();
@@ -102,31 +110,53 @@ public class MeetupController {
 					System.out.println("worked number 2");
 
 					meetup.setGROUP_URL(groupURL);
-					meetup.setGROUP_NAME(groupName);
-					meetup.setEVENT_VENUE_NAME(venueName);
-					meetup.setEVENT_STREET(eventStreet);
-					meetup.setEVENT_CITY(eventCity);
-					meetup.setEVENT_STATE(eventState);
-					meetup.setEVENT_ZIP(eventZIP);
-					meetup.setEVENT_LATITUDE(eventLatitude);
-					meetup.setEVENT_LONGITUDE(eventLongitude);
-					meetup.setEVENT_NAME(eventName);
 
-					eventArray.add(meetup);
+					/*
+					 * System.out.println("Event Name = " + eventName + "\t" +
+					 * "Event Link = " + eventTime + "Venue Name = " + venueName
+					 * + "\r"+ "Group Name = " + groupName);
+					 */
 
-					System.out.println("Event Name = " + eventArray.get(0).getEVENT_NAME() + "rt" + "Event Link = "
-							+ eventLink + "Venue Name = " + venueName);
+					/*
+					 * meetup.setGROUP_URL(groupURL); >>>>>>>
+					 * a437e09e82cd60977d6ed3259afb91c36d532bdb
+					 * meetup.setGROUP_NAME(groupName);
+					 * meetup.setEVENT_VENUE_NAME(venueName);
+					 * meetup.setEVENT_STREET(eventStreet);
+					 * meetup.setEVENT_CITY(eventCity);
+					 * meetup.setEVENT_STATE(eventState);
+					 * meetup.setEVENT_ZIP(eventZIP);
+					 * meetup.setEVENT_LATITUDE(eventLatitude);
+					 * meetup.setEVENT_LONGITUDE(eventLongitude);
+					 * meetup.setEVENT_NAME(eventName);
+					 * 
+					 * 
+					 * eventArray.add(meetup);
+					 * 
+					 * System.out.println("Event Name = " +
+					 * eventArray.get(0).getEVENT_NAME() + "rt" +
+					 * "Event Link = " + eventLink + "Venue Name = " +
+					 * venueName);
+					 * 
+					 * eventArray.add(meetup);
+					 */
+					String mvObjectName = "eventCity" + a + b;
+					System.out.println("EventCity = " + mvObjectName);
+					mv.addObject(mvObjectName, eventCity);
+
 				}
-				return new ModelAndView("viewEvents", "message", eventArray);
-			} catch (Exception e) {
-				e.printStackTrace();
-				return new ModelAndView("error", "message", "HTTP Connection Error: " + e);
-			} finally {
-				if (request != null)
-					request.disconnect();
 			}
+			return mv;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ModelAndView("error", "message", "HTTP Connection Error: " + e);
+		} finally {
+			if (request != null)
+				request.disconnect();
 		}
-		return null;
+
+		// return null would not work if we put url connection inside a loop
+		// return null;
 	}
 
 	public static void main(String[] args) {
