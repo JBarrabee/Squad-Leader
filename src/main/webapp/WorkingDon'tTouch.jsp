@@ -32,9 +32,9 @@ function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-    	//console.log(xhttp.responseText);
+    //	console.log(xhttp.responseText);
     	var jsonObj = JSON.parse(xhttp.responseText);
-    	console.log(jsonObj);
+    	//console.log(jsonObj);
     	    	    
     	for (i = 0; i < jsonObj.length; i++) {
 			var eventName = jsonObj[i].name;
@@ -65,7 +65,7 @@ function loadDoc() {
     }
   };
   //xhttp.open("GET", "https://www.reddit.com/r/aww/.json", true);
-  xhttp.open("GET", "https://api.meetup.com/refreshdetroit/events?photo-host=public&page=20&sig_id=9283563&sig=182244089349639c68879c73ba06b4d567a867c2", true);  
+  xhttp.open("GET", "https://api.meetup.com/ITintheD/events?photo-host=public&page=20&sig_id=209133816&sig=f1f01a0c6faa4c32e47ee45454c2af4d850723de", true);  
   xhttp.send();
 }
 </script>

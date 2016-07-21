@@ -98,11 +98,11 @@ function loadDoc(list, link) {
   };
   
   xhttp.open("GET",link, true);  
-  //xhttp.setRequestHeader('Access-Control-Allow-Origin', "*");
+  xhttp.setRequestHeader('Access-Control-Allow-Origin', "*");
   xhttp.send();
 
+}
 
-  
 </script>
 
 
