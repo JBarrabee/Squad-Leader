@@ -89,7 +89,7 @@ public class MeetupController {
 					String groupName = group.get("name").getAsString();
 
 					String eventName = firstObject.get("name").getAsString();
-					String eventLink = firstObject.get("time").getAsString();
+					String eventTime = firstObject.get("time").getAsString();
 
 					JsonObject venue = firstObject.get("venue").getAsJsonObject();
 					String venueName = venue.get("name").getAsString();
@@ -101,9 +101,10 @@ public class MeetupController {
 					String eventLongitude = venue.get("lon").getAsString();
 					System.out.println("worked number 2");
 
-					System.out.println("Event Name = " + eventName + "\t" + "Event Link = " + eventLink
-							+ "Venue Name = " + venueName);
+					System.out.println("Event Name = " + eventName + "\t" + "Event Link = " + eventTime
+							+ "Venue Name = " + venueName + "\r"+ "Group Name = " + groupName);
 
+				
 					meetup.setGROUP_URL(groupURL);
 					meetup.setGROUP_NAME(groupName);
 					meetup.setEVENT_VENUE_NAME(venueName);
