@@ -1,27 +1,31 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+ <style>
+       #map {
+        width: 100%;
+        height: 400px;
+      }
+    </style>
+   
+
 </head>
 <body>
+ <script>
+    ${EventList }
+    
+    </script>
 
 
-
-<c:forEach items="${eventArray}" var="meetup">
-    <tr>      
-        <td>${meetup.EVENT_TIME}</td>
-      <%--   <td>${festival.location}</td>
-        <td>${festival.startDate}</td>
-        <td>${festival.endDate}</td>
-        <td>${festival.URL}</td> --%>  
-    </tr>
-
-</c:forEach>
-
+<body>
+    
+   
 
 </body>
 </html>

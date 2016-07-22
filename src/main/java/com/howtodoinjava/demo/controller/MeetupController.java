@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -40,14 +39,12 @@ import antlr.collections.List;
 
 public class MeetupController {
 
+	@RequestMapping("meetUpMap")
 
-	 @RequestMapping("meetUpMap")
-
-
-//	Meetup meetup = new Meetup();
+	// Meetup meetup = new Meetup();
 	// model.addAttribute("meetup", meetup);
 
-	public String listEvents(Model model) throws FileNotFoundException, IOException, ParseException {
+	public ModelAndView meetUpMap(Model model) throws FileNotFoundException, IOException, ParseException {
 
 		ArrayList<String> URLList = new ArrayList<String>();
 		URLList.add(
@@ -69,64 +66,60 @@ public class MeetupController {
 		System.out.println(URLList.size());
 
 		HttpURLConnection request = null;
-		
 
-			
-			for (int b = 0; b < URLList.size(); b++) {
-				// Connect to the URL using java's native library
-				String sURLb = URLList.get(b);
-				URL url = new URL(sURLb);
-				request = (HttpURLConnection) url.openConnection();
-				request.connect();
+		for (int b = 0; b < URLList.size(); b++) {
+			// Connect to the URL using java's native library
+			String sURLb = URLList.get(b);
+			URL url = new URL(sURLb);
+			request = (HttpURLConnection) url.openConnection();
+			request.connect();
 
-				// Convert to a JSON object to print data
-				JsonParser jp = new JsonParser(); // from gson
-				JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
-				// Convert the input stream to a jsonelement
-				JsonArray objArray = root.getAsJsonArray(); // May be an array,
-															// may be an object.
-				System.out.println("stage2");
-				System.out.println("Object Array Size = " + objArray.size());
+			// Convert to a JSON object to print data
+			JsonParser jp = new JsonParser(); // from gson
+			JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+			// Convert the input stream to a jsonelement
+			JsonArray objArray = root.getAsJsonArray(); // May be an array,
+														// may be an object.
+			System.out.println("stage2");
+			System.out.println("Object Array Size = " + objArray.size());
 
-				for (int a = 0; a < objArray.size(); a++) {
-					Meetup meetup = new Meetup();
-					JsonObject firstObject = objArray.get(a).getAsJsonObject();
-					JsonObject group = firstObject.get("group").getAsJsonObject();
-					String groupURL = group.get("urlname").getAsString();
-					String groupName = group.get("name").getAsString();
+			for (int a = 0; a < objArray.size(); a++) {
+				Meetup meetup = new Meetup();
+				JsonObject firstObject = objArray.get(a).getAsJsonObject();
+				JsonObject group = firstObject.get("group").getAsJsonObject();
+				String groupURL = group.get("urlname").getAsString();
+				String groupName = group.get("name").getAsString();
 
-					String eventName = firstObject.get("name").getAsString();
-					String eventTime = firstObject.get("time").getAsString();
+				String eventName = firstObject.get("name").getAsString();
+				String eventTime = firstObject.get("time").getAsString();
 
-					JsonObject venue = firstObject.get("venue").getAsJsonObject();
-					String venueName = venue.get("name").getAsString();
-					String eventStreet = venue.get("address_1").getAsString();
-					String eventCity = venue.get("city").getAsString();
-					String eventState = venue.get("state").getAsString();
-					String eventZIP = venue.get("zip").getAsString();
-					String eventLatitude = venue.get("lat").getAsString();
-					String eventLongitude = venue.get("lon").getAsString();
+				JsonObject venue = firstObject.get("venue").getAsJsonObject();
+				String venueName = venue.get("name").getAsString();
+				String eventStreet = venue.get("address_1").getAsString();
+				String eventCity = venue.get("city").getAsString();
+				String eventState = venue.get("state").getAsString();
+				String eventZIP = venue.get("zip").getAsString();
+				String eventLatitude = venue.get("lat").getAsString();
+				String eventLongitude = venue.get("lon").getAsString();
 
-					meetup.setGROUP_URL(groupURL);
-					meetup.setGROUP_NAME(groupName);
-					meetup.setEVENT_VENUE_NAME(venueName);
-					meetup.setEVENT_STREET(eventStreet);
-					meetup.setEVENT_CITY(eventCity);
-					meetup.setEVENT_STATE(eventState);
-					meetup.setEVENT_ZIP(eventZIP);
-					meetup.setEVENT_LATITUDE(eventLatitude);
-					meetup.setEVENT_LONGITUDE(eventLongitude);
-					meetup.setEVENT_NAME(eventName);
+				meetup.setGROUP_URL(groupURL);
+				meetup.setGROUP_NAME(groupName);
+				meetup.setEVENT_VENUE_NAME(venueName);
+				meetup.setEVENT_STREET(eventStreet);
+				meetup.setEVENT_CITY(eventCity);
+				meetup.setEVENT_STATE(eventState);
+				meetup.setEVENT_ZIP(eventZIP);
+				meetup.setEVENT_LATITUDE(eventLatitude);
+				meetup.setEVENT_LONGITUDE(eventLongitude);
+				meetup.setEVENT_NAME(eventName);
 
-				}
+				eventArray.add(meetup);
 			}
-
-			
-			 model.addAttribute("EventList", eventArray);
-			 return "meetUpMap";
-			
-			
-
 		}
+
+		model.addAttribute("EventList", eventArray);
+		return new ModelAndView("meetUpMap");
+
+	}
 
 }
