@@ -22,10 +22,25 @@
 		<ul class="nav navbar-nav ">
 
 			<li class="nav-item"><a class="nav-link"
-				href=" addPeron.html">LOG OUT</a></li>
-			<!-- <li class="nav-item"><a class="nav-link" href="">LOG IN</a></li> -->
+				href=" Logout.html">LOG OUT</a></li>
 		</ul>
 	</nav>
+	
+	
+<%
+// 		String loggedIn = null;
+// 		Cookie[] cookies = request.getCookies();
+// 		if(cookies != null) {
+// 			for (Cookie cookie: cookies) {
+// 				if (cookie.getName().equals("loggedIn") && cookie.getValue().equals("true"))
+// 					loggedIn = cookie.getValue();
+// 			}
+// 		}
+// 		if(loggedIn == null)
+// 			System.out.println("bruh");
+// 			response.sendRedirect("createLogin.html");
+	
+%>
 
 	<div class="row">
 		<div class="col-lg-2 col-md-offset-1 ">
