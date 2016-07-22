@@ -2,6 +2,8 @@ package com.howtodoinjava.demo.controller;
 
 import net.squadleader.meetups.*;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -9,6 +11,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
+
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -36,12 +40,12 @@ import antlr.collections.List;
 
 public class MeetupController {
 
-	// @RequestMapping("MeetupController")
+	 @RequestMapping("meetUpMap")
 
-	Meetup meetup = new Meetup();
+//	Meetup meetup = new Meetup();
 	// model.addAttribute("meetup", meetup);
 
-	public static ModelAndView listEvents() {
+	public String listEvents(Model model) throws FileNotFoundException, IOException, ParseException {
 
 		ArrayList<String> URLList = new ArrayList<String>();
 		URLList.add(
@@ -63,9 +67,9 @@ public class MeetupController {
 		System.out.println(URLList.size());
 
 		HttpURLConnection request = null;
-		try {
+		
 
-			ModelAndView mv = new ModelAndView("viewEvents");
+			
 			for (int b = 0; b < URLList.size(); b++) {
 				// Connect to the URL using java's native library
 				String sURLb = URLList.get(b);
@@ -112,37 +116,13 @@ public class MeetupController {
 					meetup.setEVENT_LONGITUDE(eventLongitude);
 					meetup.setEVENT_NAME(eventName);
 
-					eventArray.add(meetup);
-
-					// System.out.println("Event Names = " +
-					// eventArray.get(a).getEVENT_NAME());
 				}
 			}
-			mv.addObject("eventArray", eventArray);
-			// mv.setViewName();
-
-			for (Meetup p : eventArray) {
-				String event = p.getEVENT_NAME();
-				String group = p.getGROUP_NAME();
-
-				System.out.println("Group Name = " + group + ", event name = " + event);
-			}
-			return mv;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return new ModelAndView("error", "message", "HTTP Connection Error: " + e);
-		} finally {
-			if (request != null)
-				request.disconnect();
+			
+			 model.addAttribute("EventList", eventArray);
+			 return "meetUpMap";
+			
+			
 		}
-	}
-
-	// THIS IS WHERE I THOUGT IT ENDED
-
-	// THIS WAS A WAY TO TEST IT.
-	public static void main(String[] args) {
-		listEvents();
-		System.out.println("Worked?");
-	}
 
 }

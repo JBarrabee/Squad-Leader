@@ -77,13 +77,12 @@ public class mapController {
 		String lng = jObject.get("lng").getAsString();
 		
 		
-		
 		 String myHouse = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyDH6PNEja-Sh-fhKEmuMDnYWlcpaDbCPBg&location="
 				+ lat + "," + lng ;
 
 		 model.addAttribute("location", );
 		
-		System.out.println(myHouse);
+		
 		return "StudentMap";
 	}
 	
