@@ -2,10 +2,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Meetup Events</title>
+<title>Upcoming Meetup Events</title>
 </head>
 <body>
 <script>
+
+
+
+
 
 var meetupArray = [ 
 "https://api.meetup.com/ITintheD/events?photo-host=public&page=20&sig_id=209133816&sig=f1f01a0c6faa4c32e47ee45454c2af4d850723de",
@@ -100,10 +104,13 @@ function loadDoc(list, link) {
   xhttp.open("GET",link, true);  
   xhttp.setRequestHeader('Access-Control-Allow-Origin', "*");
   xhttp.send();
+  
+ 
 
-}
 
-</script>
+
+ </html>
+
 
 
 <div id="debug"></div>
@@ -114,5 +121,7 @@ function loadDoc(list, link) {
 <div id="list4"></div>
 <div id="list5"></div>
 <div id="list6"></div>
+
+</script>
 </body>
 </html>

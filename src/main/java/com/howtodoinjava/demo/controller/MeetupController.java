@@ -117,6 +117,7 @@ public class MeetupController {
 				meetup.setEVENT_VENUE_NAME(venueName);
 				meetup.setEVENT_STREET(eventStreet);
 				meetup.setEVENT_CITY(eventCity);
+				meetup.setEVENT_DATE(eventTime);
 				meetup.setEVENT_STATE(eventState);
 				meetup.setEVENT_ZIP(eventZIP);
 				meetup.setEVENT_LATITUDE(eventLatitude);

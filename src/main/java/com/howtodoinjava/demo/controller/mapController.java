@@ -80,7 +80,9 @@ public class mapController {
 		 String myHouse = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyDH6PNEja-Sh-fhKEmuMDnYWlcpaDbCPBg&location="
 				+ lat + "," + lng ;
 
-		 model.addAttribute("location");
+
+		 model.addAttribute("location", myHouse);
+
 		
 		
 		return "StudentMap";
