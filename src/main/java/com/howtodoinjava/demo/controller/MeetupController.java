@@ -36,7 +36,7 @@ import antlr.collections.List;
 
 public class MeetupController {
 
-	// @RequestMapping("MeetupController")
+	// @RequestMapping("viewEvents")
 
 	Meetup meetup = new Meetup();
 	// model.addAttribute("meetup", meetup);
@@ -120,13 +120,14 @@ public class MeetupController {
 			}
 			mv.addObject("eventArray", eventArray);
 			// mv.setViewName();
-
+			// THis was a test
 			for (Meetup p : eventArray) {
 				String event = p.getEVENT_NAME();
 				String group = p.getGROUP_NAME();
 
 				System.out.println("Group Name = " + group + ", event name = " + event);
 			}
+			// end of test
 			return mv;
 		} catch (Exception e) {
 			e.printStackTrace();
