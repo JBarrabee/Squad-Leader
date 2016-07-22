@@ -32,11 +32,13 @@ import com.howtodoinjava.demo.validator.EmployeeValidator;
 import antlr.collections.List;
 
 @Controller
-@RequestMapping("viewEvents")
-@SessionAttributes("meetup")
+// This is what the index page needs to ask for in the URL
+// @SessionAttributes("meetup")
+//
 public class MeetupController {
 
-	public static ModelAndView listEvents() {
+	@RequestMapping("/MeetupController")
+	public ModelAndView listEvents() {
 
 		ArrayList<String> meetupArray = new ArrayList<String>();
 		meetupArray.add(
@@ -53,18 +55,15 @@ public class MeetupController {
 				"https://api.meetup.com/the-iron-yard-detroit/events?photo-host=public&page=20&sig_id=209133816&sig=54e41552a1621655091dd3aab3b543e075b0f0b6");
 
 		ArrayList<Meetup> eventArray = new ArrayList<Meetup>();
+		// used at bottom
 		ArrayList<String> sURLList = new ArrayList<String>();
+
 		System.out.println(meetupArray.size());
+
 		for (int i = 0; i < meetupArray.size(); i++) {
-			// from Java Script for proof. Not needed
-			/*
-			 * String a = "list"; String c = Integer.toString(i); String list =
-			 * a.concat(c); String link = meetupArray.get(i); loadDoc(list ,
-			 * link )
-			 */
-			// public addMeetupsToArray(){
+
 			String sURL = meetupArray.get(i);// just a string
-			System.out.println(sURL);
+			// System.out.println(sURL);
 			sURLList.add(sURL);
 
 		}
@@ -87,7 +86,7 @@ public class MeetupController {
 				JsonArray objArray = root.getAsJsonArray(); // May be an array,
 															// may be an object.
 				System.out.println("stage2");
-				System.out.println(objArray.size());
+				System.out.println("Object Array Size = " + objArray.size());
 
 				for (int a = 0; a < objArray.size(); a++) {
 					Meetup meetup = new Meetup();
@@ -107,44 +106,44 @@ public class MeetupController {
 					String eventZIP = venue.get("zip").getAsString();
 					String eventLatitude = venue.get("lat").getAsString();
 					String eventLongitude = venue.get("lon").getAsString();
-					System.out.println("worked number 2");
 
 					meetup.setGROUP_URL(groupURL);
+					meetup.setGROUP_NAME(groupName);
+					meetup.setEVENT_VENUE_NAME(venueName);
+					meetup.setEVENT_STREET(eventStreet);
+					meetup.setEVENT_CITY(eventCity);
+					meetup.setEVENT_STATE(eventState);
+					meetup.setEVENT_ZIP(eventZIP);
+					meetup.setEVENT_LATITUDE(eventLatitude);
+					meetup.setEVENT_LONGITUDE(eventLongitude);
+					meetup.setEVENT_NAME(eventName);
 
-					/*
-					 * System.out.println("Event Name = " + eventName + "\t" +
-					 * "Event Link = " + eventTime + "Venue Name = " + venueName
-					 * + "\r"+ "Group Name = " + groupName);
-					 */
+					eventArray.add(meetup);
 
-					/*
-					 * meetup.setGROUP_URL(groupURL); >>>>>>>
-					 * a437e09e82cd60977d6ed3259afb91c36d532bdb
-					 * meetup.setGROUP_NAME(groupName);
-					 * meetup.setEVENT_VENUE_NAME(venueName);
-					 * meetup.setEVENT_STREET(eventStreet);
-					 * meetup.setEVENT_CITY(eventCity);
-					 * meetup.setEVENT_STATE(eventState);
-					 * meetup.setEVENT_ZIP(eventZIP);
-					 * meetup.setEVENT_LATITUDE(eventLatitude);
-					 * meetup.setEVENT_LONGITUDE(eventLongitude);
-					 * meetup.setEVENT_NAME(eventName);
-					 * 
-					 * 
-					 * eventArray.add(meetup);
-					 * 
-					 * System.out.println("Event Name = " +
-					 * eventArray.get(0).getEVENT_NAME() + "rt" +
-					 * "Event Link = " + eventLink + "Venue Name = " +
-					 * venueName);
-					 * 
-					 * eventArray.add(meetup);
-					 */
-					String mvObjectName = "eventCity" + a + b;
-					System.out.println("EventCity = " + mvObjectName);
-					mv.addObject(mvObjectName, eventCity);
+					// System.out.println(
+					// "Event Name = " + eventArray.get(0).getEVENT_NAME() +
+					// "rt" + "Venue Name = " + venueName);
+
+					// String mvObjectName = eventCity;
+					// System.out.println("EventCity = " + mvObjectName);
+
+					// mv.addObject takes String Attribute Name, Object
+					// Attribute Value
+					// mv.getView() returns the View Object
+					// mv.getViewName() only returns the location to be sent
+					System.out.println("Event Names = " + eventArray.get(a).getEVENT_NAME());
+					// System.out.println(groupName + " " + a);
 
 				}
+
+			}
+			mv.addObject("eventArray", eventArray);
+			// mv.setViewName();
+			int q = 0;
+			for (Meetup p : eventArray) {
+				String event = p.getEVENT_NAME();
+				q = q++;
+				System.out.println("Number # " + q + "event name = " + event);
 			}
 			return mv;
 		} catch (Exception e) {
@@ -158,12 +157,12 @@ public class MeetupController {
 		// return null would not work if we put url connection inside a loop
 		// return null;
 	}
-
-	public static void main(String[] args) {
-		listEvents();
-		System.out.println("Worked?");
-	}
 }
+/*
+ * public static void main(String[] args) { listEvents();
+ * System.out.println("Worked?"); }
+ */
+
 /*
  * return new ModelAndView("shuffle","message", rootobj); } catch (Exception e )
  * { return new ModelAndView("error","message", "HTTP Connection Error: " + e);
@@ -178,22 +177,4 @@ public class MeetupController {
  * @Autowired EmployeeManager manager;
  * 
  * @Autowired EmployeeValidator validator;
- * 
- * @RequestMapping(method = RequestMethod.GET) public String setupForm(Model
- * model) { Meetup meetup = new Meetup(); model.addAttribute("meetup", meetup);
- * return "addMeetup"; }
- * 
- * @RequestMapping(method = RequestMethod.POST) public String
- * submitForm(@ModelAttribute("meetup") Meetup meetup, BindingResult result,
- * SessionStatus status) {
- * 
- * validator.validate(meetup, result);
- * 
- * if (result.hasErrors()) { return "addMeetup"; } // Store the employee
- * information in database // manager.createNewRecord(Person);
- * MeetupsDAO.addMeetup(meetup); // Mark Session Complete status.setComplete();
- * return "addSuccess"; }
- * 
- * @RequestMapping(value = "/success", method = RequestMethod.GET) public String
- * success(Model model) { return "addSuccess"; } }
  */
