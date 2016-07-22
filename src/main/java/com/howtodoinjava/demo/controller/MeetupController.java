@@ -33,48 +33,42 @@ import antlr.collections.List;
 
 @Controller
 // This is what the index page needs to ask for in the URL
-// @SessionAttributes("meetup")
-//
+
 public class MeetupController {
 
-	@RequestMapping("/MeetupController")
-	public ModelAndView listEvents() {
+	// @RequestMapping("MeetupController")
 
-		ArrayList<String> meetupArray = new ArrayList<String>();
-		meetupArray.add(
+	Meetup meetup = new Meetup();
+	// model.addAttribute("meetup", meetup);
+
+	public static ModelAndView listEvents() {
+
+		ArrayList<String> URLList = new ArrayList<String>();
+		URLList.add(
 				"https://api.meetup.com/ITintheD/events?photo-host=public&page=20&sig_id=209133816&sig=f1f01a0c6faa4c32e47ee45454c2af4d850723de");
-		meetupArray.add(
+		URLList.add(
 				"https://api.meetup.com/refreshdetroit/events?photo-host=public&page=20&sig_id=9283563&sig=182244089349639c68879c73ba06b4d567a867c2");
-		meetupArray.add(
+		URLList.add(
 				"https://api.meetup.com/BDPA-Detroit-technology-meetup/events?photo-host=public&page=20&sig_id=209133816&sig=db30a53e119fe9a87011a882d0fb33f1d7120110");
-		meetupArray.add(
+		URLList.add(
 				"https://api.meetup.com/Detroit-java-user-group/events?photo-host=public&page=20&sig_id=209133816&sig=1267a5d24e1aac9d58c5f1648f096629783a9517");
-		meetupArray.add(
+		URLList.add(
 				"https://api.meetup.com/girl-develop-it-detroit/events?photo-host=public&page=20&sig_id=209133816&sig=a531894ec6e4a1645afb57e9857d08a782203662");
-		meetupArray.add(
+		URLList.add(
 				"https://api.meetup.com/the-iron-yard-detroit/events?photo-host=public&page=20&sig_id=209133816&sig=54e41552a1621655091dd3aab3b543e075b0f0b6");
 
 		ArrayList<Meetup> eventArray = new ArrayList<Meetup>();
 		// used at bottom
-		ArrayList<String> sURLList = new ArrayList<String>();
 
-		System.out.println(meetupArray.size());
-
-		for (int i = 0; i < meetupArray.size(); i++) {
-
-			String sURL = meetupArray.get(i);// just a string
-			// System.out.println(sURL);
-			sURLList.add(sURL);
-
-		}
+		System.out.println(URLList.size());
 
 		HttpURLConnection request = null;
 		try {
 
 			ModelAndView mv = new ModelAndView("viewEvents");
-			for (int b = 0; b < sURLList.size(); b++) {
+			for (int b = 0; b < URLList.size(); b++) {
 				// Connect to the URL using java's native library
-				String sURLb = sURLList.get(b);
+				String sURLb = URLList.get(b);
 				URL url = new URL(sURLb);
 				request = (HttpURLConnection) url.openConnection();
 				request.connect();
@@ -120,30 +114,18 @@ public class MeetupController {
 
 					eventArray.add(meetup);
 
-					// System.out.println(
-					// "Event Name = " + eventArray.get(0).getEVENT_NAME() +
-					// "rt" + "Venue Name = " + venueName);
-
-					// String mvObjectName = eventCity;
-					// System.out.println("EventCity = " + mvObjectName);
-
-					// mv.addObject takes String Attribute Name, Object
-					// Attribute Value
-					// mv.getView() returns the View Object
-					// mv.getViewName() only returns the location to be sent
-					System.out.println("Event Names = " + eventArray.get(a).getEVENT_NAME());
-					// System.out.println(groupName + " " + a);
-
+					// System.out.println("Event Names = " +
+					// eventArray.get(a).getEVENT_NAME());
 				}
-
 			}
 			mv.addObject("eventArray", eventArray);
 			// mv.setViewName();
-			int q = 0;
+
 			for (Meetup p : eventArray) {
 				String event = p.getEVENT_NAME();
-				q = q++;
-				System.out.println("Number # " + q + "event name = " + event);
+				String group = p.getGROUP_NAME();
+
+				System.out.println("Group Name = " + group + ", event name = " + event);
 			}
 			return mv;
 		} catch (Exception e) {
@@ -153,28 +135,14 @@ public class MeetupController {
 			if (request != null)
 				request.disconnect();
 		}
-
-		// return null would not work if we put url connection inside a loop
-		// return null;
 	}
-}
-/*
- * public static void main(String[] args) { listEvents();
- * System.out.println("Worked?"); }
- */
 
-/*
- * return new ModelAndView("shuffle","message", rootobj); } catch (Exception e )
- * { return new ModelAndView("error","message", "HTTP Connection Error: " + e);
- * } finally { if (request != null) request.disconnect(); }
- * 
- * 
- * 
- * }
- * 
- * }
- * 
- * @Autowired EmployeeManager manager;
- * 
- * @Autowired EmployeeValidator validator;
- */
+	// THIS IS WHERE I THOUGT IT ENDED
+
+	// THIS WAS A WAY TO TEST IT.
+	public static void main(String[] args) {
+		listEvents();
+		System.out.println("Worked?");
+	}
+
+}
