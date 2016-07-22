@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<a href ="MeetupController">Click Here</a>
+<a href ="meetUpMap">Click Here</a>
 
 <nav class="navbar navbar-dark bg-inverse ">
   <ul class="nav navbar-nav ">
