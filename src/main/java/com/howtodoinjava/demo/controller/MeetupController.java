@@ -40,7 +40,9 @@ import antlr.collections.List;
 
 public class MeetupController {
 
+
 	 @RequestMapping("meetUpMap")
+
 
 //	Meetup meetup = new Meetup();
 	// model.addAttribute("meetup", meetup);
@@ -118,11 +120,13 @@ public class MeetupController {
 
 				}
 			}
+
 			
 			 model.addAttribute("EventList", eventArray);
 			 return "meetUpMap";
 			
 			
+
 		}
 
 }
