@@ -21,8 +21,11 @@
 	<nav class="navbar navbar-dark bg-inverse ">
 		<ul class="nav navbar-nav ">
 
-			<li class="nav-item"><a class="nav-link"
-				href=" Logout.html">LOG OUT</a></li>
+		<li class="nav-item"><a class="nav-link"
+		href=" Logout.html">LOG OUT</a></li>
+		<li class="nav-item">
+  		<a class="nav-link" href=" meetUpMap.html">Check out relevant MeetUps in the area!</a>
+   		</li>
 		</ul>
 	</nav>
 	
@@ -40,18 +43,6 @@
 // 			System.out.println("bruh");
 // 			response.sendRedirect("createLogin.html");
 	
-%>
-
-	<div class="row">
-		<div class="col-lg-2 col-md-offset-1 ">
-		<p>stuff in here. <br> Stuff in here. </p>
-	 
-	 </div>
-	
-	
-	</div>
-	
-	
-	
+%>	
 </body>
 </html>
