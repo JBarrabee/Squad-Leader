@@ -8,6 +8,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -16,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.support.BindingAwareModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -93,6 +97,11 @@ public class MeetupController {
 				String eventName = firstObject.get("name").getAsString();
 				String eventTime = firstObject.get("time").getAsString();
 
+				DateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+				String formattedDate = format.format(Integer.parseInt(eventTime));
+
+				System.out.println(formattedDate);
+
 				JsonObject venue = firstObject.get("venue").getAsJsonObject();
 				String venueName = venue.get("name").getAsString();
 				String eventStreet = venue.get("address_1").getAsString();
@@ -104,6 +113,7 @@ public class MeetupController {
 
 				meetup.setGROUP_URL(groupURL);
 				meetup.setGROUP_NAME(groupName);
+				meetup.setEVENT_DATE(formattedDate);
 				meetup.setEVENT_VENUE_NAME(venueName);
 				meetup.setEVENT_STREET(eventStreet);
 				meetup.setEVENT_CITY(eventCity);
@@ -119,6 +129,24 @@ public class MeetupController {
 
 		model.addAttribute("EventList", eventArray);
 		return new ModelAndView("meetUpMap");
+
+	}
+
+	public static void main(String[] args) {
+		Model a = new BindingAwareModelMap();
+		MeetupController s = new MeetupController();
+		try {
+			s.meetUpMap(a);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

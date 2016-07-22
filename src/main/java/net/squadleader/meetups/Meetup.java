@@ -134,6 +134,16 @@ public class Meetup implements Serializable {
 	 */
 
 	@Override
+	public int compareTo(eventArray comparestu) {
+		int compareage = ((eventArray) comparestu).getEVENT_DATE();
+		/* For Ascending order */
+		return this.studentage - compareage;
+
+		/* For Descending order do like this */
+		// return compareage-this.studentage;
+	}
+
+	@Override
 	public String toString() {
 		return "Meetup ID = " + MEETUP_ID + ", Group URL = " + GROUP_URL + ", Event Name = " + EVENT_NAME
 				+ ", Event Date = " + EVENT_DATE + ", Event Venue Name = " + EVENT_VENUE_NAME + ", Event Street = "
