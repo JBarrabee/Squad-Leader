@@ -39,7 +39,7 @@ import antlr.collections.List;
 
 public class MeetupController {
 
-	@RequestMapping("meetUpMap")
+	@RequestMapping("/meetUpMap")
 
 	// Meetup meetup = new Meetup();
 	// model.addAttribute("meetup", meetup);
