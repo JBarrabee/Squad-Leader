@@ -26,8 +26,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 function SetMarkers() {
 //call to database for lat and long
 <c:forEach var="student" items="${students}">
-	var latitude: ${student.getLATITUDE()};
-	var longitude: ${student.getLONGITUDE()};
+	var latitude: ${student.getLAT()};
+	var longitude: ${student.getLNG()};
 	var myLatLng = {lat: latitude, lng: longitude};
 	var name = ${student.getFIRST_NAME()} + " " + ${student.getLAST_NAME()};
 
