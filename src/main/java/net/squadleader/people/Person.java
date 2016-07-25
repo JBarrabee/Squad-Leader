@@ -11,20 +11,11 @@ public class Person implements Serializable  {
 	
 
 	private int ID;
-
+	
 	private String FIRST_NAME;
 	private String LAST_NAME;
 	private String EMAIL;
 	private String PASS;
-	public String getPASS() {
-		return PASS;
-	}
-
-	public void setPASS(String PASS) {
-		this.PASS = PASS;
-	}
-
-
 	private String STREET_ADDRESS;
 	private String CITY;
 	private String STATE;
@@ -108,12 +99,14 @@ public class Person implements Serializable  {
 		return LAT;
 	}
 	
-	public void setLONGITUDE(String LNG) {
+	public void setLNG(String LNG) {
+
 		this.LNG = LNG;
 	}
 	
 	public String getLNG() {
 		return LNG;
+
 	}
 	
 	public void setACCESS_LEVEL(String ACCESS_LEVEL) {
@@ -122,6 +115,14 @@ public class Person implements Serializable  {
 	
 	public String getACCESS_LEVEL() {
 		return ACCESS_LEVEL;
+	}
+	
+	public String getPASS() {
+		return PASS;
+	}
+
+	public void setPASS(String PASS) {
+		this.PASS = PASS;
 	}
 
 

@@ -1,26 +1,37 @@
 package com.howtodoinjava.demo.controller;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
-
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.stream.JsonReader;
 import com.howtodoinjava.demo.service.EmployeeManager;
 import com.howtodoinjava.demo.validator.EmployeeValidator;
 
@@ -53,14 +64,25 @@ public class PersonController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String submitForm(@ModelAttribute("person") Person person, BindingResult result, SessionStatus status) {
+	public String submitForm(@ModelAttribute("person") Person person, BindingResult result, SessionStatus status)
+			throws FileNotFoundException, IOException, ParseException{
+	
 
 		validator.validate(person, result);
 
 		if (result.hasErrors()) {
 			return "addPerson";
 		}
-
+//add latlng
+		JSONParser parser = new JSONParser();
+		
+		String ADDRESS = person.getSTREET_ADDRESS() + person.getCITY() + person.getSTATE();
+		String encodedAddress = URLEncoder.encode(ADDRESS, "UTF-8");
+		
+		String url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDH6PNEja-Sh-fhKEmuMDnYWlcpaDbCPBg&address="
+				+ encodedAddress;
+		
+		HttpClient client = HttpClientBuilder.create().build();
 		
 		// Store the employee information in database
 		// manager.createNewRecord(Person);
