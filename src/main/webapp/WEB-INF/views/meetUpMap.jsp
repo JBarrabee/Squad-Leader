@@ -48,7 +48,8 @@ th {
 			<option value="2">3</option>
 			<option value="4">5</option>
 			<option value="29">30</option>
-		</select> <select name="include">
+		</select> 
+		<select name="include">
 			<option value="0">All</option>
 			<option value="1">IT in the D</option>
 			<option value="2">Refresh Detroit</option>
@@ -66,13 +67,16 @@ th {
 	<table id="MeetupDisplay" align="left">
 		<c:forEach var="meetup" begin="0" end="${limit}" items="${EventList}">
 			
-			<a href="${meetup.EVENT_LINK}"></a>
+			
 				<tr >
-					<td>${meetup.GROUP_NAME}</td>
-					<td>${meetup.EVENT_NAME}</td>
+				
+					<td>${meetup.GROUP_NAME}</td> 
+					<td><a href="${meetup.EVENT_LINK}" >${meetup.EVENT_NAME}</a></td>
 					<td>${meetup.EVENT_DATE}</td>
 					<td>${meetup.EVENT_CITY}</td>
+				
 				</tr>
+				
 	
 		</c:forEach>
 	</table>
