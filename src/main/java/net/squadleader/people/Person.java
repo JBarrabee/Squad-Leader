@@ -30,8 +30,8 @@ public class Person implements Serializable  {
 	private String STATE;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date DOB;
-	private String LATITUDE;
-	private String LONGITUDE;
+	private String LAT;
+	private String LNG;
 
 	
 
@@ -100,28 +100,20 @@ public class Person implements Serializable  {
 		return STATE;
 	}
 	
-	public void setLATITUDE(String LATITUDE) {
-		this.LATITUDE = LATITUDE;
+	public void setLAT(String LAT) {
+		this.LAT = LAT;
 	}
 	
-	public String getLATITUDE() {
-		return LATITUDE;
+	public String getLAT() {
+		return LAT;
 	}
 	
-	public void setLONGITUDE(String LONGITUDE) {
-		this.LONGITUDE = LONGITUDE;
+	public void setLONGITUDE(String LNG) {
+		this.LNG = LNG;
 	}
 	
-	public String getLONGITUDE() {
-		return LONGITUDE;
-	}
-	
-	public void setDOB(Date DOB) {
-		this.DOB = DOB;
-	}
-	
-	public Date getDOB() {
-		return DOB;
+	public String getLNG() {
+		return LNG;
 	}
 	
 	public void setACCESS_LEVEL(String ACCESS_LEVEL) {
@@ -138,8 +130,7 @@ public class Person implements Serializable  {
 		return "ID = " + ID + ", First name = " + FIRST_NAME
 				+ "Last name = " + LAST_NAME + ", Email = " + EMAIL + 
 				"Access Level = " + ACCESS_LEVEL + "Street Address = " + STREET_ADDRESS + 
-				"City = " + CITY + "State = " + STATE + 
-				"Birthday = " + DOB;
+				"City = " + CITY + "State = " + STATE;
 
 	}
 	

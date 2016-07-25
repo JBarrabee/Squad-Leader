@@ -61,8 +61,7 @@ public class PersonController {
 			return "addPerson";
 		}
 
-		System.out.println(person.getDOB());
-		System.out.println(person.getDOB().toString());
+		
 		// Store the employee information in database
 		// manager.createNewRecord(Person);
 

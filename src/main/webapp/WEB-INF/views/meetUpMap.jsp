@@ -68,7 +68,7 @@
       */
     </script>
 <c:forEach var="meetup" items="${EventList}">
-
+	
 <table>
   <tr>
 				<td>${meetup.GROUP_NAME}</td>
