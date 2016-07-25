@@ -11,27 +11,18 @@ public class Person implements Serializable  {
 	
 
 	private int ID;
-
+	
 	private String FIRST_NAME;
 	private String LAST_NAME;
 	private String EMAIL;
 	private String PASS;
-	public String getPASS() {
-		return PASS;
-	}
-
-	public void setPASS(String PASS) {
-		this.PASS = PASS;
-	}
-
-
 	private String STREET_ADDRESS;
 	private String CITY;
 	private String STATE;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date DOB;
-	private String LATITUDE;
-	private String LONGITUDE;
+	private String LAT;
+	private String LNG;
 
 	
 
@@ -100,20 +91,20 @@ public class Person implements Serializable  {
 		return STATE;
 	}
 	
-	public void setLATITUDE(String LATITUDE) {
-		this.LATITUDE = LATITUDE;
+	public void setLAT(String LAT) {
+		this.LAT = LAT;
 	}
 	
-	public String getLATITUDE() {
-		return LATITUDE;
+	public String getLAT() {
+		return LAT;
 	}
 	
-	public void setLONGITUDE(String LONGITUDE) {
-		this.LONGITUDE = LONGITUDE;
+	public void setLONGITUDE(String LNG) {
+		this.LNG = LNG;
 	}
 	
-	public String getLONGITUDE() {
-		return LONGITUDE;
+	public String getLNG() {
+		return LNG;
 	}
 	
 	public void setDOB(Date DOB) {
@@ -130,6 +121,14 @@ public class Person implements Serializable  {
 	
 	public String getACCESS_LEVEL() {
 		return ACCESS_LEVEL;
+	}
+	
+	public String getPASS() {
+		return PASS;
+	}
+
+	public void setPASS(String PASS) {
+		this.PASS = PASS;
 	}
 
 
