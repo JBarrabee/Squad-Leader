@@ -45,10 +45,10 @@ public class PeopleDAO {
 			setupFactory();
 		Session hibernateSession = factory.openSession();
 		hibernateSession.getTransaction().begin();
-		List<Person> people = hibernateSession.createQuery("FROM people").list();
+		List<Person> People = hibernateSession.createQuery("FROM Person").list();
 		hibernateSession.getTransaction().commit();
 		hibernateSession.close();
-		return people;
+		return People;
 	}
 
 	public static boolean checkLogin(Person person) {

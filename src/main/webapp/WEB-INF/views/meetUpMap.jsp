@@ -39,13 +39,10 @@ th {
 }
 </style>
 
-
 </head>
 
 <body>
-
 	<h2>Upcoming Meetups</h2>
-
 	<form method="Post" action="meetUpMap.html">
 		<select name="limit">
 			<option value="2">3</option>
@@ -65,14 +62,7 @@ th {
 		</select> <input type="text" name="keyWord"> <input type="submit"
 			value="Submit" />
 	</form>
-	<!--
-		<form action="#" th:action="@{/MeetupController}" th:object="${selections}" method="post">
-    	<p>Meetup Choice<input type="text" th:field="*{include}" /></p>
-        <p>keyword: <input type="text" th:field="*{keyWord}" /></p>
-        <p> <input type="reset" value="Reset" /></p>
-    </form>
--->
-
+	
 	<table id="MeetupDisplay" align="left">
 		<c:forEach var="meetup" begin="0" end="${limit}" items="${EventList}">
 			
