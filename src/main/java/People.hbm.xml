@@ -15,9 +15,8 @@
 		<property name="STREET_ADDRESS" column="STREET_ADDRESS" type="string"></property>
 		<property name="CITY" column="CITY" type="string"></property>
 		<property name="STATE" column="STATE" type="string"></property>
-		<property name="LATITUDE" column="LATITUDE" type="string"></property>
-		<property name="LONGITUDE" column="LONGITUDE" type="string"></property>
-		<property name="DOB" column="DOB" type="date"></property>
+		<property name="LAT" column="LAT" type="string"></property>
+		<property name="LNG" column="LNG" type="string"></property>
 		<property name="ACCESS_LEVEL" column="ACCESS_LEVEL" type="string"></property>
 
 		

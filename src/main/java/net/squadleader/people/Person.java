@@ -99,7 +99,7 @@ public class Person implements Serializable  {
 		return LAT;
 	}
 	
-	public void setLONGITUDE(String LNG) {
+	public void setLNG(String LNG) {
 		this.LNG = LNG;
 	}
 	
