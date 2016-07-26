@@ -37,7 +37,7 @@
 
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
-			<form:form method="post" modelAttribute="Person">
+			<form:form method="post" modelAttribute="person">
 				<%-- <form:errors path="*" cssClass="error" /> --%>
 				<table>
 					<tr>
@@ -56,7 +56,7 @@
 					<tr>
 						<td><spring:message code="lbl.email" text="Email " /></td>
 						<td><form:input path="EMAIL" /></td>
-						<td><form:errors path="EMAIL" cssClass="error" /></td>
+						<td><form:errors path="EMAIL" cssClass="error" />${userExistError}</td>
 					</tr>
 					
 					<tr>

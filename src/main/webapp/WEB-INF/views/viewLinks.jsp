@@ -40,12 +40,13 @@
 	</ul>
 	</nav>
 	
-	<form>
+	<form action="viewLinks.html" method="Post">
 	<select name="categories">
 	<option value="all">All Categories</option>
 	<option value="SQL">SQL</option>
 	<option value="Java">Java</option>
 	<option value="Javascript">JavaScript</option>
+	<button type="submit">Filter</button>
 	</select>
 	</form>
 	<table>
