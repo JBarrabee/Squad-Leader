@@ -13,8 +13,17 @@
 <script src="bootstrap/js/bootstrap.js"></script>
 
 <title>HOME</title>
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 40%;
+      margin: auto;
+  }
+</style>
 </head>
 <body>
 <h1>Welcome To Squad Leader!</h1>
@@ -33,8 +42,60 @@
 		href=" Logout.html">Log Out</a></li>
 		</ul>
 	</nav>
-	<p> This is your survival guide to coding bootcamps. Network your way into your first tech job, use only the most efficient and effective online resources, and find other coding bootcamp students near you for face-to-face support. OORAH!</p>
-	
+	<p> This is your survival guide for coding bootcamps. Network your way into your first tech job, use only the most efficient and effective online resources, and find other coding bootcamp students near you for face-to-face support. OORAH!</p>
+
+
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="http://files.meetup.com/1760803/MEETUP%20Logo.jpg" alt="Meetup" width="460" height="345">
+         <a href="meetUpMap.html">
+          <h4>Metro Detroit Tech Meetups</h4> 
+         <p>We recommend attending 1-2 meetups a week while on the job search to grow your network.</p>
+         
+      </div>
+
+      <div class="item">
+        <img src="http://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.png?v=c78bd457575a" alt="Links" width="460" height="345">
+        <a href="viewLinks.html">
+        <h4>Frequently Used Resources</h4>
+        <p>No need to bookmark, here's a list of the resources you should go to first when you just can't figure out that tough code question on your own.</p>
+         
+      </div>
+    
+      <div class="item">
+        <img src="http://www.destination360.com/north-america/us/michigan/detroit/ramada-inn-downtown-detroit-map.gif" alt="Student Map" width="460" height="345">
+        <a href="StudentMap.html">
+        <h4>Student Map</h4>
+        <p> Sometimes the best solution is teamwork! Find out where fellow bootcampers are near you for help during after bootcamp hours or organize carpools easily.</p>
+        
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
 	
 <%
 // 		String loggedIn = null;

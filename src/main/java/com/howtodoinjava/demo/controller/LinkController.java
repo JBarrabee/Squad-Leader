@@ -32,8 +32,10 @@ public class LinkController {
 	}
 	@RequestMapping("viewLinks")
 	public ModelAndView viewLinks(){
+
 		List <Links> links = LinksDAO.listLinks(); 
 		return new ModelAndView("viewLinks", "Links", links);
+
 	}
 	
 }
