@@ -284,5 +284,14 @@ public class MeetupController {
 		model.addAttribute("limit", limit);
 		return new ModelAndView("meetUpMap");
 	}
+	// Could we create a different Model and view to send to send to the Maps?
+	// How would we get the information from here to the Map Controller?
+	// @RequestMapping("/StudentMap");
 
+	// Creating the Model and View
+	// public ModelAndView meetUpMap(Model model, HttpServletRequest servelet)
+	// throws FileNotFoundException, IOException, ParseException {
+	// model.addAttribute("EventList", eventArray);
+	// return new ModelAndView("StudentMap");
+	// }
 }
