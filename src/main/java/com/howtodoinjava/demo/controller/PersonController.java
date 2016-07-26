@@ -59,7 +59,7 @@ public class PersonController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String setupForm(Model model) {
 		Person person = new Person();
-		model.addAttribute("person", person);
+		model.addAttribute("Person", person);
 		return "addPerson";
 	}
 
