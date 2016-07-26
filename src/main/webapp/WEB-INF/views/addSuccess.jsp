@@ -18,8 +18,7 @@
 </head>
 <body>
 <h1>Welcome To Squad Leader!</h1>
-<p> Below is your survival guide to bootcamp. Network your way into your first tech job, use only the most efficient and effective online resources, and find other bootcamp students near you for in person support. Can you survive bootcamp?</p>
-	<nav class="navbar navbar-dark bg-inverse ">
+<nav class="navbar navbar-dark bg-inverse ">
 		<ul class="nav navbar-nav ">
 		<li class="nav-item">
   		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
@@ -34,6 +33,7 @@
 		href=" Logout.html">LOG OUT</a></li>
 		</ul>
 	</nav>
+	<p> This is your survival guide to coding bootcamps. Network your way into your first tech job, use only the most efficient and effective online resources, and find other coding bootcamp students near you for face-to-face support. OORAH!</p>
 	
 	
 <%
