@@ -42,6 +42,7 @@ h1 {
 			<h1> 
 				WELCOME TO </br> SQUAD LEADER
 			</h1>
+			<p1> Your survival guide to coding bootcamp</p1>
 		</div>
 	</div>
 </body>
