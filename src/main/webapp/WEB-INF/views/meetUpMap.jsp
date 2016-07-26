@@ -59,7 +59,7 @@ th {
   		<a class="nav-link" href="StudentMap.html">Student Map</a>
    		</li>
    		<li class="nav-item"><a class="nav-link"
-		href=" Logout.html">LOG OUT</a></li>
+		href=" Logout.html">Log Out</a></li>
 		</ul>
 	</nav>
 	
