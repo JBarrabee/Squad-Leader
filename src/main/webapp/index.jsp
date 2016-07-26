@@ -6,6 +6,27 @@
 
 <head>
 
+<style>
+h1{
+padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
+nav{
+padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    }
+p1{
+padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    }
+</style>
+
 <!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->
 <link rel="stylesheet" type="text/css"
 	href="bootstrap/css/bootstrap.css">
@@ -15,11 +36,7 @@
 <title>SQUAD LEADER</title>
 
 </head>
-<style>
-h1 {
-    text-align: center;
-}
-</style>
+
 <body>
 
 

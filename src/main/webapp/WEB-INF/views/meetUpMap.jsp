@@ -5,6 +5,24 @@
 <html>
 <head>
 
+<style>
+h2{
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
+
+form{
+	padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
+
+
+ </style>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -26,17 +44,15 @@
 #meetupDisplay {
 	width: 100%;
 	height: 400px;
-	text-align: left;
+	
+	
 }
 
 table, tr {
 	border: 1px solid black;
-	allign: left
+	
 }
 
-th {
-	text-align: left;
-}
 </style>
 
 </head>
@@ -74,7 +90,7 @@ th {
 		</ul>
 	</nav> -->
 	
-  <h2>Upcoming Meetups for Networking</h2>
+  <h2>Upcoming Meetups in Metro Detroit</h2>
 
 	<form method="Post" action="meetUpMap.html">
 	<br> <span>Keyword Search</span>
