@@ -40,7 +40,7 @@ import net.squadleader.people.Person;
 
 @Controller
 @RequestMapping("addPerson")
-@SessionAttributes("person")
+@SessionAttributes("Person")
 public class PersonController {
 	@Autowired
 	EmployeeManager manager;
@@ -64,7 +64,7 @@ public class PersonController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String submitForm(@ModelAttribute("person") Person person, BindingResult result, SessionStatus status)
+	public String submitForm(@ModelAttribute("Person") Person person, BindingResult result, SessionStatus status)
 			throws FileNotFoundException, IOException, ParseException{
 	
 
