@@ -33,12 +33,7 @@ public class LinkController {
 	@RequestMapping("viewLinks")
 	public ModelAndView viewLinks(){
 		List <Links> links = LinksDAO.listLinks(); 
-		return new ModelAndView("viewLinks", "links", links);
+		return new ModelAndView("viewLinks", "Links", links);
 	}
 	
-	@RequestMapping("viewLinksByCat")
-	public ModelAndView viewLinksByCat(){
-//		LinksDAO.listByCatLinks(cat)
-		return new ModelAndView("viewLinks");
-	}
 }
