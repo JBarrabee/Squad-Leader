@@ -18,15 +18,20 @@
       }
       </style>
       <script>
+      
+      //inidiate the map
+      
       function initMap() {
     	 	var mapProp = {
+    	 			
+    	 			//centering location over michigan
     	 			  center:new google.maps.LatLng(42.7937895,-83.7500016),
     	 			  zoom: 7,
     	 			  mapTypeId: google.maps.MapTypeId.ROADMAP
     	 			};
     	 			var map=new google.maps.Map(document.getElementById("map"), mapProp);
 
-    	 			
+    	 			//loop that runs through students in database and creates markers for students with addresses
    	 				<c:forEach var="student" items="${students}">
    	 					<c:set var="hasLatLng" value="${student.getLAT()!=null  && student.getLNG()!=null}" />
    	 					<c:if test="${hasLatLng}">
@@ -48,7 +53,7 @@
 
 <body>
 <div id="map"></div>
-<!-- Replace the value of the key parameter with your own API key. -->
+
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH6PNEja-Sh-fhKEmuMDnYWlcpaDbCPBg&callback=initMap"></script>
 

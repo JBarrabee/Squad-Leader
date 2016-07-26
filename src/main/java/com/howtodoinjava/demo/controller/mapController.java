@@ -37,12 +37,9 @@ public class mapController {
 	@RequestMapping("StudentMap")
 
 	public String map( Model model)	{
-		
-		
-		 //String myHouse = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyDH6PNEja-Sh-fhKEmuMDnYWlcpaDbCPBg&location="
-				;
 
-		 List <Person> studentList = PeopleDAO.getAllPeople();  
+		//calling all student data from database and returning student map with location and name
+		List <Person> studentList = PeopleDAO.getAllPeople();  
 		 
 		 model.addAttribute("students", studentList);
 
