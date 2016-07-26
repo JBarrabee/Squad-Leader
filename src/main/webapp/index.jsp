@@ -15,7 +15,11 @@
 <title>SQUAD LEADER</title>
 
 </head>
-
+<style>
+h1 {
+    text-align: center;
+}
+</style>
 <body>
 
 
@@ -34,9 +38,10 @@
 
 	<div class="row">
 		<div class="col-lg-4 col-lg-offset-4">
-			<h2>
-				WELCOME TO <br>SQUAD LEADER
-			</h2>
+			
+			<h1> 
+				WELCOME TO </br> SQUAD LEADER
+			</h1>
 		</div>
 	</div>
 </body>
