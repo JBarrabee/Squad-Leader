@@ -33,21 +33,20 @@ import net.squadleader.people.*;
 @Controller
 
 public class mapController {
-	
+
 	@RequestMapping("StudentMap")
 
-	public String map( Model model)	{
+	public String map(Model model) {
 
-		//calling all student data from database and returning student map with location and name
-		List <Person> studentList = PeopleDAO.getAllPeople();  
-		 
-		 model.addAttribute("students", studentList);
+		// calling all student data from database and returning student map with
+		// location and name
+		List<Person> studentList = PeopleDAO.getAllPeople();
 
-		
-		
+		model.addAttribute("students", studentList);
+
 		return "StudentMap";
 	}
-	
-	
+	// Is this where we would put the path for eventList array to get to the
+	// maps.
 
 }
