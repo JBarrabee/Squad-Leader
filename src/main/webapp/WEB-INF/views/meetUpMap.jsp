@@ -42,13 +42,17 @@ th {
 </head>
 
 <body>
-	<h2>Upcoming Meetups</h2>
+<a href="/StudentMap" class="btn btn-default">View A Map of Students</a>
+<a href="/UsefulLinks" class="btn btn-default">Helpful Links</a>
+	<h2>Upcoming Meetups for Networking</h2>
 	<form method="Post" action="meetUpMap.html">
+	<span>How many events do you want to see?</span>
 		<select name="limit">
 			<option value="2">3</option>
 			<option value="4">5</option>
 			<option value="29">30</option>
 		</select> 
+		<br><span>Which Meetup Group?</span>
 		<select name="include">
 			<option value="0">All</option>
 			<option value="1">IT in the D</option>
@@ -60,28 +64,33 @@ th {
 			<option value="7">Great Lakes Area NET User Group</option>
 			<option value="8">TechShop Detroit</option>
 			<option value="9">Tech248</option>
-		</select> <input type="text" name="keyWord"> <input type="submit"
+		</select>
+		<br> <span>Keyword Search</span>
+		 <input type="text" name="keyWord"> <input type="submit"
 			value="Submit" />
 	</form>
 	
 	<table id="MeetupDisplay" align="left">
-		<c:forEach var="meetup" begin="0" end="${limit}" items="${EventList}">
-			
-			
-				<tr >
-				
-					<td>${meetup.GROUP_NAME}</td> 
-					<td><a href="${meetup.EVENT_LINK}" >${meetup.EVENT_NAME}</a></td>
-					<td>${meetup.EVENT_DATE}</td>
-					<td>${meetup.EVENT_CITY}</td>
-				
-				</tr>
-				
+		<tr>
+		<td>Group Name</td>
+		<td>Event Name</td>
+		<td>Event Time</td>
+		<td>Event City</td>
+		</tr>
 	
+	
+		<c:forEach var="meetup" begin="0" end="${limit}" items="${EventList}">
+				<tr >	
+					<td><a href="${meetup.EVENT_LINK}" target="_blank" >${meetup.GROUP_NAME}</a></td>
+					<td><a href="${meetup.EVENT_LINK}" target="_blank" >${meetup.EVENT_NAME}</a></td>
+					<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_DATE}</a></td> 
+					<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_CITY}</a></td>
+								
+				</tr>		
 		</c:forEach>
 	</table>
+	
 
 
-	<div id=list></div>
 </body>
 </html>

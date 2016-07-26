@@ -14,10 +14,12 @@ table {
 
  
 tr:hover td {
-  background:#4E5066;
-  color:#FFFFFF;
+  background:#80ffff;
+  color:#00ff40;
   border-top: 1px solid #22262e;
   border-bottom: 1px solid #22262e;
+  
+  
 }
  
 
@@ -28,7 +30,7 @@ td {
   text-align:left;
   vertical-align:middle;
   font-weight:300;
-  font-size:18px;
+  font-size:16px;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   
 }

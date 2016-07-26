@@ -211,7 +211,7 @@ public class MeetupController {
 				int eventDateInt = Integer.parseInt(shortString);
 				// Need to change the formatting of the Epoc Time.
 				// Epoc time should be helpful for sorting
-				DateFormat format = new SimpleDateFormat("EEEE MMM dd, yyyy h:mm a");
+				DateFormat format = new SimpleDateFormat("EEEE MMM dd, h:mm a");
 				String formattedDate = format.format(eventDateLong);
 
 				// Test
