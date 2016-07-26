@@ -19,7 +19,7 @@
         padding: 0;
       }
       #map {
-        height: 400px;
+        height: 500px;
       }
       </style>
       <script>
@@ -30,8 +30,8 @@
     	 	var mapProp = {
     	 			
     	 			//centering location over michigan
-    	 			  center:new google.maps.LatLng(42.7937895,-83.7500016),
-    	 			  zoom: 7,
+    	 			  center:new google.maps.LatLng(42.4448945,-83.1213776),
+    	 			  zoom: 10,
     	 			  mapTypeId: google.maps.MapTypeId.ROADMAP
     	 			};
     	 			var map=new google.maps.Map(document.getElementById("map"), mapProp);

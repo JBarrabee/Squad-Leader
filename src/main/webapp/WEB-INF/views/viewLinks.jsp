@@ -24,22 +24,29 @@
 	<ul class="nav navbar-nav ">
 
 	<li class="nav-item"><a class="nav-link"
-	href=" Logout.html">LOG OUT</a></li>
+	href=" Logout.html">Log Out</a></li>
 	<li class="nav-item">
- 		<a class="nav-link" href="addSuccess.html">Student Home</a>
+ 		<a class="nav-link" href="addSuccess.html">Home</a>
   		</li>
   		<li class="nav-item">
  		<a class="nav-link" href="addlinks.html">Add a Resource</a>
   		</li>
+  		<li class="nav-item">
+  		<a class="nav-link" href="StudentMap.html">Student Map</a>
+   		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
+   		</li>
 	</ul>
 	</nav>
 	
-	<form>
+	<form action="viewLinks.html" method="Post">
 	<select name="categories">
 	<option value="all">All Categories</option>
 	<option value="SQL">SQL</option>
 	<option value="Java">Java</option>
 	<option value="Javascript">JavaScript</option>
+	<button type="submit">Filter</button>
 	</select>
 	</form>
 	<table>

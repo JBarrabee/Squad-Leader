@@ -64,11 +64,16 @@ public class PersonController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String submitForm(@ModelAttribute("Person") Person person, BindingResult result, SessionStatus status)
+
+	public String submitForm(@ModelAttribute("Person") Person person, Model model, BindingResult result, SessionStatus status)
+
 			throws FileNotFoundException, IOException, ParseException{
 	
 //validates user input
 		validator.validate(person, result);
+		
+		if (PeopleDAO.containsPerson(person))
+			model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
 
 		if (result.hasErrors()) {
 			return "addPerson";
