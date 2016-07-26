@@ -44,10 +44,7 @@ form{
 #meetupDisplay {
 	width: 100%;
 	height: 400px;
-	padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 20px;
-    padding-left: 40px;
+	
 	
 }
 

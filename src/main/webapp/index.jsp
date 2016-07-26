@@ -23,7 +23,8 @@ p1{
 padding-top: 50px;
     padding-right: 30px;
     padding-bottom: 20px;
-    padding-left: 40px;}
+    padding-left: 40px;
+    }
 </style>
 
 <!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->
