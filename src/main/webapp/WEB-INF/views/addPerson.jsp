@@ -64,7 +64,15 @@
 						<td><form:input path="PASS" /></td>
 						<td><form:errors path="PASS" cssClass="error" /></td>
 					</tr>
-
+					</table>
+					<br>
+ <p align="left">We are creating a map to display where students live.<br>
+If you would like your information to appear on the map,<br>
+please enter it below.  You can enter your Street and City,<br>
+ just your City, or neither.</p>
+					
+					
+					<table>
 					<tr>
 						<td><spring:message code="lbl.streetAddress"
 								text="Street Address" /></td>
@@ -137,10 +145,7 @@
 						</select></td>
 						<td><form:errors path="STATE" cssClass="error" /></td>
 					</tr>
-					<tr>
-						<td><spring:message code=".lbl" text="DOB" /></td>
-						<td><form:input type="date" path="DOB" />
-					<tr>
+					
 						<td colspan="3"><input type="submit" value="Add Person" /></td>
 					</tr>
 				</table>

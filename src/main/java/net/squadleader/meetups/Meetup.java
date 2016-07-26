@@ -2,6 +2,7 @@ package net.squadleader.meetups;
 
 import net.squadleader.meetups.Meetup;
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.Date;
 
 public class Meetup implements Serializable {
@@ -13,6 +14,7 @@ public class Meetup implements Serializable {
 	private String GROUP_NAME;
 	private String EVENT_NAME;
 	private String EVENT_DATE;
+	private int EVENT_DATE_INT;
 	private String EVENT_VENUE_NAME;
 	private String EVENT_STREET;
 	private String EVENT_CITY;
@@ -21,6 +23,8 @@ public class Meetup implements Serializable {
 	private String EVENT_LATITUDE;
 	private String EVENT_LONGITUDE;
 	private String EVENT_LINK;
+	private String EVENT_DESCRIPTION;
+	private String GROUP_DESCRIPTION;
 
 	public Meetup() {
 	}
@@ -141,5 +145,35 @@ public class Meetup implements Serializable {
 				+ EVENT_ZIP + ", Event Latitude = " + EVENT_LATITUDE + ", Event Logitude" + EVENT_LONGITUDE;
 
 	}
+
+	public int getEVENT_DATE_INT() {
+		return EVENT_DATE_INT;
+	}
+
+	public void setEVENT_DATE_INT(int eVENT_DATE_INT) {
+		EVENT_DATE_INT = eVENT_DATE_INT;
+	}
+
+	public String getEVENT_DESCRIPTION() {
+		return EVENT_DESCRIPTION;
+	}
+
+	public void setEVENT_DESCRIPTION(String eVENT_DESCRIPTION) {
+		EVENT_DESCRIPTION = eVENT_DESCRIPTION;
+	}
+
+	public String getGROUP_DESCRIPTION() {
+		return GROUP_DESCRIPTION;
+	}
+
+	public void setGROUP_DESCRIPTION(String gROUP_DESCRIPTION) {
+		GROUP_DESCRIPTION = gROUP_DESCRIPTION;
+	}
+
+	/*
+	 * public int compareTo(Meetup compareEvents) { int compareTime = ((Meetup)
+	 * compareEvents).getEVENT_DATE_INT(); return this.EVENT_DATE_INT -
+	 * compareTime; }
+	 */
 
 }
