@@ -5,6 +5,21 @@
 
 <html>
 <head>
+<style>
+h1 {
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}
+
+p{
+padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    }
+ </style>
 
 <!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->
 <link rel="stylesheet" type="text/css"
