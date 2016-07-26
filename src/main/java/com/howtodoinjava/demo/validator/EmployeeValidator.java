@@ -40,15 +40,6 @@ public class EmployeeValidator implements Validator {
 		if (!matcher.find()) {
 			errors.rejectValue("EMAIL", "error.email.invalid");
 		}
-
-		// NEEDS TO VALIDATE ADDRESS DYNAMICALLY THROUGH API
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "STREET_ADDRESS", "error.streetAddress",
-				"Street Address Required.");
-
-		
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "CITY", "error.city", "City Required.");
-
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "STATE", "error.state", "State Required.");
 		
 		
 

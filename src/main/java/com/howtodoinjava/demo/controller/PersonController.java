@@ -40,7 +40,7 @@ import net.squadleader.people.Person;
 
 @Controller
 @RequestMapping("addPerson")
-@SessionAttributes("person")
+@SessionAttributes("Person")
 public class PersonController {
 	@Autowired
 	EmployeeManager manager;

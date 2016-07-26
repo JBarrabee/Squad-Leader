@@ -29,6 +29,9 @@
    		<li class="nav-item">
   		<a class="nav-link" href="viewLinks.html">Links to Online Resources!!</a>
    		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="StudentMap.html">Student Map</a>
+   		</li>
 		</ul>
 	</nav>
 	
