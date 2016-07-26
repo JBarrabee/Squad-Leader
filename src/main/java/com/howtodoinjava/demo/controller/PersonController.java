@@ -73,7 +73,7 @@ public class PersonController {
 		if (result.hasErrors()) {
 			return "addPerson";
 		}
-		
+//pulls latlng from google geocoder	
 		JSONParser parser = new JSONParser();
 		
 		String ADDRESS = person.getSTREET_ADDRESS() + person.getCITY() + person.getSTATE();
@@ -83,6 +83,36 @@ public class PersonController {
 				+ encodedAddress;
 		
 		HttpClient client = HttpClientBuilder.create().build();
+		
+
+		HttpGet request = new HttpGet(url);
+
+		HttpResponse response = client.execute(request);
+
+		BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+		
+		String line, json="";
+		while ((line = rd.readLine()) != null){
+			json += line;
+		}
+		System.out.println(json);
+		request.releaseConnection();
+		
+		JsonElement jelement = new JsonParser().parse(json.toString());
+
+		JsonObject jObject = jelement.getAsJsonObject();
+		
+		jObject = jObject.getAsJsonObject();
+		
+		JsonArray jArray = jObject.getAsJsonArray("results");
+		jObject = jArray.get(0).getAsJsonObject();
+		jObject = jObject.getAsJsonObject("geometry");
+		jObject = jObject.getAsJsonObject("location");
+		String LAT = jObject.get("lat").getAsString();
+		String LNG = jObject.get("lng").getAsString();
+		
+		person.setLAT(LAT);
+		person.setLNG(LNG);
 		
 		// Store the employee information in database
 		// manager.createNewRecord(Person);
