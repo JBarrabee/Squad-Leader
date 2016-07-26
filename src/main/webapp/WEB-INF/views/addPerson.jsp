@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="bootstrap/js/bootstrap.js"></script>
 
-<title>Add Employee Form</title>
+<title>Add Student</title>
 
 
 </head>
@@ -66,10 +66,9 @@
 					</tr>
 					</table>
 					<br>
- <p align="left">We are creating a map to display where students live.<br>
-If you would like your information to appear on the map,<br>
-please enter it below.  You can enter your Street and City,<br>
- just your City, or neither.</p>
+ <p align="left">One of the features of our app is a student map.<br>
+If you would like your information to be included on this map,<br>
+please provide it below. You may be identified by street address or just city.</p>
 					
 					
 					<table>

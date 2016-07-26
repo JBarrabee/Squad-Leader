@@ -43,9 +43,26 @@ th {
 
 <body>
 
-<a href="/StudentMap" class="btn btn-default">View A Map of Students</a>
-<a href="/UsefulLinks" class="btn btn-default">Helpful Links</a>
-<a href="Logout.html" class="btn btn-default">LOG OUT</a>	
+<nav class="navbar navbar-dark bg-inverse ">
+		<ul class="nav navbar-nav ">
+
+		<li class="nav-item">
+  		<a class="nav-link" href="addSuccess.html">HOME</a>
+   		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
+   		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="viewLinks.html">Resources</a>
+   		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="StudentMap.html">Student Map</a>
+   		</li>
+   		<li class="nav-item"><a class="nav-link"
+		href=" Logout.html">Log Out</a></li>
+		</ul>
+	</nav>
+	
 
 
 <!-- <div class="container">
@@ -60,12 +77,9 @@ th {
   <h2>Upcoming Meetups for Networking</h2>
 
 	<form method="Post" action="meetUpMap.html">
-	<span>How many events do you want to see?</span>
-		<select name="limit">
-			<option value="2">3</option>
-			<option value="4">5</option>
-			<option value="29">30</option>
-		</select> 
+	<br> <span>Keyword Search</span>
+		 <input type="text" name="keyWord"> <input type="submit"
+			value="Submit" />
 		<br><span>Which Meetup Group?</span>
 		<select name="include">
 			<option value="0">All</option>
@@ -79,9 +93,13 @@ th {
 			<option value="8">TechShop Detroit</option>
 			<option value="9">Tech248</option>
 		</select>
-		<br> <span>Keyword Search</span>
-		 <input type="text" name="keyWord"> <input type="submit"
-			value="Submit" />
+		<span>How many events do you want to see?</span>
+		<select name="limit">
+			<option value="2">3</option>
+			<option value="4">5</option>
+			<option value="29">30</option>
+		</select> 
+		
 	</form>
 	
 	<table id="MeetupDisplay" align="left">

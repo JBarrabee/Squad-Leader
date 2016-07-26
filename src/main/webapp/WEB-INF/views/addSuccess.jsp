@@ -17,20 +17,23 @@
 
 </head>
 <body>
-
-	<nav class="navbar navbar-dark bg-inverse ">
+<h1>Welcome To Squad Leader!</h1>
+<nav class="navbar navbar-dark bg-inverse ">
 		<ul class="nav navbar-nav ">
-
-		<li class="nav-item"><a class="nav-link"
-		href=" Logout.html">LOG OUT</a></li>
 		<li class="nav-item">
-  		<a class="nav-link" href="meetUpMap.html">Check out relevant MeetUps in the area!</a>
+  		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
    		</li>
    		<li class="nav-item">
-  		<a class="nav-link" href="viewLinks.html">Links to Online Resources!!</a>
+  		<a class="nav-link" href="viewLinks.html">Resources</a>
    		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="StudentMap.html">Student Map</a>
+   		</li>
+   		<li class="nav-item"><a class="nav-link"
+		href=" Logout.html">Log Out</a></li>
 		</ul>
 	</nav>
+	<p> This is your survival guide to coding bootcamps. Network your way into your first tech job, use only the most efficient and effective online resources, and find other coding bootcamp students near you for face-to-face support. OORAH!</p>
 	
 	
 <%
