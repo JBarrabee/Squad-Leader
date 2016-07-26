@@ -47,7 +47,7 @@
 			<th>Category</th>
 			<th>Title</th>
 		</tr>
-		<c:forEach var="row" items="${links}">
+		<c:forEach var="row" items="${Links}">
 		<tr>
 			<td>${row.getCategory()}</td>
 			<td><a href="${row.getURL()}">${row.getTitle()}</a></td>
