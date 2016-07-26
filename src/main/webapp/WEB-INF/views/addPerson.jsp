@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="bootstrap/js/bootstrap.js"></script>
 
-<title>Add Employee Form</title>
+<title>Add Student</title>
 
 
 </head>
