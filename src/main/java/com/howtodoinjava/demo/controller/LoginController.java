@@ -23,7 +23,7 @@ public class LoginController {
 			HttpServletResponse response, HttpServletRequest request){
 		if (PeopleDAO.checkLogin(person)){
 			Cookie cookie = new Cookie("loggedIn","true");
-			cookie.setMaxAge(60);
+			cookie.setMaxAge(60*15);
 			response.addCookie(cookie);
 			//model.addAttribute("cookie", cookie);
 	//		HttpSession session = request.getSession();

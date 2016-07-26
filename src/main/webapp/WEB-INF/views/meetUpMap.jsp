@@ -31,6 +31,14 @@
 
 <body>
 <div class="container">
+	<nav class="navbar navbar-dark bg-inverse ">
+		<ul class="nav navbar-nav ">
+		<li class="nav-item"><a class="nav-link"
+		href=" Logout.html">LOG OUT</a></li>
+   		</li>
+		</ul>
+	</nav>
+	
   <h2>Upcoming Meetups</h2>
   
   <table class="table table-hover">
