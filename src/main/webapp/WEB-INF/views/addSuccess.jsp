@@ -30,7 +30,7 @@
   		<a class="nav-link" href="StudentMap.html">Student Map</a>
    		</li>
    		<li class="nav-item"><a class="nav-link"
-		href=" Logout.html">LOG OUT</a></li>
+		href=" Logout.html">Log Out</a></li>
 		</ul>
 	</nav>
 	<p> This is your survival guide to coding bootcamps. Network your way into your first tech job, use only the most efficient and effective online resources, and find other coding bootcamp students near you for face-to-face support. OORAH!</p>
