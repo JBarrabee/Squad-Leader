@@ -67,13 +67,13 @@ public class PersonController {
 	public String submitForm(@ModelAttribute("Person") Person person, BindingResult result, SessionStatus status)
 			throws FileNotFoundException, IOException, ParseException{
 	
-
+//validates user input
 		validator.validate(person, result);
 
 		if (result.hasErrors()) {
 			return "addPerson";
 		}
-//add latlng
+		
 		JSONParser parser = new JSONParser();
 		
 		String ADDRESS = person.getSTREET_ADDRESS() + person.getCITY() + person.getSTATE();
