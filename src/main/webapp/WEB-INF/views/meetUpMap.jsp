@@ -42,9 +42,23 @@ th {
 </head>
 
 <body>
+
 <a href="/StudentMap" class="btn btn-default">View A Map of Students</a>
 <a href="/UsefulLinks" class="btn btn-default">Helpful Links</a>
-	<h2>Upcoming Meetups for Networking</h2>
+<a href="Logout.html" class="btn btn-default">LOG OUT</a>	
+
+
+<!-- <div class="container">
+	<nav class="navbar navbar-dark bg-inverse ">
+		<ul class="nav navbar-nav ">
+		<li class="nav-item"><a class="nav-link"
+		href=" Logout.html">LOG OUT</a></li>
+   		</li>
+		</ul>
+	</nav> -->
+	
+  <h2>Upcoming Meetups for Networking</h2>
+
 	<form method="Post" action="meetUpMap.html">
 	<span>How many events do you want to see?</span>
 		<select name="limit">
@@ -71,6 +85,7 @@ th {
 	</form>
 	
 	<table id="MeetupDisplay" align="left">
+
 		<tr>
 		<td>Group Name</td>
 		<td>Event Name</td>
@@ -78,6 +93,7 @@ th {
 		<td>Event City</td>
 		</tr>
 	
+
 	
 		<c:forEach var="meetup" begin="0" end="${limit}" items="${EventList}">
 				<tr >	

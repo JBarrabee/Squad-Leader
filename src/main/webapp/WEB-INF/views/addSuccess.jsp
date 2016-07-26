@@ -24,7 +24,10 @@
 		<li class="nav-item"><a class="nav-link"
 		href=" Logout.html">LOG OUT</a></li>
 		<li class="nav-item">
-  		<a class="nav-link" href=" meetUpMap.html">Check out relevant MeetUps in the area!</a>
+  		<a class="nav-link" href="meetUpMap.html">Check out relevant MeetUps in the area!</a>
+   		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="viewLinks.html">Links to Online Resources!!</a>
    		</li>
 		</ul>
 	</nav>
