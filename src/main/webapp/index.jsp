@@ -8,13 +8,14 @@
 
 <style>
 h1{
-padding-top: 50px;
+	padding-top: 50px;
     padding-right: 30px;
     padding-bottom: 20px;
     padding-left: 40px;
 }
 nav{
-padding-top: 50px;
+	text-align: center;
+	padding-top: 50px;
     padding-right: 30px;
     padding-bottom: 20px;
     padding-left: 40px;
