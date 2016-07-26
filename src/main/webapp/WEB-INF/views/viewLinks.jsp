@@ -34,12 +34,13 @@
 	</ul>
 	</nav>
 	
-	<form>
+	<form action="viewLinks.html" method="Post">
 	<select name="categories">
 	<option value="all">All Categories</option>
 	<option value="SQL">SQL</option>
 	<option value="Java">Java</option>
 	<option value="Javascript">JavaScript</option>
+	<button type="submit">Filter</button>
 	</select>
 	</form>
 	<table>
@@ -47,7 +48,7 @@
 			<th>Category</th>
 			<th>Title</th>
 		</tr>
-		<c:forEach var="row" items="${links}">
+		<c:forEach var="row" items="${Links}">
 		<tr>
 			<td>${row.getCategory()}</td>
 			<td><a href="${row.getURL()}">${row.getTitle()}</a></td>
