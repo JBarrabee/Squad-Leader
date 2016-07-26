@@ -40,7 +40,7 @@ import net.squadleader.people.Person;
 
 @Controller
 @RequestMapping("addPerson")
-@SessionAttributes("person")
+@SessionAttributes("Person")
 public class PersonController {
 	@Autowired
 	EmployeeManager manager;
@@ -59,24 +59,26 @@ public class PersonController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String setupForm(Model model) {
 		Person person = new Person();
-		model.addAttribute("person", person);
+		model.addAttribute("Person", person);
 		return "addPerson";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String submitForm(@ModelAttribute("person") Person person, Model model, BindingResult result, SessionStatus status)
+
+	public String submitForm(@ModelAttribute("Person") Person person, Model model, BindingResult result, SessionStatus status)
+
 			throws FileNotFoundException, IOException, ParseException{
 	
-
+//validates user input
 		validator.validate(person, result);
 		
-//		if (PeopleDAO.containsPerson(person))
-//			model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
+		if (PeopleDAO.containsPerson(person))
+			model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
 
 		if (result.hasErrors()) {
 			return "addPerson";
 		}
-//add latlng
+//pulls latlng from google geocoder	
 		JSONParser parser = new JSONParser();
 		
 		String ADDRESS = person.getSTREET_ADDRESS() + person.getCITY() + person.getSTATE();
@@ -86,6 +88,36 @@ public class PersonController {
 				+ encodedAddress;
 		
 		HttpClient client = HttpClientBuilder.create().build();
+		
+
+		HttpGet request = new HttpGet(url);
+
+		HttpResponse response = client.execute(request);
+
+		BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+		
+		String line, json="";
+		while ((line = rd.readLine()) != null){
+			json += line;
+		}
+		System.out.println(json);
+		request.releaseConnection();
+		
+		JsonElement jelement = new JsonParser().parse(json.toString());
+
+		JsonObject jObject = jelement.getAsJsonObject();
+		
+		jObject = jObject.getAsJsonObject();
+		
+		JsonArray jArray = jObject.getAsJsonArray("results");
+		jObject = jArray.get(0).getAsJsonObject();
+		jObject = jObject.getAsJsonObject("geometry");
+		jObject = jObject.getAsJsonObject("location");
+		String LAT = jObject.get("lat").getAsString();
+		String LNG = jObject.get("lng").getAsString();
+		
+		person.setLAT(LAT);
+		person.setLNG(LNG);
 		
 		// Store the employee information in database
 		// manager.createNewRecord(Person);

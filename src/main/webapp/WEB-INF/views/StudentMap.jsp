@@ -5,6 +5,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+<link rel="stylesheet" type="text/css"
+	href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script src="bootstrap/js/bootstrap.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Student Map</title>
     <style>
@@ -14,19 +19,24 @@
         padding: 0;
       }
       #map {
-        height: 100%;
+        height: 400px;
       }
       </style>
       <script>
+      
+      //inidiate the map
+      
       function initMap() {
     	 	var mapProp = {
+    	 			
+    	 			//centering location over michigan
     	 			  center:new google.maps.LatLng(42.7937895,-83.7500016),
     	 			  zoom: 7,
     	 			  mapTypeId: google.maps.MapTypeId.ROADMAP
     	 			};
     	 			var map=new google.maps.Map(document.getElementById("map"), mapProp);
 
-    	 			
+    	 			//loop that runs through students in database and creates markers for students with addresses
    	 				<c:forEach var="student" items="${students}">
    	 					<c:set var="hasLatLng" value="${student.getLAT()!=null  && student.getLNG()!=null}" />
    	 					<c:if test="${hasLatLng}">
@@ -47,8 +57,28 @@
 </head>
 
 <body>
+<nav class="navbar navbar-dark bg-inverse ">
+		<ul class="nav navbar-nav ">
+
+		<li class="nav-item">
+  		<a class="nav-link" href="addSuccess.html">HOME</a>
+   		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
+   		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="viewLinks.html">Resources</a>
+   		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="StudentMap.html">Student Map</a>
+   		</li>
+   		<li class="nav-item"><a class="nav-link"
+		href=" Logout.html">Log Out</a></li>
+		</ul>
+	</nav>
+
 <div id="map"></div>
-<!-- Replace the value of the key parameter with your own API key. -->
+
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH6PNEja-Sh-fhKEmuMDnYWlcpaDbCPBg&callback=initMap"></script>
 

@@ -49,9 +49,8 @@ public class MeetupController {
 	// @RequestParam(value = , )
 	// int include = ${selections.include}
 	int include = 0;
-	String keyWord = "The";
-	// String keyWord = "";// ${selections.keyword}
-	int limit = 50; // take out as soon as it works on the meetUpMap.
+	String keyWord = "Pluto";
+	int limit = 50;
 
 	@RequestMapping("/meetUpMap")
 
@@ -67,83 +66,99 @@ public class MeetupController {
 		if (servelet.getParameter("limit") != null) {
 			limit = Integer.parseInt(servelet.getParameter("limit"));
 		}
-		// Creating and filling the ArrayList, Going to put in if statements
-		ArrayList<String> URLList = new ArrayList<String>();
-		ArrayList<String> descriptionList = new ArrayList<String>();
+		// Creating and filling the eventArray
+		ArrayList<String> eventURLList = new ArrayList<String>();
+		ArrayList<String> descriptionURLList = new ArrayList<String>();
 		if (include == 0 || include == 1) {
-			URLList.add(
+			eventURLList.add(
 					"https://api.meetup.com/ITintheD/events?photo-host=public&page=20&sig_id=209133816&sig=f1f01a0c6faa4c32e47ee45454c2af4d850723de");
-			descriptionList.add(
+		}
+		if (!keyWord.equals("Pluto") && (include == 0 || include == 1)) {
+			descriptionURLList.add(
 					"https://api.meetup.com/ITintheD?photo-host=public&sig_id=209133816&only=description&sig=1305e66cfaa3247e94c63d45d598a7747b709648");
 		}
 		if (include == 0 || include == 2) {
-			URLList.add(
+			eventURLList.add(
 					"https://api.meetup.com/refreshdetroit/events?photo-host=public&page=20&sig_id=9283563&sig=182244089349639c68879c73ba06b4d567a867c2");
-			descriptionList.add(
+		}
+		if (!keyWord.equals("Pluto") && (include == 0 || include == 2)) {
+			descriptionURLList.add(
 					"https://api.meetup.com/refreshDetroit?photo-host=public&sig_id=209133816&only=description&sig=ebfeca1f2389e7dc0ace9a2abedb529d6b2674fd");
 		}
 		if (include == 0 || include == 3) {
-			URLList.add(
+			eventURLList.add(
 					"https://api.meetup.com/BDPA-Detroit-technology-meetup/events?photo-host=public&page=20&sig_id=209133816&sig=db30a53e119fe9a87011a882d0fb33f1d7120110");
-			descriptionList.add(
+		}
+		if (!keyWord.equals("Pluto") && (include == 0 || include == 3)) {
+			descriptionURLList.add(
 					"https://api.meetup.com/BDPA-Detroit-technology-meetup?photo-host=public&sig_id=209133816&only=description&sig=94c044814bd1f0bfa5777949afd89c78524803b2");
 		}
 		if (include == 0 || include == 4) {
-			URLList.add(
+			eventURLList.add(
 					"https://api.meetup.com/Detroit-java-user-group/events?photo-host=public&page=20&sig_id=209133816&sig=1267a5d24e1aac9d58c5f1648f096629783a9517");
-			descriptionList.add(
+		}
+		if (!keyWord.equals("Pluto") && (include == 0 || include == 4)) {
+			descriptionURLList.add(
 					"https://api.meetup.com/Detroit-java-user-group?photo-host=public&sig_id=209133816&only=description&sig=9feccd227ca59d03c316ec8813c9de2ab271c7d9");
 		}
 		if (include == 0 || include == 5) {
-			URLList.add(
+			eventURLList.add(
 					"https://api.meetup.com/girl-develop-it-detroit/events?photo-host=public&page=20&sig_id=209133816&sig=a531894ec6e4a1645afb57e9857d08a782203662");
-			descriptionList.add(
+		}
+		if (!keyWord.equals("Pluto") && (include == 0 || include == 5)) {
+			descriptionURLList.add(
 					"https://api.meetup.com/girl-develop-it-detroit?photo-host=public&sig_id=209133816&only=description&sig=5cf899c36a636d58847350f3bf247f30ff6defef");
 		}
 		if (include == 0 || include == 6) {
-			URLList.add(
+			eventURLList.add(
 					"https://api.meetup.com/Detroit-User-Experience/events?photo-host=public&page=20&sig_id=209133816&sig=2a2208d5ccbf840bae8af880d717b35569c3088b");
-			descriptionList.add(
+		}
+		if (!keyWord.equals("Pluto") && (include == 0 || include == 6)) {
+			descriptionURLList.add(
 					"https://api.meetup.com/Detroit-User-Experience?photo-host=public&sig_id=209133816&only=description&sig=b750b6ba39bc412377710db9d49372fedbe74229");
 		}
 		if (include == 0 || include == 7) {
-			URLList.add(
+			eventURLList.add(
 					"https://api.meetup.com/Great-Lakes-Area-NET-User-Group-MIGANG/events?photo-host=public&page=20&sig_id=209133816&sig=c4d9e411d883061af6ee32c29586206646adec6e");
-			descriptionList.add(
+		}
+		if (!keyWord.equals("Pluto") && (include == 0 || include == 7)) {
+			descriptionURLList.add(
 					"https://api.meetup.com/Great-Lakes-Area-NET-User-Group-MIGANG?photo-host=public&sig_id=209133816&only=description&sig=a2d39d97426b8587735edebfabdb26baa910fd07");
 		}
 		if (include == 0 || include == 8) {
-			URLList.add(
+			eventURLList.add(
 					"https://api.meetup.com/TechShopDetroit/events?photo-host=public&page=20&sig_id=209133816&sig=fb1007044b0b014743f8f3b2bdb8b79a62c9b028");
-			descriptionList.add(
+		}
+		if (!keyWord.equals("Pluto") && (include == 0 || include == 8)) {
+			descriptionURLList.add(
 					"https://api.meetup.com/TechShopDetroit?photo-host=public&sig_id=209133816&only=description&sig=5a785f78615af7c06da0d6c4409a691597e4b523");
 		}
 		if (include == 0 || include == 9) {
-			URLList.add("https://api.meetup.com/Tech248-Meetup/events?&sign=true&photo-host=public&page=20");
-			descriptionList.add(
+			eventURLList.add("https://api.meetup.com/Tech248-Meetup/events?&sign=true&photo-host=public&page=20");
+		}
+		if (!keyWord.equals("Pluto") && (include == 0 || include == 9)) {
+			descriptionURLList.add(
 					"https://api.meetup.com/Tech248-Meetup?photo-host=public&sig_id=209133816&only=description&sig=e9085e0debec464fbd506ff587c744440fdb3576");
 		}
 
 		// used at bottom Had to keep out of the for loop
 		ArrayList<Meetup> eventArray = new ArrayList<Meetup>();
 		// Test
-		System.out.println("Size of URL list =" + URLList.size());
-		System.out.println("Size of Description list = " + descriptionList.size());
+		System.out.println("Size of URL list =" + eventURLList.size());
+		System.out.println("Size of Description list = " + descriptionURLList.size());
 		// need to make sure there is no left over connection
 
 		HttpURLConnection request = null;
-		// Going through the URLList and getting the meetup information from
-		// each site
 
 		// GETTING THE GROUP DESCRIPTION
-
 		String groupDescription = "";
-		// Going through the URLList and getting the meetup information from
+		// Going through the eventURLList and getting the meetup information
+		// from
 		// each site
 		// FIRST LOOP ON PAGE USE a
-		for (int a = 0; a < descriptionList.size(); a++) {
+		for (int a = 0; a < descriptionURLList.size(); a++) {
 			// Connect to the URL using java's native library
-			String sURLb = descriptionList.get(a);
+			String sURLb = descriptionURLList.get(a);
 			URL url = new URL(sURLb);
 			// Getting the connection
 			request = (HttpURLConnection) url.openConnection();
@@ -164,9 +179,9 @@ public class MeetupController {
 
 		HttpURLConnection request2 = null;
 		// Second Array use b
-		for (int b = 0; b < URLList.size(); b++) {
+		for (int b = 0; b < eventURLList.size(); b++) {
 			// Connect to the URL using java's native library
-			String sURLb = URLList.get(b);
+			String sURLb = eventURLList.get(b);
 			URL url = new URL(sURLb);
 			// Getting the connection
 			request2 = (HttpURLConnection) url.openConnection();
@@ -187,13 +202,6 @@ public class MeetupController {
 			// Inner loop taking apart the JsonArray with getters and saving
 			// elements as strings
 
-			// LIMIT SIZE
-			// number just needs to be initialized
-			// int number = 0;
-			// if ( < limit)
-			// number = objArray.size();
-			// else
-			// number = limit;
 			// Third array use c
 			for (int c = 0; c < objArray.size(); c++) {
 				Meetup meetup = new Meetup();
@@ -211,7 +219,7 @@ public class MeetupController {
 				int eventDateInt = Integer.parseInt(shortString);
 				// Need to change the formatting of the Epoc Time.
 				// Epoc time should be helpful for sorting
-				DateFormat format = new SimpleDateFormat("EEEE MMM dd, yyyy h:mm a");
+				DateFormat format = new SimpleDateFormat("EEEE MMM dd, h:mm a");
 				String formattedDate = format.format(eventDateLong);
 
 				// Test

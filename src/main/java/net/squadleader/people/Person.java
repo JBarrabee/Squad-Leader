@@ -64,8 +64,8 @@ public class Person implements Serializable  {
 		return EMAIL;
 	}
 	
-	public void setSTREET_ADDRESS(String sTREET_ADDRESS) {
-		STREET_ADDRESS = sTREET_ADDRESS;
+	public void setSTREET_ADDRESS(String STREET_ADDRESS) {
+		this.STREET_ADDRESS = STREET_ADDRESS;
 
 	}
 	
