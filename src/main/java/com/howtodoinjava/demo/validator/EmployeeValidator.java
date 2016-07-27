@@ -39,13 +39,17 @@ public class EmployeeValidator implements Validator {
 		if (!matcher.find()) {
 			errors.rejectValue("EMAIL", "error.email.invalid");
 		}
-
+		// Validation for authorization code to give permission to make user account. 
 		final Pattern authRegex = Pattern.compile("\\*69\\*69", Pattern.CASE_INSENSITIVE);
 		Matcher AuthMatcher = authRegex.matcher(p.getAUTHORIZATION());
 
 		if (!AuthMatcher.find()) {
 			errors.rejectValue("AUTHORIZATION", "error.AUTHORIZATION");
 		}
+		
+		//Validation to ensure a password has been entered. 
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "PASS", "error.PASS.noPassword", "Must enter a password");
+
 
 	}
 

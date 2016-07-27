@@ -35,7 +35,7 @@
 
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
-			<form:form method="post" modelAttribute="Person">
+			<form:form method="post" action= "addPerson.html" modelAttribute="Person">
 				<%-- <form:errors path="*" cssClass="error" /> --%>
 				<table>
 					<tr>
@@ -58,7 +58,7 @@
 					</tr>
 					
 					<tr>
-						<td><spring:message code="lbl.pass" text="Password" /></td>
+						<td><spring:message code="lbl.PASS" text="Password" /></td>
 						<td><form:input path="PASS" /></td>
 						<td><form:errors path="PASS" cssClass="error" /></td>
 					</tr>
@@ -93,6 +93,7 @@ please provide it below. You may be identified by street address or just city. T
 						<td><form:errors path="CITY" cssClass="error" /></td>
 					</tr>
 					<tr>
+
 						<td><spring:message code="lbl.state" text="State" /></td>
 					
 						<td><select id="STATE" name="STATE">

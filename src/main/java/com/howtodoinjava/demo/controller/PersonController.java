@@ -75,7 +75,7 @@ public class PersonController {
 
 		String url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDH6PNEja-Sh-fhKEmuMDnYWlcpaDbCPBg&address="
 				+ encodedAddress;
-
+		System.out.println(url);
 		HttpClient client = HttpClientBuilder.create().build();
 
 		HttpGet request = new HttpGet(url);
