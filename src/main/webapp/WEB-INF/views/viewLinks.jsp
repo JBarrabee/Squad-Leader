@@ -19,7 +19,8 @@
 <title>View Resource List</title>
 </head>
 <body>
-	<h1>All Links</h1>
+<h1>SQUAD LEADER</h1>
+	
 	<nav class="navbar navbar-dark bg-inverse ">
 	<ul class="nav navbar-nav ">
 
@@ -30,9 +31,6 @@
   		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
    		</li>
   		<li class="nav-item">
- 		<a class="nav-link" href="addlinks.html">Add a Resource</a>
-  		</li>
-  		<li class="nav-item">
   		<a class="nav-link" href="StudentMap.html">Student Map</a>
    		</li>
    		
@@ -41,7 +39,11 @@
 		
 	</ul>
 	</nav>
-	
+	<h2>Resources</h2>
+	<form action ="addlinks.html">
+ 		<input type="submit" value="Add a Resource">
+  		</form>
+  		</br>
 	<form action="viewLinks.html" method="Post">
 	<select name="categories">
 	<option value="all">All Categories</option>

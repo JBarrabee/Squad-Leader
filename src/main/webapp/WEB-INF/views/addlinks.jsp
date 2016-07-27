@@ -15,7 +15,7 @@
 <title>Online resources</title>
 </head>
 <body>
-
+<h1>SQUAD LEADER</h1>
 <nav class="navbar navbar-dark bg-inverse ">
 	<ul class="nav navbar-nav ">
 
@@ -31,7 +31,7 @@
 				Out</a></li>
 	</ul>
 	</nav>
-	
+	<h2>Add a Resource</h2>
 <div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
 			<form:form method="post" action="viewlinks.html">
@@ -55,6 +55,7 @@
 						<td><form:input path="URL" /></td>
 						<td><form:errors path="URL" cssClass="error" /></td>
 					</tr>
+
 					<tr>
 						<td colspan="3"></br></br><input type="submit" value="Add Link" /></td>
 					</tr>

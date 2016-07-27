@@ -5,24 +5,17 @@
 <html>
 <head>
 
-<style>
-h2 {
-	padding-top: 50px;
-	padding-right: 30px;
-	padding-bottom: 20px;
-	padding-left: 40px;
-}
-
-form {
-	padding-top: 50px;
-	padding-right: 30px;
-	padding-bottom: 20px;
-	padding-left: 40px;
-}
-</style>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->
+<link rel="stylesheet" type="text/css"
+	href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script src="bootstrap/js/bootstrap.js"></script>
+
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script
@@ -35,6 +28,8 @@ form {
 <script src="bootstrap/js/bootstrap.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/tablepage.css">
+
+
 <title>Upcoming Meetups</title>
 
 <style>
@@ -48,6 +43,7 @@ table, tr {
 </style>
 </head>
 <body>
+<h1>SQUAD LEADER</h1>
 	<nav class="navbar navbar-dark bg-inverse ">
 	<ul class="nav navbar-nav ">
 
