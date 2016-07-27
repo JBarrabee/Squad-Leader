@@ -30,6 +30,8 @@
   		<li class="nav-item">
   		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
    		</li>
+   		<li class="nav-item"><a class="nav-link" href="viewLinks.html">Resources</a>
+		</li>
   		<li class="nav-item">
   		<a class="nav-link" href="StudentMap.html">Student Map</a>
    		</li>
