@@ -58,7 +58,7 @@
 					</tr>
 					
 					<tr>
-						<td><spring:message code="lbl.pass" text="Password" /></td>
+						<td><spring:message code="lbl.PASS" text="Password" /></td>
 						<td><form:input path="PASS" /></td>
 						<td><form:errors path="PASS" cssClass="error" /></td>
 					</tr>
@@ -93,7 +93,7 @@ please provide it below. You may be identified by street address or just city. T
 						<td><form:errors path="CITY" cssClass="error" /></td>
 					</tr>
 					<tr>
-						<td><spring:message code="lbl." text="State" /></td>
+						<td><spring:message code="lbl.STATE" text="State" /></td>
 					
 						<td><select id="STATE" name="STATE">
 								<option value="AL">Alabama</option>
