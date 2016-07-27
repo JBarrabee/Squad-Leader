@@ -23,20 +23,22 @@
 	<nav class="navbar navbar-dark bg-inverse ">
 	<ul class="nav navbar-nav ">
 
-	<li class="nav-item"><a class="nav-link"
-	href=" Logout.html">Log Out</a></li>
-	<li class="nav-item">
+		<li class="nav-item">
  		<a class="nav-link" href="addSuccess.html">Home</a>
   		</li>
+  		<li class="nav-item">
+  		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
+   		</li>
   		<li class="nav-item">
  		<a class="nav-link" href="addlinks.html">Add a Resource</a>
   		</li>
   		<li class="nav-item">
   		<a class="nav-link" href="StudentMap.html">Student Map</a>
    		</li>
-   		<li class="nav-item">
-  		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
-   		</li>
+   		
+   		<li class="nav-item"><a class="nav-link"
+		href=" Logout.html">Log Out</a></li>
+		
 	</ul>
 	</nav>
 	

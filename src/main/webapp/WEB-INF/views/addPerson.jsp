@@ -18,7 +18,7 @@
 </head>
 
 <body>
-
+<h1>SQUAD LEADER</h1>
 	<nav class="navbar navbar-dark bg-inverse ">
 		<ul class="nav navbar-nav ">
 
@@ -29,8 +29,8 @@
 	</nav>
 
 	<div class="row">
-		<h2> Enter Your Information*
-		</h2>
+		<h3> Enter Your Information*
+		</h3>
 	</div>
 
 	<div class="row">
@@ -66,7 +66,7 @@
 					<br>
  <p align="left">*One of the features of our app is a student map.<br>
 If you would like your information to be included on this map,<br>
-please provide it below. You may be identified by street address or just city.</p>
+please provide it below. You may be identified by street address or just city. The name you provide will be listed next to your location. </p>
 					
 					
 					<table>
