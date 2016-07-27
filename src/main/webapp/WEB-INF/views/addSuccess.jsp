@@ -14,11 +14,17 @@ h1 {
 }
 
 p{
-padding-top: 50px;
+	padding-top: 50px;
     padding-right: 30px;
     padding-bottom: 20px;
     padding-left: 40px;
     }
+nav{
+	padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
  </style>
 
 <!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->

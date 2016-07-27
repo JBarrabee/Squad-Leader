@@ -65,8 +65,8 @@ public class PersonController {
 		// validates user input
 		validator.validate(person, result);
 
-		if (PeopleDAO.containsPerson(person))
-			model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
+		//if (PeopleDAO.containsPerson(person))
+		//	model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
 
 		if (result.hasErrors()) {
 			return "addPerson";
