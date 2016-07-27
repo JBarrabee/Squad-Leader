@@ -53,21 +53,18 @@ public class PersonController {
 	@RequestMapping(method = RequestMethod.POST)
 
 
-	public ModelAndView submitForm(@ModelAttribute("Person") Person person, Model model, BindingResult result, SessionStatus status)
+	public ModelAndView submitForm(@ModelAttribute("Person") Person person, BindingResult result, SessionStatus status)
 	throws FileNotFoundException, IOException, ParseException {
 
 
 		// validates user input
 		validator.validate(person, result);
 		
-		if (PeopleDAO.containsPerson(person))
-			model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
+
 		ModelAndView newModel = new ModelAndView("addPerson", "Person", person);
-
-
-		//if (PeopleDAO.containsPerson(person))
-		//	model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
-
+		//Trying to check whether account already exists
+//		if (PeopleDAO.containsPerson(person))
+//			newModel.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
 
 		if (result.hasErrors()) {
 			return newModel;

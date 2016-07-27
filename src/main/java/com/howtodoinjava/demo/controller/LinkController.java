@@ -24,26 +24,13 @@ public class LinkController {
 	public ModelAndView addlinks(){
 		return new ModelAndView("addlinks","command",new Links());
 	}
-<<<<<<< HEAD
+
 	@RequestMapping("/submitLink")
-	public ModelAndView submitLink(@ModelAttribute("links") Links link, BindingResult result, SessionStatus status) {
+	public ModelAndView submitLink(@ModelAttribute("link") Links link, BindingResult result, SessionStatus status) {
 
 		if (result.hasErrors()) {
 			return new ModelAndView("addlinks","command",new Links());
-=======
-	
-	@RequestMapping(method = RequestMethod.GET)
-	public String setupForm(Model model) {
-		Links link = new Links();
-		model.addAttribute("Link", link);
-		return "addlinks";
-	}
-	@RequestMapping(method = RequestMethod.POST)
-	public String submitLink(@ModelAttribute("Links") Links link, BindingResult result, SessionStatus status) {
 
-		if (result.hasErrors()) {
-			return "addlinks";
->>>>>>> 5a867c6780f09536e68f60094e153a81e67e0692
 		}
 
 		LinksDAO.addLink(link);
@@ -54,7 +41,7 @@ public class LinkController {
 		return new ModelAndView("viewLinks", "Link", LinksList);
 	}
 	@RequestMapping("viewLinks")
-<<<<<<< HEAD
+
 	public ModelAndView viewLinks(HttpServletRequest servlet){
 		List <Links> LinksList = LinksDAO.listLinks(); 
 //		
@@ -65,13 +52,7 @@ public class LinkController {
 				
 		
 		return new ModelAndView("viewLinks", "Link", LinksList);
-=======
-	public ModelAndView viewLinks(){
 
-		List <Links> links = LinksDAO.listLinks(); 
-		return new ModelAndView("viewLinks", "Links", links);
-
->>>>>>> 5a867c6780f09536e68f60094e153a81e67e0692
 	}
 	
 }
