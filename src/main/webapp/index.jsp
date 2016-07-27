@@ -6,6 +6,28 @@
 
 <head>
 
+<style>
+h1{
+	padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
+nav{
+	text-align: center;
+	padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    }
+p1{
+padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    }
+</style>
+
 <!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->
 <link rel="stylesheet" type="text/css"
 	href="bootstrap/css/bootstrap.css">
@@ -34,9 +56,11 @@
 
 	<div class="row">
 		<div class="col-lg-4 col-lg-offset-4">
-			<h2>
-				WELCOME TO <br>SQUAD LEADER
-			</h2>
+			
+			<h1> 
+				WELCOME TO </br> SQUAD LEADER
+			</h1>
+			<p1> Your survival guide to coding bootcamp</p1>
 		</div>
 	</div>
 </body>

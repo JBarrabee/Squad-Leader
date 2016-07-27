@@ -79,7 +79,7 @@ public class MeetupController {
 		}
 		if (include == 0 || include == 2) {
 			eventURLList.add(
-					"https://api.meetup.com/refreshdetroit/events?photo-host=public&page=20&sig_id=9283563&sig=182244089349639c68879c73ba06b4d567a867c2");
+					"https://api.meetup.com/refreshdetroit/events?photo-host=public&page=20&sig_id=209133816&sig=45041f2937f85ce7a2694fb40252fda05690528c");
 		}
 		if (!keyWord.equals("Pluto") && (include == 0 || include == 2)) {
 			descriptionURLList.add(
@@ -134,11 +134,12 @@ public class MeetupController {
 					"https://api.meetup.com/TechShopDetroit?photo-host=public&sig_id=209133816&only=description&sig=5a785f78615af7c06da0d6c4409a691597e4b523");
 		}
 		if (include == 0 || include == 9) {
-			eventURLList.add("https://api.meetup.com/Tech248-Meetup/events?&sign=true&photo-host=public&page=20");
+			eventURLList.add(
+					"https://api.meetup.com/Tech248-Meetup/events?photo-host=public&page=20&sig_id=209133816&sig=e54c54736cdba911ebb205d16af5d80fa01b3834");
 		}
 		if (!keyWord.equals("Pluto") && (include == 0 || include == 9)) {
 			descriptionURLList.add(
-					"https://api.meetup.com/Tech248-Meetup?photo-host=public&sig_id=209133816&only=description&sig=e9085e0debec464fbd506ff587c744440fdb3576");
+					"https://api.meetup.com/Tech248-Meetup?photo-host=public&sig_id=209133816&fields=description&sig=4ff94a674bdda48288568af65e93fa907c894627");
 		}
 
 		// used at bottom Had to keep out of the for loop
@@ -175,7 +176,7 @@ public class MeetupController {
 			groupDescription = descriptionObject.get("description").getAsString();
 			System.out.println(groupDescription);
 		}
-		// GETTING EVENT DISTRACTION
+		// GETTING EVENT DISCRIPTION
 
 		HttpURLConnection request2 = null;
 		// Second Array use b
@@ -252,7 +253,7 @@ public class MeetupController {
 				meetup.setGROUP_DESCRIPTION(groupDescription);
 				meetup.setEVENT_DESCRIPTION(eventDescription);
 
-				if (groupDescription.toLowerCase().contains(keyWord.toLowerCase())
+				if (keyWord.equals("Pluto") || groupDescription.toLowerCase().contains(keyWord.toLowerCase())
 						|| eventDescription.toLowerCase().contains(keyWord.toLowerCase())) {
 					// putting the meetup in an array to be sent to another
 					// screen
@@ -284,5 +285,13 @@ public class MeetupController {
 		model.addAttribute("limit", limit);
 		return new ModelAndView("meetUpMap");
 	}
+	// Could we create a different Model and view to send to send to the Maps?
+	// @RequestMapping("/StudentMap")
 
+	// Creating the Model and View
+	// public ModelAndView meetUpMap(Model model, HttpServletRequest servelet)
+	// throws FileNotFoundException, IOException, ParseException {
+	// model.addAttribute("limit", limit);
+	// return new ModelAndView("StudentMap");
+	// }
 }

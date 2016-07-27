@@ -52,6 +52,21 @@
    	 							}) ;
    	 						</c:if>
    	 				</c:forEach>
+   	 			//<c:forEach var="meetup" items="${eventList}">
+   					//	<c:set var="hasLatLng" value="${meetup.getEVENT_LATITUDE()!=null  && meetup.getEVENT_LONGITUDE()!=null}" />
+   					//	<c:if test="${hasLatLng}">
+   					
+   							//	var latitude=${meetup.getEVENT_LATITUDE()};
+   							//	var longitude= ${meetup.getEVENT_LONGITUDE()};
+   							//	var myLatLng = {lat: latitude, lng: longitude};
+   							//	var name = "${meetup.getEVENT_NAME()} ${student.getLAST_NAME()}";
+   							//	var marker = new google.maps.Marker({
+   							//		position: myLatLng,
+   							//		map: map,
+   							//		title: name
+   							//	}) ;
+   						//	</c:if>
+   					//</c:forEach>
     	}
       </script>
 </head>

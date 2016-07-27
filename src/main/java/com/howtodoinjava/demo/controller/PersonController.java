@@ -43,7 +43,6 @@ public class PersonController {
 	@Autowired
 	EmployeeValidator validator;
 
-
 	@RequestMapping(method = RequestMethod.GET)
 	public String setupForm(Model model) {
 		Person person = new Person();
@@ -53,60 +52,66 @@ public class PersonController {
 
 	@RequestMapping(method = RequestMethod.POST)
 
-	public ModelAndView submitForm(@ModelAttribute("Person") Person person, Model model, BindingResult result, SessionStatus status)
 
-			throws FileNotFoundException, IOException, ParseException{
-	
-//validates user input
+	public ModelAndView submitForm(@ModelAttribute("Person") Person person, Model model, BindingResult result, SessionStatus status)
+	throws FileNotFoundException, IOException, ParseException {
+
+
+		// validates user input
 		validator.validate(person, result);
 		
-//		if (PeopleDAO.containsPerson(person))
-//			model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
+		if (PeopleDAO.containsPerson(person))
+			model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
 		ModelAndView newModel = new ModelAndView("addPerson", "Person", person);
+
+
+		//if (PeopleDAO.containsPerson(person))
+		//	model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
+
+
 		if (result.hasErrors()) {
 			return newModel;
 		}
-//pulls latlng from google geocoder	
+		// pulls latlng from google geocoder
 		JSONParser parser = new JSONParser();
-		
+
 		String ADDRESS = person.getSTREET_ADDRESS() + person.getCITY() + person.getSTATE();
 		String encodedAddress = URLEncoder.encode(ADDRESS, "UTF-8");
-		
+
 		String url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDH6PNEja-Sh-fhKEmuMDnYWlcpaDbCPBg&address="
 				+ encodedAddress;
-		
+
 		HttpClient client = HttpClientBuilder.create().build();
-		
 
 		HttpGet request = new HttpGet(url);
 
 		HttpResponse response = client.execute(request);
 
 		BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-		
-		String line, json="";
-		while ((line = rd.readLine()) != null){
+
+		String line, json = "";
+		while ((line = rd.readLine()) != null) {
 			json += line;
 		}
 		System.out.println(json);
 		request.releaseConnection();
-		
+
 		JsonElement jelement = new JsonParser().parse(json.toString());
 
 		JsonObject jObject = jelement.getAsJsonObject();
-		
+
 		jObject = jObject.getAsJsonObject();
-		
+
 		JsonArray jArray = jObject.getAsJsonArray("results");
 		jObject = jArray.get(0).getAsJsonObject();
 		jObject = jObject.getAsJsonObject("geometry");
 		jObject = jObject.getAsJsonObject("location");
 		String LAT = jObject.get("lat").getAsString();
 		String LNG = jObject.get("lng").getAsString();
-		
+
 		person.setLAT(LAT);
 		person.setLNG(LNG);
-		
+
 		// Store the employee information in database
 		// manager.createNewRecord(Person);
 
@@ -120,8 +125,6 @@ public class PersonController {
 
 	public String success(Model model) {
 		return "addSuccess";
-		
-	
+
 	}
 }
-

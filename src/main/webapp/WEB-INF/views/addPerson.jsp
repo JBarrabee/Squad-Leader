@@ -15,7 +15,6 @@
 
 <title>Add Student</title>
 
-
 </head>
 
 <body>
@@ -30,8 +29,7 @@
 	</nav>
 
 	<div class="row">
-		<h2>
-			<spring:message code="lbl.page" text="Enter Your Info" />
+		<h2> Enter Your Information*
 		</h2>
 	</div>
 
@@ -66,7 +64,7 @@
 					</tr>
 					</table>
 					<br>
- <p align="left">One of the features of our app is a student map.<br>
+ <p align="left">*One of the features of our app is a student map.<br>
 If you would like your information to be included on this map,<br>
 please provide it below. You may be identified by street address or just city.</p>
 					

@@ -8,6 +8,15 @@
 <html>
 <head>
 <style>
+div {
+    
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    
+    
+}
 .error{
 color: red;
 }
@@ -23,6 +32,7 @@ color: red;
 
 </head>
 <body>
+<div>
 <h1>Please Enter Your Account Information</h1>
 	<form:form action="submitLogin.html" method="POST">
 		<table>
@@ -36,12 +46,13 @@ color: red;
 					<td class="error">${passError}</td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" value="Submit"></td>
+					
+					<td colspan="2"></br></br><input type="submit" value="Submit"></td>
 				</tr>
 			</tbody>
 		</table>
 	</form:form>
 	<br>
-	<a href="addPerson.html">Sign Up</a>
+	<a href="addPerson.html">Sign Up</a></div>
 </body>
 </html>
