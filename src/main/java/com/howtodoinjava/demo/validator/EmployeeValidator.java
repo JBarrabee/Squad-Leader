@@ -44,7 +44,7 @@ public class EmployeeValidator implements Validator {
 		Matcher AuthMatcher = authRegex.matcher(p.getAUTHORIZATION());
 
 		if (!AuthMatcher.find()) {
-			errors.rejectValue("AUTHORIZATION", "error.email.invalid");
+			errors.rejectValue("AUTHORIZATION", "error.AUTHORIZATION");
 		}
 
 	}
