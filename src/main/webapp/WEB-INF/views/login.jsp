@@ -7,6 +7,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->
+<link rel="stylesheet" type="text/css"
+	href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script src="bootstrap/js/bootstrap.js"></script>
 <style>
 div {
     
@@ -24,16 +29,37 @@ color: red;
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Log In</title>
 
-<!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->
-<link rel="stylesheet" type="text/css"
-	href="bootstrap/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<script src="bootstrap/js/bootstrap.js"></script>
+
 
 </head>
 <body>
+<h1>SQUAD LEADER</h1>
+	 <!--logging out does not prevent you from clicking back through nav bar on this page if cookie is still valid
+	 
+	  <nav class="navbar navbar-dark bg-inverse ">
+		<ul class="nav navbar-nav ">
+		<li class="nav-item">
+		
+ 		<a class="nav-link" href="addSuccess.html">Home</a>
+  		</li>
+  		<li class="nav-item">
+  		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
+  		Can we use this link to post to get a prefilled MeetupMap? Use Expression language
+  		
+   		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="viewLinks.html">Resources</a>
+   		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="StudentMap.html">Student Map</a>
+   		</li>
+   		<li class="nav-item"><a class="nav-link"
+		href=" Logout.html">Log Out</a></li>
+		</ul>
+	</nav>  -->
+   		
 <div>
-<h1>Please Enter Your Account Information</h1>
+<h3>Please Enter Your Account Information</h3>
 	<form:form action="submitLogin.html" method="POST">
 		<table>
 			<tbody>

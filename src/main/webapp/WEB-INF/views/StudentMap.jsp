@@ -72,6 +72,7 @@
 </head>
 
 <body>
+<h1>SQUAD LEADER</h1>
 <nav class="navbar navbar-dark bg-inverse ">
 		<ul class="nav navbar-nav ">
 
