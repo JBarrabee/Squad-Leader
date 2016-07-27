@@ -40,15 +40,15 @@
 	</ul>
 	</nav>
 	
-	<form action="viewLinks.html" method="Post">
-	<select name="categories">
-	<option value="all">All Categories</option>
-	<option value="SQL">SQL</option>
-	<option value="Java">Java</option>
-	<option value="Javascript">JavaScript</option>
-	<input type="submit" value="Filter"></input>
-	</select>
-	</form>
+<!-- 	<form action="viewLinks.html" method="Post"> -->
+<!-- 	<select name="categories"> -->
+<!-- 	<option value="all">All Categories</option> -->
+<!-- 	<option value="SQL">SQL</option> -->
+<!-- 	<option value="Java">Java</option> -->
+<!-- 	<option value="Javascript">JavaScript</option> -->
+<!-- 	<input type="submit" value="Filter"></input> -->
+<!-- 	</select> -->
+<!-- 	</form> -->
 	<table>
 		<tr>
 			<th>Category</th>
