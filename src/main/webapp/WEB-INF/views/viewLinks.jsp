@@ -46,7 +46,7 @@
 	<option value="SQL">SQL</option>
 	<option value="Java">Java</option>
 	<option value="Javascript">JavaScript</option>
-	<button type="submit">Filter</button>
+	<input type="submit" value="Filter"></input>
 	</select>
 	</form>
 	<table>
@@ -54,7 +54,7 @@
 			<th>Category</th>
 			<th>Title</th>
 		</tr>
-		<c:forEach var="row" items="${Links}">
+		<c:forEach var="row" items="${Link}">
 		<tr>
 			<td>${row.getCategory()}</td>
 			<td><a href="${row.getURL()}">${row.getTitle()}</a></td>

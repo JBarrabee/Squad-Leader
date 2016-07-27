@@ -5,8 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URLEncoder;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -15,23 +13,20 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.stream.JsonReader;
 import com.howtodoinjava.demo.service.EmployeeManager;
 import com.howtodoinjava.demo.validator.EmployeeValidator;
 
@@ -48,13 +43,6 @@ public class PersonController {
 	@Autowired
 	EmployeeValidator validator;
 
-	@InitBinder
-	protected void initBinder(WebDataBinder binder) {
-
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		dateFormat.setLenient(true);
-		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
-	}
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String setupForm(Model model) {
@@ -65,18 +53,18 @@ public class PersonController {
 
 	@RequestMapping(method = RequestMethod.POST)
 
-	public String submitForm(@ModelAttribute("Person") Person person, Model model, BindingResult result, SessionStatus status)
+	public ModelAndView submitForm(@ModelAttribute("Person") Person person, Model model, BindingResult result, SessionStatus status)
 
 			throws FileNotFoundException, IOException, ParseException{
 	
 //validates user input
 		validator.validate(person, result);
 		
-		if (PeopleDAO.containsPerson(person))
-			model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
-
+//		if (PeopleDAO.containsPerson(person))
+//			model.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
+		ModelAndView newModel = new ModelAndView("addPerson", "Person", person);
 		if (result.hasErrors()) {
-			return "addPerson";
+			return newModel;
 		}
 //pulls latlng from google geocoder	
 		JSONParser parser = new JSONParser();
@@ -125,7 +113,7 @@ public class PersonController {
 		PeopleDAO.addPerson(person);
 		// Mark Session Complete
 		status.setComplete();
-		return "addSuccess";
+		return new ModelAndView ("addSuccess");
 	}
 
 	@RequestMapping(value = "/success", method = RequestMethod.GET)
