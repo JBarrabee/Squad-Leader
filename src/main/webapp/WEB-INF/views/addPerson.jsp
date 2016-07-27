@@ -62,6 +62,16 @@
 						<td><form:input path="PASS" /></td>
 						<td><form:errors path="PASS" cssClass="error" /></td>
 					</tr>
+					
+					<tr>
+					
+					
+					</tr>
+						<td><spring:message code="lbl.authorizationCode" text="Authorization Code" /></td>
+						<td><form:input path="AUTHORIZATION" /></td>
+						<td><form:errors path="AUTHORIZATION" cssClass="error" /></td>
+
+					<tr>
 					</table>
 					<br>
  <p align="left">*One of the features of our app is a student map.<br>
@@ -82,11 +92,9 @@ please provide it below. You may be identified by street address or just city.</
 						<td><form:input path="CITY" /></td>
 						<td><form:errors path="CITY" cssClass="error" /></td>
 					</tr>
-
-
 					<tr>
 						<td><spring:message code="lbl." text="State" /></td>
-
+					
 						<td><select id="STATE" name="STATE">
 								<option value="AL">Alabama</option>
 								<option value="AK">Alaska</option>
@@ -142,7 +150,7 @@ please provide it below. You may be identified by street address or just city.</
 						</select></td>
 						<td><form:errors path="STATE" cssClass="error" /></td>
 					</tr>
-					
+					<tr>
 						<td colspan="3"><input type="submit" value="Add Person" /></td>
 					</tr>
 				</table>

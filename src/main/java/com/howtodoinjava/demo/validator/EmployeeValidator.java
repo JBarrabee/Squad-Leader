@@ -10,7 +10,6 @@ import org.springframework.validation.Validator;
 
 import net.squadleader.people.Person;
 
-
 @Component
 public class EmployeeValidator implements Validator {
 
@@ -40,8 +39,13 @@ public class EmployeeValidator implements Validator {
 		if (!matcher.find()) {
 			errors.rejectValue("EMAIL", "error.email.invalid");
 		}
-		
-		
+
+		final Pattern authRegex = Pattern.compile("\\*69\\*69", Pattern.CASE_INSENSITIVE);
+		Matcher AuthMatcher = authRegex.matcher(p.getAUTHORIZATION());
+
+		if (!AuthMatcher.find()) {
+			errors.rejectValue("AUTHORIZATION", "error.email.invalid");
+		}
 
 	}
 
