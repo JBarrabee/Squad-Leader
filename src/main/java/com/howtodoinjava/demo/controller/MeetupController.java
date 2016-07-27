@@ -176,7 +176,7 @@ public class MeetupController {
 			groupDescription = descriptionObject.get("description").getAsString();
 			System.out.println(groupDescription);
 		}
-		// GETTING EVENT DISTRACTION
+		// GETTING EVENT DISCRIPTION
 
 		HttpURLConnection request2 = null;
 		// Second Array use b
@@ -253,7 +253,7 @@ public class MeetupController {
 				meetup.setGROUP_DESCRIPTION(groupDescription);
 				meetup.setEVENT_DESCRIPTION(eventDescription);
 
-				if (groupDescription.toLowerCase().contains(keyWord.toLowerCase())
+				if (keyWord.equals("Pluto") || groupDescription.toLowerCase().contains(keyWord.toLowerCase())
 						|| eventDescription.toLowerCase().contains(keyWord.toLowerCase())) {
 					// putting the meetup in an array to be sent to another
 					// screen

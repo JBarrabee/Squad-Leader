@@ -6,22 +6,20 @@
 <head>
 
 <style>
-h2{
-    padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 20px;
-    padding-left: 40px;
-}
-
-form{
+h2 {
 	padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 20px;
-    padding-left: 40px;
+	padding-right: 30px;
+	padding-bottom: 20px;
+	padding-left: 40px;
 }
 
-
- </style>
+form {
+	padding-top: 50px;
+	padding-right: 30px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+}
+</style>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +32,6 @@ form{
 
 <link rel="stylesheet" type="text/css"
 	href="bootstrap/css/bootstrap.css">
-
 <script src="bootstrap/js/bootstrap.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/tablepage.css">
@@ -44,60 +41,35 @@ form{
 #meetupDisplay {
 	width: 100%;
 	height: 400px;
-	
-	
 }
-
 table, tr {
 	border: 1px solid black;
-	
 }
-
 </style>
-
 </head>
-
 <body>
-
-<nav class="navbar navbar-dark bg-inverse ">
-		<ul class="nav navbar-nav ">
-
-		<li class="nav-item">
-  		<a class="nav-link" href="addSuccess.html">HOME</a>
-   		</li>
-   		<li class="nav-item">
-  		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
-   		</li>
-   		<li class="nav-item">
-  		<a class="nav-link" href="viewLinks.html">Resources</a>
-   		</li>
-   		<li class="nav-item">
-  		<a class="nav-link" href="StudentMap.html">Student Map</a>
-   		</li>
-   		<li class="nav-item"><a class="nav-link"
-		href=" Logout.html">Log Out</a></li>
-		</ul>
-	</nav>
-	
-
-
-<!-- <div class="container">
 	<nav class="navbar navbar-dark bg-inverse ">
-		<ul class="nav navbar-nav ">
-		<li class="nav-item"><a class="nav-link"
-		href=" Logout.html">LOG OUT</a></li>
-   		</li>
-		</ul>
-	</nav> -->
-	
-  <h2>Upcoming Meetups in Metro Detroit</h2>
+	<ul class="nav navbar-nav ">
+
+		<li class="nav-item"><a class="nav-link" href="addSuccess.html">HOME</a>
+		</li>
+		<li class="nav-item"><a class="nav-link" href="meetUpMap.html">Tech
+				Meetups in Metro Detroit</a></li>
+		<li class="nav-item"><a class="nav-link" href="viewLinks.html">Resources</a>
+		</li>
+		<li class="nav-item"><a class="nav-link" href="StudentMap.html">Student
+				Map</a></li>
+		<li class="nav-item"><a class="nav-link" href=" Logout.html">Log
+				Out</a></li>
+	</ul>
+	</nav>
+
+	<h2>Upcoming Meetups in Metro Detroit</h2>
 
 	<form method="Post" action="meetUpMap.html">
-	<br> <span>Keyword Search</span>
-		 <input type="text" name="keyWord"> <input type="submit"
-			value="Submit" />
-		<br><span>Which Meetup Group?</span>
-		<select name="include">
+		<br> <span>Keyword Search</span> <input type="text"
+			name="keyWord"> <input type="submit" value="Submit" /> <br>
+		<span>Which Meetup Group?</span> <select name="include">
 			<option value="0">All</option>
 			<option value="1">IT in the D</option>
 			<option value="2">Refresh Detroit</option>
@@ -108,39 +80,31 @@ table, tr {
 			<option value="7">Great Lakes Area NET User Group</option>
 			<option value="8">TechShop Detroit</option>
 			<option value="9">Tech248</option>
-		</select>
-		<span>How many events do you want to see?</span>
-		<select name="limit">
+		</select> <span>How many events do you want to see?</span> <select name="limit">
 			<option value="2">3</option>
 			<option value="4">5</option>
 			<option value="29">30</option>
-		</select> 
-		
+		</select>
 	</form>
-	
+
 	<table id="MeetupDisplay" align="left">
-
 		<tr>
-		<td>Group Name</td>
-		<td>Event Name</td>
-		<td>Event Time</td>
-		<td>Event City</td>
+			<td>Group Name</td>
+			<td>Event Name</td>
+			<td>Event Time</td>
+			<td>Event City</td>
 		</tr>
-	
 
-	
 		<c:forEach var="meetup" begin="0" end="${limit}" items="${EventList}">
-				<tr >	
-					<td><a href="${meetup.EVENT_LINK}" target="_blank" >${meetup.GROUP_NAME}</a></td>
-					<td><a href="${meetup.EVENT_LINK}" target="_blank" >${meetup.EVENT_NAME}</a></td>
-					<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_DATE}</a></td> 
-					<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_CITY}</a></td>
-								
-				</tr>		
+			<tr>
+				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.GROUP_NAME}</a></td>
+				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_NAME}</a></td>
+				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_DATE}</a></td>
+				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_CITY}</a></td>
+
+			</tr>
 		</c:forEach>
 	</table>
-	
-
 
 </body>
 </html>

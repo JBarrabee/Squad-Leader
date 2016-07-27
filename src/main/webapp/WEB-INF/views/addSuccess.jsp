@@ -52,6 +52,8 @@ nav{
 		<ul class="nav navbar-nav ">
 		<li class="nav-item">
   		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
+  		<!-- Can we use this link to post to get a prefilled MeetupMap? Use Expression language
+  		 -->
    		</li>
    		<li class="nav-item">
   		<a class="nav-link" href="viewLinks.html">Resources</a>
