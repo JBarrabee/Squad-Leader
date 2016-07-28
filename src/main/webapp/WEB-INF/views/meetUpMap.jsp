@@ -7,10 +7,12 @@
 
 <!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->
 <link rel="stylesheet" type="text/css"
+
 	href="bootstrap/css/bootstrap.css"> 
 <link rel="stylesheet" type="text/css" href="../css/main.css">
 
 <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans' rel='stylesheet' type='text/css'>
+
 <script src="bootstrap/js/bootstrap.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/tablepage.css">
