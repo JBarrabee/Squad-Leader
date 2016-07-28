@@ -9,8 +9,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <link rel="stylesheet" type="text/css"
 	href="bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -18,12 +17,15 @@
 	
 <link rel="stylesheet" type="text/css" href="css/tablepage.css">
 <link rel="stylesheet" type="text/css" href="css/sortTables.css">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!-- <link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
+<!-- <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>View Resource List</title>
 </head>
 <body>
@@ -81,9 +83,11 @@
 <!-- 	<button value="Filter" onclick="filterButton()">Filter</button> -->
 	<div id="users">
   <input class="search" placeholder="Search" id="search"/>
-  <button class="sort" data-sort="category">
+  <button class="sort btn btn-primary btn-lg" data-sort="category">
     Sort by Category
   </button>
+  </br>
+  </br>
 	<table>
 		<tr>
 			<th>Category</th>
