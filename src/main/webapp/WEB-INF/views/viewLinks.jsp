@@ -10,12 +10,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css"
 	href="bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="bootstrap/js/bootstrap.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
 <link rel="stylesheet" type="text/css" href="css/tablepage.css">
+<link rel="stylesheet" type="text/css" href="css/sortTables.css">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <title>View Resource List</title>
 </head>
 <body>
@@ -30,7 +38,7 @@
   		<li class="nav-item">
   		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
    		</li>
-   		<li class="nav-item"><a class="nav-link" href="viewLinks.html">Resources</a>
+   		<li class="nav-item"><a class="nav-link" href="addlinks.html">Add a Resource</a>
 		</li>
   		<li class="nav-item">
   		<a class="nav-link" href="StudentMap.html">Student Map</a>
@@ -41,32 +49,58 @@
 		
 	</ul>
 	</nav>
+
+	
+<!-- 	<form action="viewLinks.html" method="Post"> -->
+<!-- 	<select name="categories"> -->
+<!-- 	<option value="all">All Categories</option> -->
+<!-- 	<option value="SQL">SQL</option> -->
+<!-- 	<option value="Java">Java</option> -->
+<!-- 	<option value="Javascript">JavaScript</option> -->
+<!-- 	<input type="submit" value="Filter"></input> -->
+<!-- 	</select> -->
+<!-- 	</form> -->
+
 	<h2>Resources</h2>
-	<form action ="addlinks.html">
- 		<input type="submit" value="Add a Resource">
-  		</form>
-  		</br>
-	<form action="viewLinks.html" method="Post">
-	<select name="categories">
-	<option value="all">All Categories</option>
-	<option value="SQL">SQL</option>
-	<option value="Java">Java</option>
-	<option value="Javascript">JavaScript</option>
-	<input type="submit" value="Filter"></input>
+	<script>
+	function filterButton(){
+		var Button = document.getElementById("filter");
+		var Category = Button.options[Button.selectedIndex].value;
+		var search = document.getElementById("search");
+		search.value = Category;
+		var event = new Event('onchange');
+		search.dispatchEvent(event);
+		
+	}
+	</script>
+	<select name="categories" id = "filter" onchange="filterButton()">
+	<c:forEach var="row" items="${Link}">
+	<option value="${row.getCategory()}">${row.getCategory()}</option>
+	</c:forEach>
 	</select>
-	</form>
+<!-- 	<button value="Filter" onclick="filterButton()">Filter</button> -->
+	<div id="users">
+  <input class="search" placeholder="Search" id="search"/>
+  <button class="sort" data-sort="category">
+    Sort by Category
+  </button>
 	<table>
 		<tr>
 			<th>Category</th>
 			<th>Title</th>
 		</tr>
+		<tbody class="list">
 		<c:forEach var="row" items="${Link}">
 		<tr>
-			<td>${row.getCategory()}</td>
-			<td><a href="${row.getURL()}">${row.getTitle()}</a></td>
+			<td class="category">${row.getCategory()}</td>
+			<td class="link"><a href="${row.getURL()}">${row.getTitle()}</a></td>
 		</tr>
 		</c:forEach>
 		</select>
+	</tbody>
 	</table>
+	</div>
+<script src="http://listjs.com/no-cdn/list.js"></script>
+<script src="JS/tablesort.js"></script>
 </body>
 </html>

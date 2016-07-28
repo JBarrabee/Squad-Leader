@@ -1,6 +1,9 @@
 package net.squadleader.people;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -27,7 +30,9 @@ public class PeopleDAO {
 		factory = configuration.buildSessionFactory(serviceRegistry);
 	}
 
-	public static int addPerson(Person p) {
+	public static int addPerson(Person p) throws NoSuchAlgorithmException {
+//		String pass = MD5Encoder(p.getPASS().toString());
+//	    p.setPASS(pass);
 		if (factory == null)
 			setupFactory();
 		Session hibernateSession = factory.openSession();
@@ -84,5 +89,23 @@ public class PeopleDAO {
 			return false;
 		
 		return true;
+	}
+	
+	private static String MD5Encoder( String password ) throws NoSuchAlgorithmException
+	{
+    	MessageDigest md = MessageDigest.getInstance("MD5");
+        md.update(password.getBytes());
+        
+        byte byteData[] = md.digest();
+ 
+        //convert the byte to hex format method 1
+        StringBuffer sb = new StringBuffer();
+        
+        for (int i = 0; i < byteData.length; i++) 
+        {
+            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 5).substring(1));
+        }
+        
+        return sb.toString();
 	}
 }
