@@ -53,19 +53,17 @@ public class PersonController {
 
 	@RequestMapping(method = RequestMethod.POST)
 
-
 	public ModelAndView submitForm(@ModelAttribute("Person") Person person, BindingResult result, SessionStatus status)
 	throws FileNotFoundException, IOException, ParseException, NoSuchAlgorithmException {
 
-
 		// validates user input
 		validator.validate(person, result);
-		
 
 		ModelAndView newModel = new ModelAndView("addPerson", "Person", person);
-		//Trying to check whether account already exists
-//		if (PeopleDAO.containsPerson(person))
-//			newModel.addAttribute("userExistError", "An account associated with this e-mail address already exists.");
+		// Trying to check whether account already exists
+		// if (PeopleDAO.containsPerson(person))
+		// newModel.addAttribute("userExistError", "An account associated with
+		// this e-mail address already exists.");
 
 		if (result.hasErrors()) {
 			return newModel;
@@ -78,7 +76,7 @@ public class PersonController {
 
 		String url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDH6PNEja-Sh-fhKEmuMDnYWlcpaDbCPBg&address="
 				+ encodedAddress;
-
+		System.out.println(url);
 		HttpClient client = HttpClientBuilder.create().build();
 
 		HttpGet request = new HttpGet(url);
@@ -116,7 +114,7 @@ public class PersonController {
 		PeopleDAO.addPerson(person);
 		// Mark Session Complete
 		status.setComplete();
-		return new ModelAndView ("addSuccess");
+		return new ModelAndView("addSuccess");
 	}
 
 	@RequestMapping(value = "/success", method = RequestMethod.GET)

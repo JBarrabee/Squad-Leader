@@ -18,7 +18,7 @@
 </head>
 
 <body>
-
+<h1>SQUAD LEADER</h1>
 	<nav class="navbar navbar-dark bg-inverse ">
 		<ul class="nav navbar-nav ">
 
@@ -29,8 +29,8 @@
 	</nav>
 
 	<div class="row">
-		<h2> Enter Your Information*
-		</h2>
+		<h3> Enter Your Information*
+		</h3>
 	</div>
 
 	<div class="row">
@@ -58,15 +58,25 @@
 					</tr>
 					
 					<tr>
-						<td><spring:message code="lbl.pass" text="Password" /></td>
+						<td><spring:message code="lbl.PASS" text="Password" /></td>
 						<td><form:input path="PASS" /></td>
 						<td><form:errors path="PASS" cssClass="error" /></td>
 					</tr>
+					
+					<tr>
+					
+					
+					</tr>
+						<td><spring:message code="lbl.authorizationCode" text="Authorization Code" /></td>
+						<td><form:input path="AUTHORIZATION" /></td>
+						<td><form:errors path="AUTHORIZATION" cssClass="error" /></td>
+
+					<tr>
 					</table>
 					<br>
  <p align="left">*One of the features of our app is a student map.<br>
 If you would like your information to be included on this map,<br>
-please provide it below. You may be identified by street address or just city.</p>
+please provide it below. You may be identified by street address or just city. The name you provide will be listed next to your location. </p>
 					
 					
 					<table>
@@ -82,11 +92,9 @@ please provide it below. You may be identified by street address or just city.</
 						<td><form:input path="CITY" /></td>
 						<td><form:errors path="CITY" cssClass="error" /></td>
 					</tr>
-
-
 					<tr>
-						<td><spring:message code="lbl." text="State" /></td>
-
+						<td><spring:message code="lbl.STATE" text="State" /></td>
+					
 						<td><select id="STATE" name="STATE">
 								<option value="AL">Alabama</option>
 								<option value="AK">Alaska</option>
@@ -142,7 +150,7 @@ please provide it below. You may be identified by street address or just city.</
 						</select></td>
 						<td><form:errors path="STATE" cssClass="error" /></td>
 					</tr>
-					
+					<tr>
 						<td colspan="3"><input type="submit" value="Add Person" /></td>
 					</tr>
 				</table>

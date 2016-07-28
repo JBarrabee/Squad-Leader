@@ -1,5 +1,6 @@
 package com.howtodoinjava.demo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,23 +37,29 @@ public class LinkController {
 		LinksDAO.addLink(link);
 		// Mark Session Complete
 		status.setComplete();
-		
+
 		List <Links> LinksList = LinksDAO.listLinks(); 
 		return new ModelAndView("viewLinks", "Link", LinksList);
 	}
 	@RequestMapping("viewLinks")
 
 	public ModelAndView viewLinks(HttpServletRequest servlet){
-		List <Links> LinksList = LinksDAO.listLinks(); 
-//		
-//		if (servlet.getParameter("categories") != null)
+		List<Links> LinksList = new ArrayList<Links>();
+//		if (servlet.getParameter("category") != null){
 //			category = servlet.getParameter("category");
-//			if (category.equalsIgnoreCase("SQL") || category.equalsIgnoreCase("all"))
-//				LinksList.add
-				
-		
+//			System.out.println("Category is");
+//			if (category.equalsIgnoreCase("SQL")){
+//				LinksList = LinksDAO.listByCatLinks("SQL"); 
+//			}else if (category.equalsIgnoreCase("Java")){
+//				LinksList = LinksDAO.listByCatLinks("Java"); 
+//			}else if (category.equalsIgnoreCase("JavaScript")){
+//				LinksList= LinksDAO.listByCatLinks("JavaScript"); 
+//			}
+//		}
+		LinksList=LinksDAO.listLinks();
 		return new ModelAndView("viewLinks", "Link", LinksList);
 
+
 	}
-	
+
 }
