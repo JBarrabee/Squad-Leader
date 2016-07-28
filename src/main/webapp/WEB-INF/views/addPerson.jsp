@@ -44,7 +44,6 @@
 						<td><form:errors path="FIRST_NAME" cssClass="error" /></td>
 					</tr>
 
-
 					<tr>
 						<td><spring:message code="lbl.lastName" text="Last Name" /></td>
 						<td><form:input path="LAST_NAME" /></td>
@@ -64,14 +63,11 @@
 					</tr>
 					
 					<tr>
-					
-					
-					</tr>
 						<td><spring:message code="lbl.authorizationCode" text="Authorization Code" /></td>
 						<td><form:input path="AUTHORIZATION" /></td>
 						<td><form:errors path="AUTHORIZATION" cssClass="error" /></td>
 
-					<tr>
+					</tr>
 					</table>
 					<br>
  <p align="left">*One of the features of our app is a student map.<br>
