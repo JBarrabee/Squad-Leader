@@ -10,6 +10,8 @@
 	href="bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="bootstrap/js/bootstrap.js"></script>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans' rel='stylesheet' type='text/css'>
+
 
 <link rel="stylesheet" type="text/css" href="css/tablepage.css">
 
@@ -74,11 +76,11 @@ table, tr {
 		</select>
 	</form>
 
- <script type="text/javascript">
+ <!-- <script type="text/javascript">
 
 alert("hello world");
 document.getElementById("message").innerHTML ="No events match your query";
-</script>
+</script> -->
 <div id= "message"></div>
 	<table id="MeetupDisplay" align="left">
 		<tr>

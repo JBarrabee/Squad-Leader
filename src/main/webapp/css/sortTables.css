@@ -25,13 +25,13 @@ input:focus {
   display:inline-block;
   color:#fff;
   text-decoration: none;
-  background-color: #28a8e0;
+  
   height:30px;
 }
-.sort:hover {
+ .sort:hover {
   text-decoration: none;
-  background-color:#1b8aba;
-}
+ 
+} 
 .sort:focus {
   outline:none;
 }

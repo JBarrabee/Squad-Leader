@@ -12,6 +12,7 @@
 	href="bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="bootstrap/js/bootstrap.js"></script>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans' rel='stylesheet' type='text/css'>
 
 <title>Add Student</title>
 

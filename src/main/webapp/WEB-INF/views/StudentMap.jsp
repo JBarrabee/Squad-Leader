@@ -10,6 +10,8 @@
 	href="bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="bootstrap/js/bootstrap.js"></script>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans' rel='stylesheet' type='text/css'>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Student Map</title>
     <style>
