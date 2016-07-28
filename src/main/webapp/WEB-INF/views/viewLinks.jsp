@@ -75,11 +75,11 @@
 		
 	}
 	</script>
-	<select name="categories" id = "filter" onchange="filterButton()">
+<%-- 	<select name="categories" id = "filter" onchange="filterButton()">
 	<c:forEach var="row" items="${Link}">
 	<option value="${row.getCategory()}">${row.getCategory()}</option>
-	</c:forEach>
-	</select>
+	</c:forEach> 
+	</select> --%>
 <!-- 	<button value="Filter" onclick="filterButton()">Filter</button> -->
 	<div id="users">
   <input class="search" placeholder="Search" id="search"/>
