@@ -21,16 +21,17 @@ import net.squadleader.people.Person;
 @Controller
 public class LinkController {
 	String category;
+
 	@RequestMapping("/addlinks")
-	public ModelAndView addlinks(){
-		return new ModelAndView("addlinks","command",new Links());
+	public ModelAndView addlinks() {
+		return new ModelAndView("addlinks", "command", new Links());
 	}
 
 	@RequestMapping("/submitLink")
 	public ModelAndView submitLink(@ModelAttribute("link") Links link, BindingResult result, SessionStatus status) {
 
 		if (result.hasErrors()) {
-			return new ModelAndView("addlinks","command",new Links());
+			return new ModelAndView("addlinks", "command", new Links());
 
 		}
 
@@ -38,27 +39,23 @@ public class LinkController {
 		// Mark Session Complete
 		status.setComplete();
 
-		List <Links> LinksList = LinksDAO.listLinks(); 
+		List<Links> LinksList = LinksDAO.listLinks();
+
 		return new ModelAndView("viewLinks", "Link", LinksList);
 	}
+
 	@RequestMapping("viewLinks")
 
-	public ModelAndView viewLinks(HttpServletRequest servlet){
-		List<Links> LinksList = new ArrayList<Links>();
-//		if (servlet.getParameter("category") != null){
-//			category = servlet.getParameter("category");
-//			System.out.println("Category is");
-//			if (category.equalsIgnoreCase("SQL")){
-//				LinksList = LinksDAO.listByCatLinks("SQL"); 
-//			}else if (category.equalsIgnoreCase("Java")){
-//				LinksList = LinksDAO.listByCatLinks("Java"); 
-//			}else if (category.equalsIgnoreCase("JavaScript")){
-//				LinksList= LinksDAO.listByCatLinks("JavaScript"); 
-//			}
-//		}
-		LinksList=LinksDAO.listLinks();
-		return new ModelAndView("viewLinks", "Link", LinksList);
+	public ModelAndView viewLinks(HttpServletRequest servlet) {
+		List<Links> LinksList = LinksDAO.listLinks();
+		//
+		// if (servlet.getParameter("categories") != null)
+		// category = servlet.getParameter("category");
+		// if (category.equalsIgnoreCase("SQL") ||
+		// category.equalsIgnoreCase("all"))
+		// LinksList.add
 
+		return new ModelAndView("viewLinks", "Link", LinksList);
 
 	}
 
