@@ -7,13 +7,10 @@
 
 <!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->
 <link rel="stylesheet" type="text/css"
-
-	href="bootstrap/css/bootstrap.css"> 
-<link rel="stylesheet" type="text/css" href="../css/main.css">
-
-<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans' rel='stylesheet' type='text/css'>
-
+	href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="bootstrap/js/bootstrap.js"></script>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" type="text/css" href="css/tablepage.css">
 
@@ -58,9 +55,8 @@ table, tr {
 	<h2>Upcoming Meetups in Metro Detroit</h2>
 
 	<form method="Post" action="meetUpMap.html">
-		<br> <span>Keyword Search</span> <input type="text"
-			name="keyWord"> <input type="submit" value="Submit" /> <br>
-		<span>Which Meetup Group?</span> <select name="include">
+		
+		<br><span>Which Meetup Group?</span> <select name="include">
 			<option value="0">All</option>
 			<option value="1">IT in the D</option>
 			<option value="2">Refresh Detroit</option>
@@ -76,14 +72,12 @@ table, tr {
 			<option value="4">5</option>
 			<option value="29">30</option>
 		</select>
+		<br> <span>Keyword Search</span> <input type="text"
+			name="keyWord"> <input type="submit" value="Submit" /> <br>
 	</form>
 
- <script type="text/javascript">
+ 
 
-//alert("hello world");
-document.getElementById("message").innerHTML ="No events match your query";
-</script>
-<div id= "message"></div>
 	<table id="MeetupDisplay" align="left">
 		<tr>
 			<td>Group Name</td>
@@ -102,7 +96,12 @@ document.getElementById("message").innerHTML ="No events match your query";
 			</tr>
 		</c:forEach>
 	</table>
-	
+<	
+<div id = "message" align="left"> </div>
+<script >
 
+//alert("hello world");
+document.getElementById("message").innerHTML ="No events match your query";
+</script>
 </body>
 </html>
