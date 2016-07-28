@@ -26,13 +26,24 @@
 <title>Upcoming Meetups</title>
 
 <style>
-#meetupDisplay {
-	width: 100%;
-	height: 400px;
+#MeetupDisplay {
+	 width: 90%;
+	 a : black;
+	float: left;
+	margin: 30px; 
+}
+div{ 
+	clear: left;
+	margin: 30px;
 }
 table, tr {
 	border: 1px solid black;
+	
 }
+table td a{
+	color: black;
+} 
+
 </style>
 </head>
 <body>
@@ -78,7 +89,7 @@ table, tr {
 	</form>
 
 
-	<table id="MeetupDisplay" align="left">
+	<table id="MeetupDisplay" align="left"  >
 		<tr>
 			<td>Group Name</td>
 			<td>Event Name</td>
@@ -88,7 +99,7 @@ table, tr {
 
 		<c:forEach var="meetup" begin="0" end="${limit}" items="${EventList}">
 			<tr>
-				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.GROUP_NAME}</a></td>
+				<td width = "200px"><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.GROUP_NAME}</a></td>
 				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_NAME}</a></td>
 				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_DATE}</a></td>
 				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_CITY}</a></td>
@@ -96,12 +107,14 @@ table, tr {
 			</tr>
 		</c:forEach>
 	</table>
-<	
-<div id = "message" align="left"> </div>
-<script >
+	
+ <div id = "NoMeetups" align="left" > </div>
 
-//alert("hello world");
-document.getElementById("message").innerHTML ="No events match your query";
-</script>
+<div align="left"  >${message}</div>
+<script >
+var x = ${EventList};
+if (x == ""){}
+document.getElementById("NoMeetups").innerHTML ="No events match your query";
+</script> 
 </body>
 </html>
