@@ -12,6 +12,7 @@
 <script src="bootstrap/js/bootstrap.js"></script>
 <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans' rel='stylesheet' type='text/css'>
 
+
 <link rel="stylesheet" type="text/css" href="css/tablepage.css">
 
 
@@ -76,7 +77,6 @@ table, tr {
 			name="keyWord"> <input type="submit" value="Submit" /> <br>
 	</form>
 
- 
 
 	<table id="MeetupDisplay" align="left">
 		<tr>

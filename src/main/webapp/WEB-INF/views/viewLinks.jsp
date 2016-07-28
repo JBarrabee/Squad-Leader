@@ -14,10 +14,12 @@
 	href="bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="bootstrap/js/bootstrap.js"></script>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans' rel='stylesheet' type='text/css'>
+
 	
 <link rel="stylesheet" type="text/css" href="css/tablepage.css">
-<link rel="stylesheet" type="text/css" href="css/sortTables.css">
-<!-- <link rel="stylesheet"
+<!-- <link rel="stylesheet" type="text/css" href="css/sortTables.css">
+ --><!-- <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -40,8 +42,9 @@
   		<li class="nav-item">
   		<a class="nav-link" href="meetUpMap.html">Tech Meetups in Metro Detroit</a>
    		</li>
-   		<li class="nav-item"><a class="nav-link" href="addlinks.html">Add a Resource</a>
-		</li>
+   		<li class="nav-item">
+  		<a class="nav-link" href="viewLinks.html">Resources</a>
+   		</li>
   		<li class="nav-item">
   		<a class="nav-link" href="StudentMap.html">Student Map</a>
    		</li>
@@ -83,9 +86,14 @@
 <!-- 	<button value="Filter" onclick="filterButton()">Filter</button> -->
 	<div id="users">
   <input class="search" placeholder="Search" id="search"/>
-  <button class="sort btn btn-primary btn-lg" data-sort="category">
+  <button class="sort" data-sort="category">
     Sort by Category
   </button>
+  <br>
+ 
+  <!-- Button to add a resource -->
+  <a href="addlinks.html"><button type="button">Add a Resource</button></a>
+
   </br>
   </br>
 	<table>
