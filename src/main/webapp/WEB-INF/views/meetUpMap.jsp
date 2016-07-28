@@ -5,41 +5,45 @@
 <html>
 <head>
 
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
 <!--Links to local bootstrap and main .css and .js files THESE NEED TO BE INCLUDED IN EVERY PAGE  -->
 <link rel="stylesheet" type="text/css"
 	href="bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="bootstrap/js/bootstrap.js"></script>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	
+<link rel="stylesheet" type="text/css" href="css/tablepage.css">
+
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css"
-	href="bootstrap/css/bootstrap.css">
-<script src="bootstrap/js/bootstrap.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="css/tablepage.css">
+<meta charset="utf-8">
 
 
 <title>Upcoming Meetups</title>
 
 <style>
-#meetupDisplay {
-	width: 100%;
-	height: 400px;
+#MeetupDisplay {
+	 width: 90%;
+	 a : black;
+	float: left;
+	margin: 30px; 
+}
+div{ 
+	clear: left;
+	margin: 30px;
 }
 table, tr {
 	border: 1px solid black;
+	
 }
+table td a{
+	color: black;
+} 
+
 </style>
 </head>
 <body>
@@ -63,9 +67,8 @@ table, tr {
 	<h2>Upcoming Meetups in Metro Detroit</h2>
 
 	<form method="Post" action="meetUpMap.html">
-		<br> <span>Keyword Search</span> <input type="text"
-			name="keyWord"> <input type="submit" value="Submit" /> <br>
-		<span>Which Meetup Group?</span> <select name="include">
+		
+		<br><span>Which Meetup Group?</span> <select name="include">
 			<option value="0">All</option>
 			<option value="1">IT in the D</option>
 			<option value="2">Refresh Detroit</option>
@@ -81,9 +84,12 @@ table, tr {
 			<option value="4">5</option>
 			<option value="29">30</option>
 		</select>
+		<br> <span>Keyword Search</span> <input type="text"
+			name="keyWord"> <input type="submit" value="Submit" /> <br>
 	</form>
 
-	<table id="MeetupDisplay" align="left">
+
+	<table id="MeetupDisplay" align="left"  >
 		<tr>
 			<td>Group Name</td>
 			<td>Event Name</td>
@@ -93,7 +99,7 @@ table, tr {
 
 		<c:forEach var="meetup" begin="0" end="${limit}" items="${EventList}">
 			<tr>
-				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.GROUP_NAME}</a></td>
+				<td width = "200px"><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.GROUP_NAME}</a></td>
 				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_NAME}</a></td>
 				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_DATE}</a></td>
 				<td><a href="${meetup.EVENT_LINK}" target="_blank">${meetup.EVENT_CITY}</a></td>
@@ -101,6 +107,14 @@ table, tr {
 			</tr>
 		</c:forEach>
 	</table>
+	
+ <div id = "NoMeetups" align="left" > </div>
 
+<div align="left"  >${message}</div>
+<script >
+var x = ${EventList};
+if (x == ""){}
+document.getElementById("NoMeetups").innerHTML ="No events match your query";
+</script> 
 </body>
 </html>

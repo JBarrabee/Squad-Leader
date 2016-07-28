@@ -45,6 +45,8 @@ import antlr.collections.List;
 @Controller
 // This is what the index page needs to ask for in the URL
 
+// Can I move methods up here?
+
 public class MeetupController {
 	// @RequestParam(value = , )
 	// int include = ${selections.include}
@@ -154,114 +156,121 @@ public class MeetupController {
 		// GETTING THE GROUP DESCRIPTION
 		String groupDescription = "";
 		// Going through the eventURLList and getting the meetup information
-		// from
-		// each site
+		// from each site
 		// FIRST LOOP ON PAGE USE a
-		for (int a = 0; a < descriptionURLList.size(); a++) {
-			// Connect to the URL using java's native library
-			String sURLb = descriptionURLList.get(a);
-			URL url = new URL(sURLb);
-			// Getting the connection
-			request = (HttpURLConnection) url.openConnection();
-			request.connect();
 
-			// Create the object jp, JsonParser is from gson
-			JsonParser jp = new JsonParser(); // using the reader to take out
-												// the info from the reader
-			JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
-			// Convert the input stream to a jsonArray
-			JsonObject descriptionObject = root.getAsJsonObject();
+		try {
+			for (int a = 0; a < descriptionURLList.size(); a++) {
+				// Connect to the URL using java's native library
+				String sURLb = descriptionURLList.get(a);
+				URL url = new URL(sURLb);
+				// Getting the connection
+				request = (HttpURLConnection) url.openConnection();
+				request.connect();
 
-			// JsonObject descriptionObject = objArray.getAsJsonObject();
-			groupDescription = descriptionObject.get("description").getAsString();
-			System.out.println(groupDescription);
-		}
-		// GETTING EVENT DISCRIPTION
+				// Create the object jp, JsonParser is from gson
+				JsonParser jp = new JsonParser();
+				// using the reader to take out the info from the reader
+				JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+				// Convert the input stream to a jsonArray
+				JsonObject descriptionObject = root.getAsJsonObject();
 
-		HttpURLConnection request2 = null;
-		// Second Array use b
-		for (int b = 0; b < eventURLList.size(); b++) {
-			// Connect to the URL using java's native library
-			String sURLb = eventURLList.get(b);
-			URL url = new URL(sURLb);
-			// Getting the connection
-			request2 = (HttpURLConnection) url.openConnection();
-			request2.connect();
+				// JsonObject descriptionObject = objArray.getAsJsonObject();
+				groupDescription = descriptionObject.get("description").getAsString();
+				System.out.println(groupDescription);
+			}
+			// GETTING EVENT DISCRIPTION
+			HttpURLConnection request2 = null;
+			// Second Array use b
+			for (int b = 0; b < eventURLList.size(); b++) {
+				// Connect to the URL using java's native library
+				String sURLb = eventURLList.get(b);
+				URL url = new URL(sURLb);
+				// Getting the connection
+				request2 = (HttpURLConnection) url.openConnection();
+				request2.connect();
 
-			// Create the object jp, JsonParser is from gson
-			JsonParser jp = new JsonParser();
-			// using the reader to take out the info from the reader
-			JsonElement root = jp.parse(new InputStreamReader((InputStream) request2.getContent()));
-			// Convert the input stream to a jsonArray
-			JsonArray objArray = root.getAsJsonArray();
-			// Test
-			System.out.println("stage2");
-			System.out.println("Object Array Size = " + objArray.size());
-			// the array may have several events each of which is an array.
-			// there are variables and there are also objects with variables
-			// group and venue are objects
-			// Inner loop taking apart the JsonArray with getters and saving
-			// elements as strings
-
-			// Third array use c
-			for (int c = 0; c < objArray.size(); c++) {
-				Meetup meetup = new Meetup();
-				JsonObject eventObject = objArray.get(c).getAsJsonObject();
-				JsonObject group = eventObject.get("group").getAsJsonObject();
-				String groupURL = group.get("urlname").getAsString();
-				String groupName = group.get("name").getAsString();
-				String eventName = eventObject.get("name").getAsString();
-				String eventLink = eventObject.get("link").getAsString();
-				String eventDateString = eventObject.get("time").getAsString();
-
-				String shortString = eventDateString.substring(0, eventDateString.length() - 4);
-				Long eventDateLong = Long.parseLong(eventDateString);
-
-				int eventDateInt = Integer.parseInt(shortString);
-				// Need to change the formatting of the Epoc Time.
-				// Epoc time should be helpful for sorting
-				DateFormat format = new SimpleDateFormat("EEEE MMM dd, h:mm a");
-				String formattedDate = format.format(eventDateLong);
-
+				// Create the object jp, JsonParser is from gson
+				JsonParser jp = new JsonParser();
+				// using the reader to take out the info from the reader
+				JsonElement root = jp.parse(new InputStreamReader((InputStream) request2.getContent()));
+				// Convert the input stream to a jsonArray
+				JsonArray objArray = root.getAsJsonArray();
 				// Test
-				System.out.println(formattedDate + " " + eventName);
+				System.out.println("stage2");
+				System.out.println("Object Array Size = " + objArray.size());
+				// the array may have several events each of which is an array.
+				// there are variables and there are also objects with variables
+				// group and venue are objects
+				// Inner loop taking apart the JsonArray with getters and saving
+				// elements as strings
 
-				JsonObject venue = eventObject.get("venue").getAsJsonObject();
-				String venueName = venue.get("name").getAsString();
-				String eventStreet = venue.get("address_1").getAsString();
-				String eventCity = venue.get("city").getAsString();
-				String eventState = venue.get("state").getAsString();
-				String eventZIP = venue.get("zip").getAsString();
-				String eventLatitude = venue.get("lat").getAsString();
-				String eventLongitude = venue.get("lon").getAsString();
-				String eventDescription = eventObject.get("description").getAsString();
-				System.out.println(eventDescription);
-				// Loading all the variables into the object meetup
-				meetup.setGROUP_URL(groupURL);
-				meetup.setGROUP_NAME(groupName);
-				meetup.setEVENT_NAME(eventName);
-				meetup.setEVENT_LINK(eventLink);
-				meetup.setEVENT_DATE(formattedDate);
-				meetup.setEVENT_DATE_INT(eventDateInt);
-				meetup.setEVENT_VENUE_NAME(venueName);
-				meetup.setEVENT_STREET(eventStreet);
-				meetup.setEVENT_CITY(eventCity);
-				meetup.setEVENT_STATE(eventState);
-				meetup.setEVENT_ZIP(eventZIP);
-				meetup.setEVENT_LATITUDE(eventLatitude);
-				meetup.setEVENT_LONGITUDE(eventLongitude);
-				meetup.setGROUP_DESCRIPTION(groupDescription);
-				meetup.setEVENT_DESCRIPTION(eventDescription);
+				// Third array use c
+				for (int c = 0; c < objArray.size(); c++) {
+					Meetup meetup = new Meetup();
+					JsonObject eventObject = objArray.get(c).getAsJsonObject();
+					JsonObject group = eventObject.get("group").getAsJsonObject();
+					String groupURL = group.get("urlname").getAsString();
+					String groupName = group.get("name").getAsString();
+					String eventName = eventObject.get("name").getAsString();
+					String eventLink = eventObject.get("link").getAsString();
+					String eventDateString = eventObject.get("time").getAsString();
 
-				if (keyWord.equals("Pluto") || groupDescription.toLowerCase().contains(keyWord.toLowerCase())
-						|| eventDescription.toLowerCase().contains(keyWord.toLowerCase())) {
-					// putting the meetup in an array to be sent to another
-					// screen
-					eventArray.add(meetup);
-				} else {
-					continue;
+					String shortString = eventDateString.substring(0, eventDateString.length() - 4);
+					Long eventDateLong = Long.parseLong(eventDateString);
+
+					int eventDateInt = Integer.parseInt(shortString);
+					// Need to change the formatting of the Epoc Time.
+					// Epoc time should be helpful for sorting
+					DateFormat format = new SimpleDateFormat("EEEE MMM dd, h:mm a");
+					String formattedDate = format.format(eventDateLong);
+
+					// Test
+					System.out.println(formattedDate + " " + eventName);
+
+					JsonObject venue = eventObject.get("venue").getAsJsonObject();
+					String venueName = venue.get("name").getAsString();
+					String eventStreet = venue.get("address_1").getAsString();
+					String eventCity = venue.get("city").getAsString();
+					String eventState = venue.get("state").getAsString();
+					String eventZIP = venue.get("zip").getAsString();
+					String eventLatitude = venue.get("lat").getAsString();
+					String eventLongitude = venue.get("lon").getAsString();
+					String eventDescription = eventObject.get("description").getAsString();
+					System.out.println(eventDescription);
+					// Loading all the variables into the object meetup
+					meetup.setGROUP_URL(groupURL);
+					meetup.setGROUP_NAME(groupName);
+					meetup.setEVENT_NAME(eventName);
+					meetup.setEVENT_LINK(eventLink);
+					meetup.setEVENT_DATE(formattedDate);
+					meetup.setEVENT_DATE_INT(eventDateInt);
+					meetup.setEVENT_VENUE_NAME(venueName);
+					meetup.setEVENT_STREET(eventStreet);
+					meetup.setEVENT_CITY(eventCity);
+					meetup.setEVENT_STATE(eventState);
+					meetup.setEVENT_ZIP(eventZIP);
+					meetup.setEVENT_LATITUDE(eventLatitude);
+					meetup.setEVENT_LONGITUDE(eventLongitude);
+					meetup.setGROUP_DESCRIPTION(groupDescription);
+					meetup.setEVENT_DESCRIPTION(eventDescription);
+
+					if (keyWord.equals("Pluto") || groupDescription.toLowerCase().contains(keyWord.toLowerCase())
+							|| eventDescription.toLowerCase().contains(keyWord.toLowerCase())) {
+						// putting the meetup in an array to be sent to another
+						// screen
+						eventArray.add(meetup);
+					} else {
+						continue;
+					}
 				}
 			}
+		} catch (IOException x) {
+			String message = "Sorry, too many people are using the website right now.";
+			model.addAttribute("message", message);
+			System.out.println("Too many calls");
+			return new ModelAndView("meetUpMap");
+
 		}
 		// This is the part where the method to put the meetups in order is
 		// created.
@@ -283,6 +292,7 @@ public class MeetupController {
 		// This is where the eventList is packaged for sending
 		model.addAttribute("EventList", eventArray);
 		model.addAttribute("limit", limit);
+
 		return new ModelAndView("meetUpMap");
 	}
 	// Could we create a different Model and view to send to send to the Maps?

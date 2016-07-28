@@ -12,6 +12,7 @@
 	href="bootstrap/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script src="bootstrap/js/bootstrap.js"></script>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Open+Sans' rel='stylesheet' type='text/css'>
 
 <title>Add Student</title>
 
@@ -23,7 +24,7 @@
 		<ul class="nav navbar-nav ">
 
 			<li class="nav-item pull-*-right"><a class="nav-link"
-				href=" addEmployee.html">SIGN UP</a></li>
+				href=" addPerson.html">SIGN UP</a></li>
 			<li class="nav-item"><a class="nav-link" href="createLogin.html">LOG IN</a></li>
 		</ul>
 	</nav>
@@ -44,7 +45,6 @@
 						<td><form:errors path="FIRST_NAME" cssClass="error" /></td>
 					</tr>
 
-
 					<tr>
 						<td><spring:message code="lbl.lastName" text="Last Name" /></td>
 						<td><form:input path="LAST_NAME" /></td>
@@ -64,14 +64,11 @@
 					</tr>
 					
 					<tr>
-					
-					
-					</tr>
 						<td><spring:message code="lbl.authorizationCode" text="Authorization Code" /></td>
 						<td><form:input path="AUTHORIZATION" /></td>
 						<td><form:errors path="AUTHORIZATION" cssClass="error" /></td>
 
-					<tr>
+					</tr>
 					</table>
 					<br>
  <p align="left">*One of the features of our app is a student map.<br>
