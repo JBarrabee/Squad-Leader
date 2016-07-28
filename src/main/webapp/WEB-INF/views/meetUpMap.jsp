@@ -83,6 +83,12 @@ table, tr {
 		</select>
 	</form>
 
+ <script type="text/javascript">
+
+alert("hello world");
+document.getElementById("message").innerHTML ="No events match your query";
+</script>
+<div id= "message"></div>
 	<table id="MeetupDisplay" align="left">
 		<tr>
 			<td>Group Name</td>
@@ -101,6 +107,7 @@ table, tr {
 			</tr>
 		</c:forEach>
 	</table>
+	
 
 </body>
 </html>
