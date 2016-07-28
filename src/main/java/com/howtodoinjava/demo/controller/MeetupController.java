@@ -45,6 +45,8 @@ import antlr.collections.List;
 @Controller
 // This is what the index page needs to ask for in the URL
 
+// Can I move methods up here?
+
 public class MeetupController {
 	// @RequestParam(value = , )
 	// int include = ${selections.include}
@@ -154,8 +156,7 @@ public class MeetupController {
 		// GETTING THE GROUP DESCRIPTION
 		String groupDescription = "";
 		// Going through the eventURLList and getting the meetup information
-		// from
-		// each site
+		// from each site
 		// FIRST LOOP ON PAGE USE a
 		for (int a = 0; a < descriptionURLList.size(); a++) {
 			// Connect to the URL using java's native library
@@ -166,8 +167,8 @@ public class MeetupController {
 			request.connect();
 
 			// Create the object jp, JsonParser is from gson
-			JsonParser jp = new JsonParser(); // using the reader to take out
-												// the info from the reader
+			JsonParser jp = new JsonParser();
+			// using the reader to take out the info from the reader
 			JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
 			// Convert the input stream to a jsonArray
 			JsonObject descriptionObject = root.getAsJsonObject();
