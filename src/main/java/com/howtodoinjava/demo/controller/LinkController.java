@@ -1,5 +1,6 @@
 package com.howtodoinjava.demo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,6 +40,7 @@ public class LinkController {
 		status.setComplete();
 
 		List<Links> LinksList = LinksDAO.listLinks();
+
 		return new ModelAndView("viewLinks", "Link", LinksList);
 	}
 

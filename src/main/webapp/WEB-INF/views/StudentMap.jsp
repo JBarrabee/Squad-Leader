@@ -92,7 +92,7 @@
 		href=" Logout.html">Log Out</a></li>
 		</ul>
 	</nav>
-
+<h2>Student Map</h2>
 <div id="map"></div>
 
 <script async defer

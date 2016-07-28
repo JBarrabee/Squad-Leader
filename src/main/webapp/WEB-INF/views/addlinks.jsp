@@ -34,7 +34,7 @@
 	<h2>Add a Resource</h2>
 <div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
-			<form:form method="post" action="viewlinks.html">
+			<form:form method="post" action="submitLink.html">
 				<%-- <form:errors path="*" cssClass="error" /> --%>
 				<table>
 					<tr>

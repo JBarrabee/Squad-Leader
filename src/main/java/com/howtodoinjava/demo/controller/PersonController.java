@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URLEncoder;
+import java.security.NoSuchAlgorithmException;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -53,7 +54,7 @@ public class PersonController {
 	@RequestMapping(method = RequestMethod.POST)
 
 	public ModelAndView submitForm(@ModelAttribute("Person") Person person, BindingResult result, SessionStatus status)
-			throws FileNotFoundException, IOException, ParseException {
+	throws FileNotFoundException, IOException, ParseException, NoSuchAlgorithmException {
 
 		// validates user input
 		validator.validate(person, result);

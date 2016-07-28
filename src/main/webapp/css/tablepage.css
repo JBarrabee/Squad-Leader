@@ -1,7 +1,7 @@
 body {
       background: 
   font-family: "Roboto", helvetica, arial, sans-serif;
-  font-size: 16px;
+  font-size: 30px;;
   font-weight: 400;
   text-rendering: optimizeLegibility;
 }
@@ -9,7 +9,8 @@ table {
 	margin: 0 auto;
 	margin-top: 50px;
 	margin-bottom: 100px;
-	color: black;	
+	color: black;
+	font-size: 30px;	
 	  
 }
 
@@ -19,6 +20,7 @@ tr:hover td {
   color:black;
   border-top: 1px solid #22262e;
   border-bottom: 1px solid #22262e;
+  
   
   
 }
@@ -31,7 +33,7 @@ td {
   text-align:left;
   vertical-align:middle;
   font-weight:300;
-  font-size:16px;
+  font-size:30px;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   
   
@@ -42,6 +44,7 @@ td:last-child {
 
 th{
   text-align: center;
+ 
 }
 
 td.text-left {
