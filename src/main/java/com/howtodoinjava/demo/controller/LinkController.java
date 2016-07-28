@@ -3,6 +3,7 @@ package com.howtodoinjava.demo.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -27,7 +28,7 @@ public class LinkController {
 	}
 
 	@RequestMapping("/submitLink")
-	public ModelAndView submitLink(@ModelAttribute("link") Links link, BindingResult result, SessionStatus status) {
+	public ModelAndView submitLink(@ModelAttribute("link") Links link, BindingResult result, SessionStatus status, HttpServletRequest request) {
 
 		if (result.hasErrors()) {
 			return new ModelAndView("addlinks","command",new Links());

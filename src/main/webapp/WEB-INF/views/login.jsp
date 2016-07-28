@@ -68,7 +68,7 @@ color: red;
 					<td class="error">${userError}</td>
 				</tr>
 				<tr>
-					<td><form:input path="PASS" placeholder="Enter password"></form:input></td>
+					<td><form:input path="PASS" type="password" placeholder="Enter password"></form:input></td>
 					<td class="error">${passError}</td>
 				</tr>
 				<tr>
